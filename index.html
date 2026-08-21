@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhysiX - Platform Latihan & Ulangan Fisika</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              900: '#312e81',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- KaTeX for Physics Formula Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .gradient-text {
+      background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col select-none">
+
+  <!-- ==================== 1. NAVBAR ==================== -->
+  <nav class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <div class="flex items-center space-x-3 cursor-pointer">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-cyan-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+          <i data-lucide="atom" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <span class="font-extrabold text-xl tracking-tight text-slate-900">Physi<span class="text-brand-600">X</span></span>
+          <span class="hidden sm:inline-block text-[11px] bg-brand-50 text-brand-700 px-2 py-0.5 rounded-full font-bold ml-2 border border-brand-200">SMA & MA</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center space-x-3">
+        <button onclick="alert('Kamus simbol & satuan akan terbuka')" class="text-xs font-semibold text-slate-600 hover:text-brand-600 bg-slate-100 hover:bg-slate-200 px-3.5 py-2 rounded-xl transition flex items-center gap-1.5">
+          <i data-lucide="binary" class="w-4 h-4 text-brand-600"></i>
+          <span class="hidden sm:inline">Simbol & Satuan</span>
+        </button>
+
+        <button onclick="promptStudentIdentity()" id="student-btn" class="bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs sm:text-sm px-4 py-2 rounded-xl transition flex items-center gap-2 shadow-sm">
+          <i data-lucide="user-circle" class="w-4 h-4"></i>
+          <span id="student-name-label">Identitas Siswa</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== 2. HERO SECTION ==================== -->
+  <main class="flex-grow">
+    <section class="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24 bg-gradient-to-b from-indigo-50/60 via-white to-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        
+        <!-- Badge -->
+        <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 mb-6 border border-emerald-200 shadow-sm">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-emerald-600"></i> Platform Ulangan & Latihan Fisika Interaktif
+        </span>
+        
+        <!-- Main Heading -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 tracking-tight leading-tight mb-6">
+          Belajar & Ulangan Fisika<br>
+          <span class="gradient-text">Mudah, Praktis, & Terstruktur</span>
+        </h1>
+        
+        <!-- Subtitle -->
+        <p class="max-w-2xl mx-auto text-slate-600 text-sm sm:text-base md:text-lg mb-8 leading-relaxed">
+          Pilih bab materi sekolahmu, kerjakan soal ulangan atau latihan terarah lengkap dengan rumus otomatis, coret-coretan digital, dan sistem anti-curang.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="#daftar-bab" class="bg-brand-600 hover:bg-brand-700 text-white font-extrabold text-sm sm:text-base px-8 py-3.5 rounded-xl transition shadow-lg shadow-brand-500/25 flex items-center justify-center gap-2">
+            <i data-lucide="play-circle" class="w-5 h-5"></i> Pilih Materi & Mulai
+          </a>
+          <a href="#fitur" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl transition flex items-center justify-center gap-2">
+            <i data-lucide="info" class="w-5 h-5 text-slate-500"></i> Fitur Ujian
+          </a>
+        </div>
+
+        <!-- Feature Badges -->
+        <div id="fitur" class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-3 text-left">
+            <div class="p-2.5 rounded-xl bg-indigo-50 text-indigo-600"><i data-lucide="pen-tool" class="w-5 h-5"></i></div>
+            <div>
+              <h4 class="font-bold text-xs text-slate-900">Scratchpad</h4>
+              <p class="text-[11px] text-slate-500">Orek-orek di layar</p>
+            </div>
+          </div>
+          <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-3 text-left">
+            <div class="p-2.5 rounded-xl bg-emerald-50 text-emerald-600"><i data-lucide="shield-alert" class="w-5 h-5"></i></div>
+            <div>
+              <h4 class="font-bold text-xs text-slate-900">Anti-Cheat</h4>
+              <p class="text-[11px] text-slate-500">Deteksi pindah tab</p>
+            </div>
+          </div>
+          <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-3 text-left">
+            <div class="p-2.5 rounded-xl bg-amber-50 text-amber-600"><i data-lucide="life-buoy" class="w-5 h-5"></i></div>
+            <div>
+              <h4 class="font-bold text-xs text-slate-900">Penyelamat</h4>
+              <p class="text-[11px] text-slate-500">Cegah nilai nol</p>
+            </div>
+          </div>
+          <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-3 text-left">
+            <div class="p-2.5 rounded-xl bg-cyan-50 text-cyan-600"><i data-lucide="calculator" class="w-5 h-5"></i></div>
+            <div>
+              <h4 class="font-bold text-xs text-slate-900">Kalkulator</h4>
+              <p class="text-[11px] text-slate-500">Akar, $\pi$, & trigonometri</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 3. CHAPTER SELECTOR SECTION ==================== -->
+    <section id="daftar-bab" class="py-14 bg-slate-100 border-t border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Pilih Tingkat Kelas & Bab</h2>
+          <p class="text-slate-600 text-xs sm:text-sm mt-2">Pilih materi yang ingin dipelajari atau diujikan hari ini.</p>
+          
+          <!-- Class Tabs (10, 11, 12) -->
+          <div class="inline-flex p-1.5 bg-white border border-slate-200 rounded-2xl mt-6 shadow-sm">
+            <button onclick="selectClass('10')" id="tab-10" class="class-tab px-5 py-2 rounded-xl font-bold text-xs transition text-slate-600 hover:text-slate-900">Kelas 10</button>
+            <button onclick="selectClass('11')" id="tab-11" class="class-tab px-5 py-2 rounded-xl font-bold text-xs transition bg-brand-600 text-white shadow-sm">Kelas 11 SMA</button>
+            <button onclick="selectClass('12')" id="tab-12" class="class-tab px-5 py-2 rounded-xl font-bold text-xs transition text-slate-600 hover:text-slate-900">Kelas 12</button>
+          </div>
+        </div>
+
+        <!-- Dynamic Grid Bab -->
+        <div id="chapter-list-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Diisi otomatis oleh JavaScript -->
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 4. FOOTER ==================== -->
+  <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500">
+    <p>© 2026 PhysiX Platform. Media Pembelajaran & Evaluasi Fisika Interaktif.</p>
+  </footer>
+
+  <!-- ==================== JAVASCRIPT STATE & LOGIC ==================== -->
+  <script>
+    // 1. DATA BAB PER KELAS
+    const chaptersData = {
+      "10": [
+        { id: "c10-1", title: "Besaran, Satuan & Vektor Dasar", desc: "Dimensi, aturan angka penting, dan resultan vektor gaya.", total: 5, icon: "ruler" },
+        { id: "c10-2", title: "Kinematika Gerak Lurus", desc: "GLB, GLBB, dan Gerak Vertikal / Jatuh Bebas.", total: 5, icon: "move-right" }
+      ],
+      "11": [
+        { id: "c11-1", title: "Vektor & Analisis Kinematika", desc: "Posisi vektor, kecepatan sudut, dan gerak parabola.", total: 5, icon: "navigation" },
+        { id: "c11-2", title: "Dinamika Gerak (Hukum Newton)", desc: "Hukum I, II, III Newton, gaya gesek, dan bidang miring.", total: 5, icon: "activity" },
+        { id: "c11-3", title: "Usaha & Energi", desc: "Teorema usaha-energi dan hukum kekekalan energi mekanik.", total: 5, icon: "zap" },
+        { id: "c11-4", title: "Fluida Statis & Dinamis", desc: "Tekanan hidrostatis, hukum Pascal, Archimedes, dan Bernoulli.", total: 5, icon: "droplet" }
+      ],
+      "12": [
+        { id: "c12-1", title: "Listrik Statis & Dinamis", desc: "Hukum Coulomb, medan listrik, Hukum Ohm, dan Kirchhoff.", total: 5, icon: "cpu" },
+        { id: "c12-2", title: "Induksi Elektromagnetik", desc: "Fluks magnetik, hukum Faraday, Lenz, dan Transformator.", total: 5, icon: "magnet" }
+      ]
+    };
+
+    let activeClass = "11";
+
+    // Inisialisasi awal
+    window.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      renderChapters();
+    });
+
+    // Ganti Tab Kelas (10, 11, 12)
+    function selectClass(cls) {
+      activeClass = cls;
+      document.querySelectorAll('.class-tab').forEach(btn => {
+        btn.className = "class-tab px-5 py-2 rounded-xl font-bold text-xs transition text-slate-600 hover:text-slate-900";
+      });
+      const activeBtn = document.getElementById(`tab-${cls}`);
+      activeBtn.className = "class-tab px-5 py-2 rounded-xl font-bold text-xs transition bg-brand-600 text-white shadow-sm";
+      renderChapters();
+    }
+
+    // Render Kartu Bab
+    function renderChapters() {
+      const container = document.getElementById('chapter-list-container');
+      container.innerHTML = '';
+
+      const items = chaptersData[activeClass] || [];
+      items.forEach(item => {
+        const card = document.createElement('div');
+        card.className = "bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between";
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-3 bg-brand-50 text-brand-600 rounded-2xl">
+                <i data-lucide="${item.icon}" class="w-6 h-6"></i>
+              </div>
+              <span class="text-[11px] font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">${item.total} Soal</span>
+            </div>
+            <h3 class="font-extrabold text-lg text-slate-900 mb-1.5">${item.title}</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">${item.desc}</p>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-100 grid grid-cols-2 gap-2">
+            <button onclick="prepareExam('${item.id}', 'latihan')" class="py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition">
+              Latihan Soal
+            </button>
+            <button onclick="prepareExam('${item.id}', 'ulangan')" class="py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs rounded-xl transition shadow-sm">
+              Ulangan Harian
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+      lucide.createIcons();
+    }
+
+    function promptStudentIdentity() {
+      const name = prompt("Masukkan Nama Lengkap Siswa:");
+      if (name) {
+        document.getElementById('student-name-label').innerText = name;
+      }
+    }
+
+    function prepareExam(chapterId, mode) {
+      alert(`[Siap Masuk Ujian]\nBab: ${chapterId}\nMode: ${mode.toUpperCase()}\n\n(Langkah berikutnya kita sambungkan ke modul mesin ujian di bawahnya)`);
+    }
+  </script>
+
+  <!-- ==================== BAGIAN MODUL UJIAN, CANVAS, & KALKULATOR AKAN DITAMBAHKAN DI SINI ==================== -->
+
+</body>
+</html>
