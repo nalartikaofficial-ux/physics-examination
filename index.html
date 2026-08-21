@@ -1,31 +1,34 @@
 <!DOCTYPE html>
-<html lang="id" class="dark">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PhysiX CBT & E-Modul Portal - Generasi Baru</title>
-  
-  <!-- Tailwind CSS CDN -->
+  <title>PhysiX - Quantum Learning & CBT Platform</title>
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
+          fontFamily: {
+            sans: ['"Space Grotesk"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
           colors: {
-            cosmic: {
-              950: '#070b14',
-              900: '#0c1322',
-              800: '#141d33',
-              700: '#1e2b4d',
-              600: '#2b3d6b',
+            dark: {
+              950: '#06080f',
+              900: '#0b1120',
+              850: '#0f172a',
+              800: '#1e293b',
+              700: '#334155'
             },
-            neon: {
-              cyan: '#00f0ff',
+            quantum: {
+              cyan: '#06b6d4',
               blue: '#3b82f6',
-              purple: '#8b5cf6',
-              amber: '#f59e0b',
+              violet: '#8b5cf6',
               emerald: '#10b981',
+              amber: '#f59e0b',
               rose: '#f43f5e'
             }
           }
@@ -34,557 +37,335 @@
     }
   </script>
 
-  <!-- Google Fonts: Plus Jakarta Sans -->
+  <!-- Google Fonts: Space Grotesk & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- KaTeX for Physics Formula Rendering -->
+  <!-- KaTeX for Physics LaTeX Formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 
   <style>
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #070b14;
+    /* Background Sci-Fi Grid Pattern */
+    .quantum-grid {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     }
-    .font-mono { font-family: 'JetBrains Mono', monospace; }
     
-    /* Glassmorphism Dark */
-    .glass-card {
-      background: rgba(12, 19, 34, 0.75);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+    /* Neon Glow & Glass Effects */
+    .glass-panel {
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
-    .glass-card-active {
-      background: linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(59, 130, 246, 0.15) 100%);
-      border: 1px solid rgba(0, 240, 255, 0.35);
-    }
-    .neon-glow-cyan {
-      box-shadow: 0 0 25px rgba(0, 240, 255, 0.25);
-    }
-    .neon-glow-btn {
-      box-shadow: 0 0 20px rgba(0, 240, 255, 0.35);
+
+    .glow-cyan {
+      box-shadow: 0 0 35px -5px rgba(6, 182, 212, 0.3);
     }
     
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: #070b14; }
-    ::-webkit-scrollbar-thumb { background: #1e2b4d; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #00f0ff; }
+    .glow-violet {
+      box-shadow: 0 0 35px -5px rgba(139, 92, 246, 0.3);
+    }
+
+    /* Custom Selection */
+    ::selection { background: #06b6d4; color: #06080f; }
   </style>
 </head>
-<body class="text-slate-200 antialiased min-h-screen select-none overflow-x-hidden">
+<body class="bg-dark-950 text-slate-100 antialiased min-h-screen quantum-grid selection:bg-cyan-500 selection:text-black">
 
   <!-- ========================================================================= -->
-  <!-- 1. VIEW: LOGIN PORTAL (LAMPIRAN 1 - LEVEL UP) -->
+  <!-- 1. VIEW: LOGIN PORTAL (SCI-FI CARD DESIGN) -->
   <!-- ========================================================================= -->
-  <div id="view-login" class="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-gradient-to-br from-cosmic-950 via-cosmic-900 to-[#050811]">
-    
-    <!-- Background Ambient Glow -->
-    <div class="absolute w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] -top-32 -left-32 pointer-events-none"></div>
-    <div class="absolute w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[120px] -bottom-32 -right-32 pointer-events-none"></div>
+  <div id="view-login" class="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
+    <!-- Ambient Orbital Lights -->
+    <div class="absolute w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] -top-40 -left-40 pointer-events-none"></div>
+    <div class="absolute w-[600px] h-[600px] bg-violet-600/10 rounded-full blur-[140px] -bottom-40 -right-40 pointer-events-none"></div>
 
     <div class="w-full max-w-md relative z-10">
       
-      <!-- App Header Icon -->
+      <!-- Top Branding -->
       <div class="text-center mb-8">
-        <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 p-0.5 shadow-xl neon-glow-cyan mb-4">
-          <div class="w-full h-full bg-cosmic-950 rounded-[14px] flex items-center justify-center text-cyan-400">
-            <i data-lucide="atom" class="w-8 h-8 animate-pulse"></i>
-          </div>
+        <div class="inline-flex p-3 rounded-2xl bg-gradient-to-tr from-cyan-500/20 via-violet-500/20 to-transparent border border-cyan-500/30 glow-cyan mb-4">
+          <i data-lucide="atom" class="w-10 h-10 text-cyan-400 animate-spin-slow"></i>
         </div>
-        <h1 class="text-2xl font-extrabold tracking-tight text-white">Physi<span class="text-cyan-400">X</span> CBT & E-Modul</h1>
-        <p class="text-xs text-slate-400 mt-1 font-medium">Platform Ujian & Latihan Fisika Interaktif</p>
+        <h1 class="text-3xl font-bold tracking-tight text-white">Physi<span class="text-cyan-400">X</span> Portal</h1>
+        <p class="text-xs text-slate-400 mt-1 font-mono tracking-wide">Interactive Physics CBT & Module Hub</p>
       </div>
 
       <!-- Login Card -->
-      <div class="glass-card rounded-3xl p-7 sm:p-8 shadow-2xl border border-white/10 relative">
-        <div class="mb-6 text-center">
-          <h2 class="text-lg font-bold text-white">Selamat Datang</h2>
-          <p class="text-xs text-slate-400 mt-1">Pilih peran dan masuk ke portal pembelajaran</p>
+      <div class="glass-panel rounded-3xl p-8 shadow-2xl relative border-slate-800">
+        
+        <!-- Role Switcher -->
+        <div class="mb-6">
+          <label class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Pilih Peran Anda</label>
+          <div class="grid grid-cols-2 gap-2 p-1.5 bg-dark-900/90 rounded-2xl border border-slate-800">
+            <button type="button" onclick="setRole('siswa')" id="role-siswa-btn" class="py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 bg-cyan-500 text-dark-950 shadow-md">
+              <i data-lucide="graduation-cap" class="w-4 h-4"></i> Siswa
+            </button>
+            <button type="button" onclick="setRole('guru')" id="role-guru-btn" class="py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 text-slate-400 hover:text-white">
+              <i data-lucide="user-check" class="w-4 h-4"></i> Guru Fisika
+            </button>
+          </div>
         </div>
 
-        <form onsubmit="handleLogin(event)" class="space-y-4">
-          
-          <!-- Role Selector -->
+        <!-- Form Fields -->
+        <form onsubmit="handleAuth(event)" class="space-y-4">
           <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center gap-1.5">
-              <i data-lucide="shield" class="w-3.5 h-3.5 text-cyan-400"></i> Peran
-            </label>
-            <div class="grid grid-cols-2 gap-2 p-1 bg-cosmic-950/80 rounded-xl border border-slate-700/60">
-              <button type="button" onclick="setLoginRole('siswa')" id="role-btn-siswa" class="py-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 shadow">
-                <i data-lucide="graduation-cap" class="w-4 h-4"></i> Siswa
-              </button>
-              <button type="button" onclick="setLoginRole('guru')" id="role-btn-guru" class="py-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-2 text-slate-400 hover:text-white">
-                <i data-lucide="user-check" class="w-4 h-4"></i> Guru
-              </button>
-            </div>
+            <label id="auth-name-label" class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1.5">Nama Lengkap Siswa</label>
+            <input type="text" id="auth-name-input" required placeholder="Contoh: Muhammad Farhan" class="w-full px-4 py-3 rounded-xl bg-dark-900/90 border border-slate-800 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-cyan-400 transition font-sans">
           </div>
 
-          <!-- Username / Nama -->
           <div>
-            <label id="login-user-label" class="block text-xs font-semibold text-slate-300 mb-1.5">Nama Lengkap Siswa</label>
-            <div class="relative">
-              <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
-                <i data-lucide="user" class="w-4 h-4"></i>
-              </span>
-              <input type="text" id="login-username" required placeholder="Contoh: Muhammad Farhan" class="w-full pl-10 pr-4 py-3 rounded-xl bg-cosmic-950/90 border border-slate-700/80 text-white placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition">
-            </div>
+            <label id="auth-sub-label" class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1.5">Kelas / NIP</label>
+            <input type="text" id="auth-sub-input" required placeholder="Contoh: XI MIPA 1" class="w-full px-4 py-3 rounded-xl bg-dark-900/90 border border-slate-800 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-cyan-400 transition font-sans">
           </div>
 
-          <!-- Class / Password Field -->
-          <div id="login-subfield">
-            <label class="block text-xs font-semibold text-slate-300 mb-1.5">Kelas & Nomor Presensi</label>
-            <div class="relative">
-              <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
-                <i data-lucide="layers" class="w-4 h-4"></i>
-              </span>
-              <input type="text" id="login-subtext" required placeholder="Contoh: XI MIPA 1 / 18" class="w-full pl-10 pr-4 py-3 rounded-xl bg-cosmic-950/90 border border-slate-700/80 text-white placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition">
-            </div>
-          </div>
-
-          <!-- Submit Button -->
-          <button type="submit" class="w-full py-3.5 mt-2 rounded-xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 hover:from-cyan-300 hover:to-indigo-500 text-slate-950 font-extrabold text-sm transition transform active:scale-95 shadow-lg neon-glow-btn flex items-center justify-center gap-2">
+          <button type="submit" class="w-full py-3.5 mt-2 rounded-xl bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-600 hover:opacity-95 text-dark-950 font-bold text-sm tracking-wide transition shadow-lg glow-cyan flex items-center justify-center gap-2">
             <span>Masuk ke Dashboard</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
         </form>
 
-        <div class="mt-6 pt-4 border-t border-slate-800 text-center">
-          <p class="text-[11px] text-slate-500">SMA Muhammadiyah 18 Jakarta • Media Fisika</p>
+        <div class="mt-6 pt-4 border-t border-slate-800/80 text-center">
+          <p class="text-[11px] text-slate-500 font-mono">SMA Muhammadiyah 18 Jakarta</p>
         </div>
+
       </div>
     </div>
   </div>
 
 
   <!-- ========================================================================= -->
-  <!-- 2. MAIN APP SHELL (DASHBOARD WITH SIDEBAR - LAMPIRAN 2, 3, 4, 5) -->
+  <!-- 2. VIEW: MAIN DASHBOARD & MATERIAL HUB -->
   <!-- ========================================================================= -->
-  <div id="app-shell" class="hidden min-h-screen flex bg-cosmic-950">
+  <div id="view-dashboard" class="hidden min-h-screen flex flex-col">
     
-    <!-- ==================== SIDEBAR ==================== -->
-    <aside class="w-64 bg-cosmic-900 border-r border-slate-800/80 flex flex-col justify-between p-4 fixed inset-y-0 z-30 transition-all">
-      <div>
-        <!-- Brand Header -->
-        <div class="flex items-center space-x-3 px-2 py-3 mb-6">
-          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-slate-950 font-black shadow-md">
-            <i data-lucide="atom" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <h2 class="font-extrabold text-sm text-white leading-none">Physi<span class="text-cyan-400">X</span> Portal</h2>
-            <p class="text-[10px] text-slate-400 mt-0.5">E-Modul & CBT Lab</p>
-          </div>
+    <!-- Top Modern Navbar -->
+    <header class="glass-panel border-b border-slate-800/80 sticky top-0 z-30 px-4 sm:px-8 py-3.5 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <div class="p-2 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+          <i data-lucide="atom" class="w-6 h-6"></i>
         </div>
-
-        <!-- Navigation Menu Items -->
-        <nav class="space-y-1.5">
-          <button onclick="navSwitch('dashboard')" id="nav-dashboard" class="nav-item w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition text-slate-400 hover:text-white hover:bg-slate-800/60">
-            <i data-lucide="layout-grid" class="w-4 h-4"></i>
-            <span>Dashboard</span>
-          </button>
-          
-          <button onclick="navSwitch('modul')" id="nav-modul" class="nav-item w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition text-slate-400 hover:text-white hover:bg-slate-800/60">
-            <i data-lucide="book-open" class="w-4 h-4"></i>
-            <span id="nav-modul-text">Daftar Modul & Ujian</span>
-          </button>
-
-          <button onclick="navSwitch('upload')" id="nav-upload" class="nav-item w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition text-slate-400 hover:text-white hover:bg-slate-800/60">
-            <i data-lucide="upload-cloud" class="w-4 h-4"></i>
-            <span id="nav-upload-text">Upload / Tambah Soal</span>
-          </button>
-
-          <button onclick="openFormulaModal()" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition text-cyan-400 hover:bg-cyan-500/10 border border-cyan-500/20 mt-4">
-            <i data-lucide="binary" class="w-4 h-4 text-cyan-400"></i>
-            <span>Simbol & Satuan SI</span>
-          </button>
-
-          <button onclick="navSwitch('profil')" id="nav-profil" class="nav-item w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition text-slate-400 hover:text-white hover:bg-slate-800/60">
-            <i data-lucide="user" class="w-4 h-4"></i>
-            <span>Profil Pengguna</span>
-          </button>
-        </nav>
+        <div>
+          <h2 class="text-base font-bold tracking-tight text-white">Physi<span class="text-cyan-400">X</span> Studio</h2>
+          <p class="text-[10px] text-slate-400 font-mono" id="nav-user-label">Peserta Ujian</p>
+        </div>
       </div>
 
-      <!-- User Profile at Sidebar Bottom -->
-      <div class="pt-4 border-t border-slate-800/80">
-        <div class="glass-card p-3 rounded-2xl flex items-center justify-between mb-2">
-          <div class="flex items-center space-x-2.5 overflow-hidden">
-            <div id="user-avatar" class="w-8 h-8 rounded-xl bg-cyan-500 text-slate-950 font-black text-xs flex items-center justify-center flex-shrink-0">
-              U
-            </div>
-            <div class="overflow-hidden">
-              <p id="sidebar-user-name" class="text-xs font-bold text-white truncate">Fadhillah Umar, S.Pd</p>
-              <p id="sidebar-user-role" class="text-[10px] text-cyan-400 truncate">Guru Fisika</p>
-            </div>
-          </div>
-        </div>
-        <button onclick="handleLogout()" class="w-full py-2 bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-500/20 rounded-xl text-xs font-bold transition flex items-center justify-center gap-1.5">
-          <i data-lucide="log-out" class="w-3.5 h-3.5"></i> Keluar
+      <div class="flex items-center space-x-3">
+        <button onclick="openCheatsheet()" class="px-3.5 py-2 rounded-xl bg-dark-900 hover:bg-slate-800 text-cyan-400 border border-cyan-500/30 text-xs font-mono font-bold flex items-center gap-2 transition">
+          <i data-lucide="binary" class="w-4 h-4"></i>
+          <span class="hidden sm:inline">Kamus Simbol & SI</span>
+        </button>
+        <button onclick="logout()" class="px-3.5 py-2 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-500/30 text-xs font-bold flex items-center gap-1.5 transition">
+          <i data-lucide="log-out" class="w-4 h-4"></i>
+          <span class="hidden sm:inline">Keluar</span>
         </button>
       </div>
-    </aside>
+    </header>
 
-    <!-- ==================== MAIN CONTENT VIEWPORT ==================== -->
-    <main class="flex-1 ml-64 p-6 sm:p-8 min-h-screen overflow-y-auto">
+    <!-- Main Content Container -->
+    <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-8 space-y-8">
       
-      <!-- ---------------------------------------------------- -->
-      <!-- TAB 1: DASHBOARD VIEW (LAMPIRAN 2) -->
-      <!-- ---------------------------------------------------- -->
-      <section id="tab-content-dashboard" class="tab-pane space-y-8">
-        
-        <!-- Welcome Banner -->
-        <div>
-          <h1 class="text-2xl sm:text-3xl font-black text-white tracking-tight flex items-center gap-3">
-            <span>Dashboard <span id="dash-role-title">Guru</span></span>
-            <span class="text-xs font-bold px-3 py-1 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded-full flex items-center gap-1">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Online
-            </span>
+      <!-- Welcome Hero Banner -->
+      <div class="glass-panel p-6 sm:p-8 rounded-3xl relative overflow-hidden border-slate-800">
+        <div class="absolute right-0 top-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="relative z-10 max-w-2xl">
+          <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-mono font-bold inline-block mb-3">
+            E-Evaluasi Fisika Interaktif
+          </span>
+          <h1 class="text-2xl sm:text-4xl font-bold text-white tracking-tight leading-tight">
+            Selamat Datang, <span id="dash-user-name" class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">Fadhillah Umar</span>!
           </h1>
-          <p class="text-xs sm:text-sm text-slate-400 mt-1">Selamat datang di Sistem CBT & E-Modul SMA Muhammadiyah 18 Jakarta.</p>
+          <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
+            Pilih bab pembelajaran di bawah untuk memulai sesi latihan mandiri atau ulangan harian. Dilengkapi kalkulator ilmiah, papan coretan, dan deteksi anti-curang.
+          </p>
         </div>
+      </div>
 
-        <!-- 4 Metric Cards -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          
-          <div class="glass-card p-5 rounded-3xl flex items-center justify-between border-l-4 border-cyan-400">
-            <div>
-              <p class="text-xs font-medium text-slate-400">Total Modul</p>
-              <h3 class="text-2xl sm:text-3xl font-black text-white mt-1" id="stat-total-modul">4</h3>
-              <p class="text-[10px] text-cyan-400 mt-0.5">Bank materi aktif</p>
-            </div>
-            <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center"><i data-lucide="book-marked" class="w-6 h-6"></i></div>
-          </div>
-
-          <div class="glass-card p-5 rounded-3xl flex items-center justify-between border-l-4 border-blue-500">
-            <div>
-              <p class="text-xs font-medium text-slate-400">Tingkat Kelas</p>
-              <h3 class="text-2xl sm:text-3xl font-black text-white mt-1">3</h3>
-              <p class="text-[10px] text-blue-400 mt-0.5">X, XI, & XII SMA</p>
-            </div>
-            <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center"><i data-lucide="layers" class="w-6 h-6"></i></div>
-          </div>
-
-          <div class="glass-card p-5 rounded-3xl flex items-center justify-between border-l-4 border-amber-400">
-            <div>
-              <p class="text-xs font-medium text-slate-400">Soal Tersedia</p>
-              <h3 class="text-2xl sm:text-3xl font-black text-white mt-1">16</h3>
-              <p class="text-[10px] text-amber-400 mt-0.5">Dengan formula LaTeX</p>
-            </div>
-            <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center"><i data-lucide="sparkles" class="w-6 h-6"></i></div>
-          </div>
-
-          <div class="glass-card p-5 rounded-3xl flex items-center justify-between border-l-4 border-purple-500">
-            <div>
-              <p class="text-xs font-medium text-slate-400">Mata Pelajaran</p>
-              <h3 class="text-2xl sm:text-3xl font-black text-white mt-1">Fisika</h3>
-              <p class="text-[10px] text-purple-400 mt-0.5">Kurikulum Merdeka</p>
-            </div>
-            <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center"><i data-lucide="atom" class="w-6 h-6"></i></div>
-          </div>
-
-        </div>
-
-        <!-- Quick Module List on Dashboard -->
-        <div class="glass-card p-6 sm:p-7 rounded-3xl space-y-4">
-          <div class="flex items-center justify-between">
-            <h3 class="text-base font-extrabold text-white flex items-center gap-2">
-              <i data-lucide="zap" class="w-5 h-5 text-cyan-400"></i> Modul & Ujian Siap Dikerjakan
-            </h3>
-            <button onclick="navSwitch('modul')" class="text-xs font-bold text-cyan-400 hover:underline">Lihat Semua →</button>
-          </div>
-
-          <div id="dashboard-quick-list" class="space-y-3">
-            <!-- Rendered by JS -->
-          </div>
-        </div>
-
-      </section>
-
-
-      <!-- ---------------------------------------------------- -->
-      <!-- TAB 2: MODUL SAYA / LIST (LAMPIRAN 3) -->
-      <!-- ---------------------------------------------------- -->
-      <section id="tab-content-modul" class="tab-pane hidden space-y-6">
-        
-        <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4">
-          <div>
-            <h2 class="text-2xl font-black text-white">Bank Modul & Paket Ujian</h2>
-            <p class="text-xs text-slate-400 mt-1">Pilih materi yang ingin diakses atau diujikan hari ini.</p>
-          </div>
-          <button onclick="navSwitch('upload')" class="px-4 py-2.5 bg-gradient-to-r from-cyan-400 to-blue-600 text-slate-950 font-bold text-xs rounded-xl shadow-lg flex items-center gap-2 hover:opacity-95 self-start">
-            <i data-lucide="plus-circle" class="w-4 h-4"></i> Tambah Bab / Soal Baru
-          </button>
-        </div>
-
-        <!-- Grid Cards Modul -->
-        <div id="module-grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Rendered by JS -->
-        </div>
-
-      </section>
-
-
-      <!-- ---------------------------------------------------- -->
-      <!-- TAB 3: UPLOAD MODUL / INPUT SOAL (LAMPIRAN 4) -->
-      <!-- ---------------------------------------------------- -->
-      <section id="tab-content-upload" class="tab-pane hidden space-y-6 max-w-2xl mx-auto">
-        
-        <div class="text-center">
-          <h2 class="text-2xl font-black text-white">Upload Modul & Tambah Bab Ujian</h2>
-          <p class="text-xs text-slate-400 mt-1">Tambahkan paket materi latihan atau ulangan harian baru.</p>
-        </div>
-
-        <div class="glass-card p-6 sm:p-8 rounded-3xl">
-          <form onsubmit="handleNewModule(event)" class="space-y-5">
-            
-            <div>
-              <label class="block text-xs font-bold text-slate-300 mb-1.5">Judul Bab / Materi</label>
-              <input type="text" id="up-title" required placeholder="Contoh: Termodinamika & Teori Gas Ideal" class="w-full px-4 py-3 rounded-xl bg-cosmic-950/90 border border-slate-700/80 text-white text-xs sm:text-sm focus:outline-none focus:border-cyan-400">
-            </div>
-
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs font-bold text-slate-300 mb-1.5">Tingkat (Level)</label>
-                <select id="up-level" class="w-full px-4 py-3 rounded-xl bg-cosmic-950/90 border border-slate-700/80 text-white text-xs sm:text-sm focus:outline-none focus:border-cyan-400">
-                  <option value="X">Kelas X</option>
-                  <option value="XI" selected>Kelas XI</option>
-                  <option value="XII">Kelas XII</option>
-                </select>
-              </div>
-              <div>
-                <label class="block text-xs font-bold text-slate-300 mb-1.5">Target Kelas</label>
-                <input type="text" id="up-class" required placeholder="Contoh: XI MIPA 1 & 2" class="w-full px-4 py-3 rounded-xl bg-cosmic-950/90 border border-slate-700/80 text-white text-xs sm:text-sm focus:outline-none focus:border-cyan-400">
-              </div>
-            </div>
-
-            <div>
-              <label class="block text-xs font-bold text-slate-300 mb-1.5">Deskripsi Singkat</label>
-              <textarea id="up-desc" rows="3" placeholder="Tulis ringkasan cakupan konsep bab ini..." class="w-full px-4 py-3 rounded-xl bg-cosmic-950/90 border border-slate-700/80 text-white text-xs sm:text-sm focus:outline-none focus:border-cyan-400"></textarea>
-            </div>
-
-            <div>
-              <label class="block text-xs font-bold text-slate-300 mb-1.5">Tautan E-Modul / Google Drive (Opsional)</label>
-              <input type="url" id="up-link" placeholder="https://drive.google.com/..." class="w-full px-4 py-3 rounded-xl bg-cosmic-950/90 border border-slate-700/80 text-white text-xs sm:text-sm focus:outline-none focus:border-cyan-400">
-            </div>
-
-            <div class="flex gap-3 pt-2">
-              <button type="button" onclick="navSwitch('modul')" class="w-1/3 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs transition">Batal</button>
-              <button type="submit" class="w-2/3 py-3 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-600 text-slate-950 font-extrabold text-xs transition shadow-lg neon-glow-btn">Simpan & Publikasikan</button>
-            </div>
-
-          </form>
-        </div>
-
-      </section>
-
-
-      <!-- ---------------------------------------------------- -->
-      <!-- TAB 4: PROFIL PENGGUNA (LAMPIRAN 5) -->
-      <!-- ---------------------------------------------------- -->
-      <section id="tab-content-profil" class="tab-pane hidden space-y-6 max-w-3xl mx-auto">
-        
+      <!-- Class Filter Tabs -->
+      <div class="flex items-center justify-between flex-wrap gap-4 border-b border-slate-800/80 pb-4">
         <div>
-          <h2 class="text-2xl font-black text-white">Profil Pengguna</h2>
-          <p class="text-xs text-slate-400 mt-1">Informasi akun dan hak akses portal CBT</p>
+          <h3 class="text-lg font-bold text-white">Daftar Bab & Paket Ujian</h3>
+          <p class="text-xs text-slate-400 font-mono">Pilih materi sesuai tingkatan kelas</p>
         </div>
-
-        <!-- Big Profile Card -->
-        <div class="glass-card p-8 rounded-3xl text-center relative overflow-hidden">
-          <div class="w-20 h-20 rounded-3xl bg-gradient-to-tr from-emerald-400 to-cyan-500 text-slate-950 font-black text-2xl flex items-center justify-center mx-auto mb-4 shadow-xl">
-            <span id="prof-avatar-char">F</span>
-          </div>
-          <h3 class="text-xl font-extrabold text-white" id="prof-name">Fadhillah Umar, S.Pd</h3>
-          <p class="text-xs text-cyan-400 mt-1" id="prof-role-label">Guru Fisika SMA Muhammadiyah 18 Jakarta</p>
+        <div class="flex gap-2 p-1 bg-dark-900 rounded-2xl border border-slate-800">
+          <button onclick="filterClass('X')" id="tab-class-X" class="class-filter-btn px-4 py-1.5 rounded-xl text-xs font-mono font-bold text-slate-400 hover:text-white transition">Kelas 10</button>
+          <button onclick="filterClass('XI')" id="tab-class-XI" class="class-filter-btn px-4 py-1.5 rounded-xl text-xs font-mono font-bold bg-cyan-500 text-dark-950 shadow transition">Kelas 11</button>
+          <button onclick="filterClass('XII')" id="tab-class-XII" class="class-filter-btn px-4 py-1.5 rounded-xl text-xs font-mono font-bold text-slate-400 hover:text-white transition">Kelas 12</button>
         </div>
+      </div>
 
-        <!-- Details Info Table Card -->
-        <div class="glass-card p-6 rounded-3xl space-y-4">
-          <div class="flex justify-between items-center py-2.5 border-b border-slate-800 text-xs">
-            <span class="text-slate-400">Username / ID</span>
-            <span class="font-bold text-white font-mono" id="prof-uname">umar18</span>
-          </div>
-          <div class="flex justify-between items-center py-2.5 border-b border-slate-800 text-xs">
-            <span class="text-slate-400">Mata Pelajaran</span>
-            <span class="font-bold text-white">Fisika SMA</span>
-          </div>
-          <div class="flex justify-between items-center py-2.5 border-b border-slate-800 text-xs">
-            <span class="text-slate-400">Status Akun</span>
-            <span class="font-bold text-emerald-400 flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Aktif
-            </span>
-          </div>
-          <div class="flex justify-between items-center py-2.5 text-xs">
-            <span class="text-slate-400">Total Modul Tersedia</span>
-            <span class="font-bold text-white" id="prof-modul-count">4 Bab Tersedia</span>
-          </div>
-        </div>
-
-      </section>
+      <!-- Modules Grid List -->
+      <div id="module-cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered by JS -->
+      </div>
 
     </main>
   </div>
 
 
   <!-- ========================================================================= -->
-  <!-- 3. ARENA UJIAN & CBT ENGINE (FULLSCREEN INTERACTIVE) -->
+  <!-- 3. VIEW: CBT ARENA (EXAM INTERFACE) -->
   <!-- ========================================================================= -->
-  <div id="view-exam" class="hidden min-h-screen bg-cosmic-950 p-4 sm:p-6 flex flex-col justify-between">
+  <div id="view-exam" class="hidden min-h-screen flex flex-col justify-between bg-dark-950 p-4 sm:p-6">
     
-    <!-- Top Exam Header -->
-    <header class="glass-card p-4 rounded-2xl flex flex-wrap justify-between items-center gap-4 mb-6 shadow-xl">
+    <!-- Exam Navigation Bar -->
+    <div class="glass-panel p-4 rounded-2xl flex flex-wrap justify-between items-center gap-4 mb-6 border-slate-800">
       <div class="flex items-center space-x-3">
-        <button onclick="exitExam()" class="p-2 bg-cosmic-900 hover:bg-slate-800 rounded-xl text-slate-300 transition" title="Kembali ke Dashboard">
+        <button onclick="exitExamPrompt()" class="p-2 bg-dark-900 hover:bg-slate-800 rounded-xl text-slate-300 transition">
           <i data-lucide="arrow-left" class="w-5 h-5"></i>
         </button>
         <div>
           <div class="flex items-center gap-2">
-            <span id="exam-mode-badge" class="bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-[10px] font-bold px-2.5 py-0.5 rounded-md uppercase">Ulangan Harian</span>
-            <h2 id="exam-chapter-title" class="font-extrabold text-white text-sm sm:text-base">Bab 1: Vektor & Kinematika</h2>
+            <span id="exam-badge-mode" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 uppercase">Ulangan</span>
+            <h3 id="exam-header-title" class="font-bold text-sm sm:text-base text-white">Bab: Vektor & Kinematika</h3>
           </div>
-          <p class="text-[11px] text-slate-400 mt-0.5" id="exam-user-label">Peserta: Siswa</p>
+          <p class="text-[11px] text-slate-400 font-mono" id="exam-header-user">Siswa: -</p>
         </div>
       </div>
 
-      <!-- Anti-Cheat & Timer Counters -->
+      <!-- Anti-Cheat Status & Timer -->
       <div class="flex items-center space-x-3">
-        <div id="cheat-warning-badge" class="hidden bg-rose-500/20 text-rose-300 border border-rose-500/40 text-xs font-bold px-3 py-1.5 rounded-xl flex items-center gap-1.5 animate-pulse">
-          <i data-lucide="alert-triangle" class="w-4 h-4 text-rose-400"></i>
-          <span>Pindah Tab: <span id="cheat-count-text">0</span>x</span>
+        <div id="cheat-alert-box" class="hidden bg-rose-500/20 text-rose-400 border border-rose-500/30 px-3 py-1.5 rounded-xl text-xs font-mono font-bold flex items-center gap-1.5 animate-pulse">
+          <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+          <span>Pindah Tab: <span id="cheat-count-num">0</span>x</span>
         </div>
 
-        <div id="exam-timer-box" class="bg-cosmic-900 border border-slate-700/80 px-4 py-2 rounded-xl flex items-center gap-2">
+        <div id="exam-timer-wrapper" class="bg-dark-900 border border-slate-800 px-4 py-2 rounded-xl flex items-center gap-2">
           <i data-lucide="clock" class="w-4 h-4 text-amber-400"></i>
-          <span id="exam-timer-text" class="font-mono text-base font-extrabold text-amber-400">20:00</span>
+          <span id="exam-timer-val" class="font-mono text-sm sm:text-base font-bold text-amber-400">15:00</span>
         </div>
       </div>
-    </header>
+    </div>
 
-    <!-- Main Exam Center Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-1 max-w-7xl mx-auto w-full">
+    <!-- Exam Body Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto w-full flex-1">
       
-      <!-- LEFT: Question Box (2 Cols) -->
-      <div class="lg:col-span-2 glass-card p-6 sm:p-7 rounded-3xl flex flex-col justify-between min-h-[460px]">
+      <!-- Question Container (2 Cols) -->
+      <div class="lg:col-span-2 glass-panel p-6 sm:p-8 rounded-3xl flex flex-col justify-between border-slate-800 min-h-[460px]">
         <div>
-          <div class="flex justify-between items-center border-b border-slate-800 pb-4 mb-5">
-            <span id="exam-q-num-pill" class="bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-extrabold text-xs px-3.5 py-1 rounded-xl">Soal #1</span>
-            <button onclick="toggleBookmarkCurrent()" id="btn-bookmark" class="text-slate-400 hover:text-amber-400 text-xs font-semibold flex items-center gap-1.5 transition">
+          <div class="flex justify-between items-center border-b border-slate-800 pb-4 mb-6">
+            <span id="exam-q-counter" class="text-xs font-mono font-bold text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-lg border border-cyan-500/20">Soal 1 dari 4</span>
+            <button onclick="toggleDoubt()" id="exam-doubt-btn" class="text-xs font-mono text-slate-400 hover:text-amber-400 flex items-center gap-1.5 transition">
               <i data-lucide="bookmark" class="w-4 h-4"></i> Ragu-ragu
             </button>
           </div>
 
-          <!-- Question Text with KaTeX -->
-          <div id="exam-q-text" class="text-white text-base sm:text-lg leading-relaxed font-medium mb-6">
-            <!-- Loaded by JS -->
+          <!-- Question Content -->
+          <div id="exam-q-prompt" class="text-slate-100 text-base sm:text-lg leading-relaxed font-sans mb-8">
+            <!-- KaTeX Text Injected Here -->
           </div>
 
-          <!-- Options Container -->
-          <div id="exam-q-options" class="space-y-3">
-            <!-- Loaded by JS -->
+          <!-- Options -->
+          <div id="exam-q-choices" class="space-y-3">
+            <!-- Options Injected Here -->
           </div>
         </div>
 
-        <!-- Question Bottom Footer -->
+        <!-- Footer Control Buttons inside Question Box -->
         <div class="mt-8 pt-4 border-t border-slate-800 flex flex-wrap justify-between items-center gap-3">
-          <button onclick="triggerRescueMode()" class="text-xs font-bold text-rose-400 hover:text-rose-300 bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/30 px-3.5 py-2.5 rounded-xl transition flex items-center gap-1.5">
-            <i data-lucide="flag" class="w-4 h-4"></i> Angkat Tangan / Menyerah (Mode Penyelamat)
+          <button onclick="triggerRescuePrompt()" class="px-3.5 py-2 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-500/30 text-xs font-bold transition flex items-center gap-1.5">
+            <i data-lucide="flag" class="w-4 h-4"></i> Butuh Bantuan / Angkat Tangan?
           </button>
 
           <div class="flex space-x-2">
-            <button id="btn-prev-q" onclick="prevQuestion()" class="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs rounded-xl transition">Sebelumnya</button>
-            <button id="btn-next-q" onclick="nextQuestion()" class="px-5 py-2.5 bg-gradient-to-r from-cyan-400 to-blue-600 text-slate-950 font-extrabold text-xs rounded-xl transition shadow-lg">Selanjutnya</button>
+            <button id="btn-q-prev" onclick="prevQ()" class="px-4 py-2 bg-dark-900 hover:bg-slate-800 text-slate-300 font-bold text-xs rounded-xl transition">Sebelumnya</button>
+            <button id="btn-q-next" onclick="nextQ()" class="px-5 py-2 bg-cyan-500 hover:bg-cyan-400 text-dark-950 font-bold text-xs rounded-xl transition">Selanjutnya</button>
           </div>
         </div>
       </div>
 
-      <!-- RIGHT: Navigation & Tools -->
+      <!-- Sidebar Controls (1 Col) -->
       <div class="space-y-6">
         
-        <!-- Question Palette -->
-        <div class="glass-card p-5 rounded-3xl">
-          <h3 class="font-extrabold text-xs text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-2">
-            <i data-lucide="grid" class="w-4 h-4 text-cyan-400"></i> Nomor Soal
-          </h3>
-          
-          <div id="exam-palette-grid" class="grid grid-cols-5 gap-2">
-            <!-- Loaded by JS -->
+        <!-- Palette Numbers Grid -->
+        <div class="glass-panel p-6 rounded-3xl border-slate-800">
+          <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2">
+            <i data-lucide="grid" class="w-4 h-4 text-cyan-400"></i> Navigasi Soal
+          </h4>
+
+          <div id="exam-palette-container" class="grid grid-cols-5 gap-2">
+            <!-- Rendered by JS -->
           </div>
 
-          <div class="mt-6">
-            <button onclick="confirmSubmitExam()" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs rounded-xl transition shadow-lg flex items-center justify-center gap-2">
-              <i data-lucide="check-circle" class="w-4 h-4"></i> Selesaikan Ujian
+          <div class="mt-6 pt-4 border-t border-slate-800">
+            <button onclick="finishExamPrompt()" class="w-full py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-dark-950 font-bold text-xs font-mono transition shadow-lg flex items-center justify-center gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4"></i> Selesaikan Ujian
             </button>
           </div>
         </div>
 
-        <!-- Floating Utilities Shortcuts -->
-        <div class="glass-card p-5 rounded-3xl">
-          <h3 class="font-extrabold text-xs text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-2">
-            <i data-lucide="wrench" class="w-4 h-4 text-cyan-400"></i> Alat Ujian
-          </h3>
+        <!-- In-Exam Interactive Tools -->
+        <div class="glass-panel p-6 rounded-3xl border-slate-800">
+          <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-2">
+            <i data-lucide="wrench" class="w-4 h-4 text-cyan-400"></i> Alat Hitung & Cakar
+          </h4>
           <div class="grid grid-cols-2 gap-3">
-            <button onclick="openCanvas()" class="p-3 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 rounded-2xl text-xs font-bold transition flex flex-col items-center gap-2">
-              <i data-lucide="pen-tool" class="w-5 h-5 text-amber-400"></i>
-              <span>Orek-Orek</span>
+            <button onclick="openCanvas()" class="p-3 bg-dark-900 hover:bg-slate-800 border border-slate-800 text-amber-400 rounded-2xl text-xs font-bold transition flex flex-col items-center gap-2">
+              <i data-lucide="pen-tool" class="w-5 h-5"></i>
+              <span>Coret-coretan</span>
             </button>
-            <button onclick="toggleCalculator()" class="p-3 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 rounded-2xl text-xs font-bold transition flex flex-col items-center gap-2">
-              <i data-lucide="calculator" class="w-5 h-5 text-cyan-400"></i>
+            <button onclick="toggleCalc()" class="p-3 bg-dark-900 hover:bg-slate-800 border border-slate-800 text-cyan-400 rounded-2xl text-xs font-bold transition flex flex-col items-center gap-2">
+              <i data-lucide="calculator" class="w-5 h-5"></i>
               <span>Kalkulator</span>
             </button>
           </div>
         </div>
 
       </div>
-
     </div>
   </div>
 
 
   <!-- ========================================================================= -->
-  <!-- 4. VIEW: RESULTS & DISCUSSION EVALUATION -->
+  <!-- 4. VIEW: RESULTS & DISCUSSION BREAKDOWN -->
   <!-- ========================================================================= -->
-  <div id="view-result" class="hidden min-h-screen bg-cosmic-950 p-6 sm:p-10 flex items-center justify-center">
-    <div class="max-w-3xl w-full glass-card rounded-3xl overflow-hidden shadow-2xl border border-slate-700/80">
+  <div id="view-result" class="hidden min-h-screen flex items-center justify-center p-4 sm:p-8">
+    <div class="glass-panel max-w-3xl w-full rounded-3xl overflow-hidden border-slate-800 shadow-2xl">
       
-      <!-- Top Banner Score -->
-      <div class="p-8 text-center bg-gradient-to-b from-cosmic-900 to-cosmic-950 border-b border-slate-800">
-        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-bold border border-cyan-500/30 mb-3 inline-block">Hasil Rekap Ujian</span>
-        <h2 class="text-2xl sm:text-3xl font-black text-white" id="res-title">Bab: Vektor & Kinematika</h2>
-        <p class="text-xs text-slate-400 mt-1" id="res-student-info">Peserta: -</p>
+      <div class="p-8 text-center bg-dark-900/80 border-b border-slate-800 relative">
+        <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-mono font-bold inline-block mb-3">
+          Rekapitulasi Hasil Evaluasi
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white" id="res-module-title">Bab: Vektor & Kinematika</h2>
+        <p class="text-xs text-slate-400 mt-1 font-mono" id="res-user-info">Peserta: -</p>
 
-        <div class="mt-6 inline-flex flex-col items-center justify-center p-6 bg-cosmic-950/80 rounded-2xl border border-cyan-500/30 min-w-[190px]">
-          <span class="text-[11px] font-bold text-slate-400 tracking-widest uppercase">NILAI AKHIR</span>
-          <span class="text-6xl font-black text-cyan-400 my-1" id="res-score-num">0</span>
-          <span class="text-xs font-bold text-emerald-400" id="res-grade-status">Lulus</span>
+        <!-- Big Score Display -->
+        <div class="mt-6 inline-flex flex-col items-center justify-center p-6 bg-dark-950 rounded-2xl border border-slate-800 min-w-[200px]">
+          <span class="text-[10px] font-mono tracking-widest text-slate-500 uppercase">NILAI AKHIR</span>
+          <span class="text-6xl font-bold text-cyan-400 my-1 font-mono" id="res-score-num">0</span>
+          <span class="text-xs font-bold text-emerald-400" id="res-score-status">Tuntas</span>
         </div>
       </div>
 
-      <!-- Metrics -->
-      <div class="grid grid-cols-4 gap-2 p-5 bg-cosmic-900/60 border-b border-slate-800 text-center">
-        <div><span class="text-[11px] text-slate-400">Benar</span><p class="text-lg font-bold text-emerald-400 mt-0.5" id="res-stat-correct">0</p></div>
-        <div><span class="text-[11px] text-slate-400">Salah</span><p class="text-lg font-bold text-rose-400 mt-0.5" id="res-stat-wrong">0</p></div>
-        <div><span class="text-[11px] text-slate-400">Kosong</span><p class="text-lg font-bold text-amber-400 mt-0.5" id="res-stat-empty">0</p></div>
-        <div><span class="text-[11px] text-slate-400">Pindah Tab</span><p class="text-lg font-bold text-purple-400 mt-0.5" id="res-stat-cheat">0x</p></div>
+      <div class="grid grid-cols-4 gap-2 p-4 bg-dark-950/60 border-b border-slate-800 text-center text-xs font-mono">
+        <div><span class="text-slate-500">Benar</span><p class="text-lg font-bold text-emerald-400 mt-0.5" id="res-c-count">0</p></div>
+        <div><span class="text-slate-500">Salah</span><p class="text-lg font-bold text-rose-400 mt-0.5" id="res-w-count">0</p></div>
+        <div><span class="text-slate-500">Kosong</span><p class="text-lg font-bold text-amber-400 mt-0.5" id="res-e-count">0</p></div>
+        <div><span class="text-slate-500">Pindah Tab</span><p class="text-lg font-bold text-violet-400 mt-0.5" id="res-t-count">0x</p></div>
       </div>
 
-      <!-- Discussion List -->
+      <!-- Discussions -->
       <div class="p-6 sm:p-8 space-y-6">
-        <h3 class="text-base font-extrabold text-white flex items-center gap-2">
-          <i data-lucide="book-open-check" class="w-5 h-5 text-cyan-400"></i> Kunci & Pembahasan Soal
-        </h3>
-        <div id="res-discussion-box" class="space-y-4">
+        <h4 class="text-sm font-bold text-white flex items-center gap-2 font-mono uppercase tracking-wider">
+          <i data-lucide="book-open-check" class="w-4 h-4 text-cyan-400"></i> Pembahasan Soal & Formula
+        </h4>
+        <div id="res-disc-list" class="space-y-4">
           <!-- Rendered by JS -->
         </div>
 
         <div class="pt-6 border-t border-slate-800 flex justify-between">
-          <button onclick="returnToDashboard()" class="px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-600 text-slate-950 font-black text-xs rounded-xl transition shadow-lg">
-            Kembali ke Dashboard
+          <button onclick="returnToDash()" class="px-6 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-dark-950 font-bold text-xs font-mono transition shadow-lg">
+            Kembali ke Hub Dashboard
           </button>
         </div>
       </div>
@@ -594,79 +375,80 @@
 
 
   <!-- ========================================================================= -->
-  <!-- 5. MODAL UTILITIES (CANVAS, CALCULATOR, FORMULA) -->
+  <!-- 5. MODAL UTILITIES (SCRATCHPAD, CALC, CHEATSHEET) -->
   <!-- ========================================================================= -->
   
   <!-- Canvas Scratchpad Modal -->
-  <div id="modal-canvas" class="fixed inset-0 z-50 bg-black/80 hidden flex items-center justify-center p-4">
-    <div class="glass-card w-full max-w-3xl rounded-3xl overflow-hidden border border-slate-700 flex flex-col">
-      <div class="bg-cosmic-900 px-6 py-4 flex justify-between items-center border-b border-slate-800">
-        <h3 class="text-sm font-bold text-white flex items-center gap-2"><i data-lucide="pen-tool" class="w-4 h-4 text-amber-400"></i> Papan Coret-Coretan Hitungan</h3>
+  <div id="modal-scratchpad" class="fixed inset-0 z-50 bg-black/80 hidden flex items-center justify-center p-4">
+    <div class="glass-panel w-full max-w-3xl rounded-3xl overflow-hidden border-slate-700 flex flex-col">
+      <div class="bg-dark-900 px-6 py-4 flex justify-between items-center border-b border-slate-800">
+        <h3 class="text-sm font-bold text-white flex items-center gap-2 font-mono"><i data-lucide="pen-tool" class="w-4 h-4 text-amber-400"></i> Papan Coret-Coretan Hitungan</h3>
         <div class="flex items-center space-x-3">
-          <button onclick="clearCanvas()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg">Bersihkan</button>
+          <button onclick="clearScratchpad()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg font-mono">Hapus Semua</button>
           <button onclick="closeCanvas()" class="text-slate-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
         </div>
       </div>
-      <div class="p-3 bg-cosmic-950 flex items-center gap-4 text-xs text-slate-300 border-b border-slate-800">
-        <label class="flex items-center gap-2"><span>Warna:</span><input type="color" id="pen-color" value="#00f0ff" class="cursor-pointer bg-transparent"></label>
-        <label class="flex items-center gap-2"><span>Tebal:</span><input type="range" id="pen-size" min="1" max="10" value="3"></label>
+      <div class="p-3 bg-dark-950 flex items-center gap-4 text-xs text-slate-300 border-b border-slate-800">
+        <label class="flex items-center gap-2"><span>Warna:</span><input type="color" id="pad-color" value="#06b6d4" class="cursor-pointer bg-transparent"></label>
+        <label class="flex items-center gap-2"><span>Tebal:</span><input type="range" id="pad-size" min="1" max="10" value="3"></label>
       </div>
-      <canvas id="scratch-canvas" class="w-full h-80 bg-[#050811] cursor-crosshair"></canvas>
+      <canvas id="pad-canvas" class="w-full h-80 bg-dark-950 cursor-crosshair"></canvas>
     </div>
   </div>
 
-  <!-- Calculator Popup Modal -->
-  <div id="modal-calc" class="fixed bottom-6 right-6 z-50 glass-card rounded-3xl p-4 w-72 hidden shadow-2xl border border-cyan-500/30">
+  <!-- Floating Scientific Calculator -->
+  <div id="modal-calc" class="fixed bottom-6 right-6 z-50 glass-panel rounded-3xl p-4 w-72 hidden shadow-2xl border-cyan-500/30">
     <div class="flex justify-between items-center mb-2 pb-2 border-b border-slate-800">
-      <span class="text-xs font-extrabold text-cyan-400 flex items-center gap-1.5"><i data-lucide="calculator" class="w-4 h-4"></i> Kalkulator Fisika</span>
-      <button onclick="toggleCalculator()" class="text-slate-400 hover:text-white"><i data-lucide="x" class="w-4 h-4"></i></button>
+      <span class="text-xs font-bold text-cyan-400 flex items-center gap-1.5 font-mono"><i data-lucide="calculator" class="w-4 h-4"></i> Kalkulator Fisika</span>
+      <button onclick="toggleCalc()" class="text-slate-400 hover:text-white"><i data-lucide="x" class="w-4 h-4"></i></button>
     </div>
-    <input type="text" id="calc-screen" readonly class="w-full bg-cosmic-950 text-right font-mono p-3 text-lg font-bold rounded-xl border border-slate-700 mb-3 text-cyan-400" value="0">
-    <div class="grid grid-cols-4 gap-1.5 text-xs font-bold">
-      <button onclick="calcIn('(')" class="p-2.5 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-300">(</button>
-      <button onclick="calcIn(')')" class="p-2.5 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-300">)</button>
-      <button onclick="calcIn('Math.sqrt(')" class="p-2.5 bg-cyan-500/20 text-cyan-400 rounded-lg">√</button>
-      <button onclick="calcClear()" class="p-2.5 bg-rose-500/20 text-rose-400 rounded-lg">C</button>
-      <button onclick="calcIn('7')" class="p-2.5 bg-cosmic-900 rounded-lg text-white">7</button>
-      <button onclick="calcIn('8')" class="p-2.5 bg-cosmic-900 rounded-lg text-white">8</button>
-      <button onclick="calcIn('9')" class="p-2.5 bg-cosmic-900 rounded-lg text-white">9</button>
-      <button onclick="calcIn('/')" class="p-2.5 bg-slate-800 text-cyan-400 rounded-lg">÷</button>
-      <button onclick="calcIn('4')" class="p-2.5 bg-cosmic-900 rounded-lg text-white">4</button>
-      <button onclick="calcIn('5')" class="p-2.5 bg-cosmic-900 rounded-lg text-white">5</button>
-      <button onclick="calcIn('6')" class="p-2.5 bg-cosmic-900 rounded-lg text-white">6</button>
-      <button onclick="calcIn('*')" class="p-2.5 bg-slate-800 text-cyan-400 rounded-lg">×</button>
-      <button onclick="calcIn('1')" class="p-2.5 bg-cosmic-900 rounded-lg text-white">1</button>
-      <button onclick="calcIn('2')" class="p-2.5 bg-cosmic-900 rounded-lg text-white">2</button>
-      <button onclick="calcIn('3')" class="p-2.5 bg-cosmic-900 rounded-lg text-white">3</button>
-      <button onclick="calcIn('-')" class="p-2.5 bg-slate-800 text-cyan-400 rounded-lg">-</button>
-      <button onclick="calcIn('0')" class="p-2.5 bg-cosmic-900 rounded-lg text-white">0</button>
-      <button onclick="calcIn('.')" class="p-2.5 bg-cosmic-900 rounded-lg text-white">.</button>
-      <button onclick="calcIn('Math.PI')" class="p-2.5 bg-cyan-500/20 text-cyan-400 rounded-lg">π</button>
-      <button onclick="calcIn('+')" class="p-2.5 bg-slate-800 text-cyan-400 rounded-lg">+</button>
-      <button onclick="calcEval()" class="col-span-4 py-2.5 bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-black rounded-xl mt-1 text-sm">=</button>
+    <input type="text" id="calc-display" readonly class="w-full bg-dark-950 text-right font-mono p-3 text-lg font-bold rounded-xl border border-slate-800 mb-3 text-cyan-400" value="0">
+    <div class="grid grid-cols-4 gap-1.5 text-xs font-mono font-bold">
+      <button onclick="calcPush('(')" class="p-2.5 bg-dark-900 hover:bg-slate-800 rounded-lg text-slate-300">(</button>
+      <button onclick="calcPush(')')" class="p-2.5 bg-dark-900 hover:bg-slate-800 rounded-lg text-slate-300">)</button>
+      <button onclick="calcPush('Math.sqrt(')" class="p-2.5 bg-cyan-500/20 text-cyan-400 rounded-lg">√</button>
+      <button onclick="calcReset()" class="p-2.5 bg-rose-500/20 text-rose-400 rounded-lg">C</button>
+      <button onclick="calcPush('7')" class="p-2.5 bg-dark-900 rounded-lg text-white">7</button>
+      <button onclick="calcPush('8')" class="p-2.5 bg-dark-900 rounded-lg text-white">8</button>
+      <button onclick="calcPush('9')" class="p-2.5 bg-dark-900 rounded-lg text-white">9</button>
+      <button onclick="calcPush('/')" class="p-2.5 bg-slate-800 text-cyan-400 rounded-lg">÷</button>
+      <button onclick="calcPush('4')" class="p-2.5 bg-dark-900 rounded-lg text-white">4</button>
+      <button onclick="calcPush('5')" class="p-2.5 bg-dark-900 rounded-lg text-white">5</button>
+      <button onclick="calcPush('6')" class="p-2.5 bg-dark-900 rounded-lg text-white">6</button>
+      <button onclick="calcPush('*')" class="p-2.5 bg-slate-800 text-cyan-400 rounded-lg">×</button>
+      <button onclick="calcPush('1')" class="p-2.5 bg-dark-900 rounded-lg text-white">1</button>
+      <button onclick="calcPush('2')" class="p-2.5 bg-dark-900 rounded-lg text-white">2</button>
+      <button onclick="calcPush('3')" class="p-2.5 bg-dark-900 rounded-lg text-white">3</button>
+      <button onclick="calcPush('-')" class="p-2.5 bg-slate-800 text-cyan-400 rounded-lg">-</button>
+      <button onclick="calcPush('0')" class="p-2.5 bg-dark-900 rounded-lg text-white">0</button>
+      <button onclick="calcPush('.')" class="p-2.5 bg-dark-900 rounded-lg text-white">.</button>
+      <button onclick="calcPush('Math.PI')" class="p-2.5 bg-cyan-500/20 text-cyan-400 rounded-lg">π</button>
+      <button onclick="calcPush('+')" class="p-2.5 bg-slate-800 text-cyan-400 rounded-lg">+</button>
+      <button onclick="calcCompute()" class="col-span-4 py-2.5 bg-cyan-500 hover:bg-cyan-400 text-dark-950 font-bold rounded-xl mt-1 text-sm">=</button>
     </div>
   </div>
 
-  <!-- Formula & Units Cheatsheet Modal -->
-  <div id="modal-formula" class="fixed inset-0 z-50 bg-black/80 hidden flex items-center justify-center p-4 backdrop-blur-sm">
-    <div class="glass-card w-full max-w-2xl rounded-3xl p-6 sm:p-8 relative max-h-[85vh] overflow-y-auto">
-      <button onclick="closeFormulaModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
-      <h3 class="text-xl font-extrabold text-white mb-2 flex items-center gap-2"><i data-lucide="binary" class="w-5 h-5 text-cyan-400"></i> Kamus Simbol & Satuan SI Fisika</h3>
-      <p class="text-xs text-slate-400 mb-6">Referensi cepat besaran fisika untuk membantu menyelesaikan soal.</p>
+  <!-- Symbols & SI Units Cheatsheet Modal -->
+  <div id="modal-cheatsheet" class="fixed inset-0 z-50 bg-black/80 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+    <div class="glass-panel w-full max-w-2xl rounded-3xl p-6 sm:p-8 relative max-h-[85vh] overflow-y-auto border-slate-800">
+      <button onclick="closeCheatsheet()" class="absolute top-5 right-5 text-slate-400 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
+      <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2 font-mono"><i data-lucide="binary" class="w-5 h-5 text-cyan-400"></i> Kamus Simbol & Satuan SI Fisika</h3>
+      <p class="text-xs text-slate-400 mb-6">Gunakan referensi ini untuk melihat lambang besaran dan persamaan dasar.</p>
+      
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono">
-        <div class="p-4 rounded-2xl bg-cosmic-900/90 border border-slate-800">
-          <span class="font-bold text-cyan-400 block mb-2 font-sans">Mekanika & Kinematika</span>
+        <div class="p-4 rounded-2xl bg-dark-900/90 border border-slate-800">
+          <span class="font-bold text-cyan-400 block mb-2 font-sans">Kinematika & Vektor</span>
           <p>• Kecepatan ($v$): $\text{m/s}$</p>
           <p>• Percepatan ($a$): $\text{m/s}^2$</p>
-          <p>• Gaya ($F$): $\text{N} = \text{kg}\cdot\text{m/s}^2$</p>
-          <p>• Usaha/Energi ($W$): $\text{Joule (J)}$</p>
+          <p>• Kecepatan Sudut ($\omega$): $\text{rad/s}$</p>
+          <p>• Posisi Vektor: $\vec{r} = x\hat{i} + y\hat{j}$</p>
         </div>
-        <div class="p-4 rounded-2xl bg-cosmic-900/90 border border-slate-800">
-          <span class="font-bold text-cyan-400 block mb-2 font-sans">Listrik & Fluida</span>
-          <p>• Arus Listrik ($I$): $\text{Ampere (A)}$</p>
-          <p>• Hambatan ($R$): $\text{Ohm }(\Omega)$</p>
-          <p>• Tekanan ($P$): $\text{Pascal (Pa)}$</p>
-          <p>• Massa Jenis ($\rho$): $\text{kg/m}^3$</p>
+        <div class="p-4 rounded-2xl bg-dark-900/90 border border-slate-800">
+          <span class="font-bold text-cyan-400 block mb-2 font-sans">Dinamika & Listrik</span>
+          <p>• Gaya ($F$): $\text{N} = \text{kg}\cdot\text{m/s}^2$</p>
+          <p>• Kuat Arus Listrik ($I$): $\text{Ampere (A)}$</p>
+          <p>• Hambatan Listrik ($R$): $\text{Ohm }(\Omega)$</p>
+          <p>• Koefisien Gesek: $\mu_s, \mu_k$ (Tanpa Satuan)</p>
         </div>
       </div>
     </div>
@@ -674,463 +456,373 @@
 
 
   <!-- ========================================================================= -->
-  <!-- JAVASCRIPT APP LOGIC & STATE ENGINE -->
+  <!-- JAVASCRIPT APP STATE & ENGINE -->
   <!-- ========================================================================= -->
   <script>
-    // 1. DATA MODUL & BANK SOAL
-    let modules = [
+    // 1. DATA MATERI SOAL
+    const databaseModules = [
       {
-        id: "c11-1",
+        id: "m-11-vektor",
         title: "Vektor & Analisis Kinematika",
         level: "XI",
-        className: "Kelas XI-1",
-        teacher: "Fadhillah Umar, S.Pd",
-        desc: "Posisi vektor, kecepatan sudut, dan persamaan gerak parabola.",
+        desc: "Posisi vektor, kecepatan sesaat, percepatan sudut, dan gerak parabola.",
         questions: [
           {
             id: 1,
-            text: "Sebuah partikel bergerak sepanjang sumbu-$x$ dengan fungsi posisi $x(t) = 2t^3 - 4t + 5\\text{ m}$. Berapakah percepatan partikel saat $t = 3\\text{ s}$?",
-            options: ["$18\\text{ m/s}^2$", "$36\\text{ m/s}^2$", "$48\\text{ m/s}^2$", "$54\\text{ m/s}^2$"],
-            correct: 1,
-            discussion: "Kecepatan $v(t) = \\frac{dx}{dt} = 6t^2 - 4$. Percepatan $a(t) = \\frac{dv}{dt} = 12t$. Pada saat $t = 3\\text{ s} \\rightarrow a(3) = 12(3) = 36\\text{ m/s}^2$."
+            text: "Sebuah partikel bergerak pada bidang-$xy$ dengan persamaan posisi $\\vec{r}(t) = (3t^2)\\hat{i} + (4t - 2)\\hat{j}\\text{ m}$. Tentukan besar kecepatan partikel pada saat $t = 2\\text{ s}$!",
+            options: ["$12.6\\text{ m/s}$", "$16.0\\text{ m/s}$", "$20.0\\text{ m/s}$", "$25.4\\text{ m/s}$"],
+            correct: 0,
+            discussion: "Kecepatan adalah turunan pertama posisi: $v_x = \\frac{dx}{dt} = 6t \\rightarrow v_x(2) = 12\\text{ m/s}$, $v_y = \\frac{dy}{dt} = 4\\text{ m/s}$. Maka besar kecepatan $|\vec{v}| = \\sqrt{12^2 + 4^2} = \\sqrt{144 + 16} = \\sqrt{160} \\approx 12.65\\text{ m/s}$."
           },
           {
             id: 2,
-            text: "Dua vektor gaya $\\vec{F}_1 = 6\\hat{i} + 8\\hat{j}\\text{ N}$ dan $\\vec{F}_2 = 2\\hat{i} - 2\\hat{j}\\text{ N}$. Tentukan besar resultan gaya $(\\vec{F}_1 + \\vec{F}_2)$!",
+            text: "Dua buah vektor gaya bekerja pada satu titik tangkap: $\\vec{F}_1 = 6\\hat{i} + 8\\hat{j}\\text{ N}$ dan $\\vec{F}_2 = 2\\hat{i} - 2\\hat{j}\\text{ N}$. Tentukan besar resultan kedua vektor tersebut!",
             options: ["$8\\text{ N}$", "$10\\text{ N}$", "$12\\text{ N}$", "$14\\text{ N}$"],
             correct: 1,
-            discussion: "$\\vec{R} = (6+2)\\hat{i} + (8-2)\\hat{j} = 8\\hat{i} + 6\\hat{j}$. Besar resultan $|\vec{R}| = \\sqrt{8^2 + 6^2} = \\sqrt{100} = 10\\text{ N}$."
+            discussion: "Resultan $\\vec{R} = \\vec{F}_1 + \\vec{F}_2 = (6+2)\\hat{i} + (8-2)\\hat{j} = 8\\hat{i} + 6\\hat{j}\\text{ N}$. Besar resultan $|\\vec{R}| = \\sqrt{8^2 + 6^2} = \\sqrt{64 + 36} = 10\\text{ N}$."
           },
           {
             id: 3,
-            text: "Peluru ditembakkan dengan kecepatan awal $v_0 = 40\\text{ m/s}$ dan sudut elevasi $\\theta = 30^\\circ$ ($g = 10\\text{ m/s}^2$). Berapakah tinggi maksimum peluru?",
-            options: ["$10\\text{ m}$", "$20\\text{ m}$", "$30\\text{ m}$", "$40\\text{ m}$"],
+            text: "Peluru ditembakkan dengan kelajuan awal $v_0 = 50\\text{ m/s}$ pada sudut elevasi $\\theta = 37^\\circ$ ($\\sin 37^\\circ = 0.6, g = 10\\text{ m/s}^2$). Berapakah tinggi maksimum yang dicapai peluru?",
+            options: ["$30\\text{ m}$", "$45\\text{ m}$", "$60\\text{ m}$", "$75\\text{ m}$"],
             correct: 1,
-            discussion: "$h_{\\max} = \\frac{v_0^2 \\sin^2 \\theta}{2g} = \\frac{40^2 \\cdot (0.5)^2}{2(10)} = \\frac{1600 \\cdot 0.25}{20} = 20\\text{ m}$."
+            discussion: "$h_{\\max} = \\frac{v_0^2 \\sin^2 \\theta}{2g} = \\frac{50^2 \\cdot (0.6)^2}{2(10)} = \\frac{2500 \\cdot 0.36}{20} = 45\\text{ m}$."
           }
         ]
       },
       {
-        id: "c11-2",
+        id: "m-11-dinamika",
         title: "Dinamika Gerak (Hukum Newton)",
         level: "XI",
-        className: "Kelas XI-1",
-        teacher: "Fadhillah Umar, S.Pd",
-        desc: "Hukum I, II, III Newton, tegangan tali, gaya gesek statis/kinetis.",
+        desc: "Hukum II Newton, gaya gesek, tegangan tali, dan gerak pada bidang miring.",
         questions: [
           {
             id: 21,
-            text: "Balok bermassa $5\\text{ kg}$ ditarik dengan gaya mendatar $F = 30\\text{ N}$ di lantai kasar ($\mu_k = 0.2$, $g = 10\\text{ m/s}^2$). Berapakah percepatan balok?",
-            options: ["$2\\text{ m/s}^2$", "$4\\text{ m/s}^2$", "$5\\text{ m/s}^2$", "$6\\text{ m/s}^2$"],
+            text: "Balok bermassa $4\\text{ kg}$ berada di atas lantai kasar ($\\mu_k = 0.25$). Jika ditarik gaya horizontal $F = 20\\text{ N}$ ($g = 10\\text{ m/s}^2$), percepatan balok adalah...",
+            options: ["$1.5\\text{ m/s}^2$", "$2.5\\text{ m/s}^2$", "$3.0\\text{ m/s}^2$", "$4.0\\text{ m/s}^2$"],
             correct: 1,
-            discussion: "$f_k = \\mu_k \\cdot m \\cdot g = 0.2 \\cdot 5 \\cdot 10 = 10\\text{ N}$. Sesuai Hukum II Newton: $a = \\frac{F - f_k}{m} = \\frac{30 - 10}{5} = 4\\text{ m/s}^2$."
+            discussion: "$f_k = \\mu_k \\cdot N = 0.25 \\cdot (4 \\cdot 10) = 10\\text{ N}$. Percepatan: $a = \\frac{F - f_k}{m} = \\frac{20 - 10}{4} = 2.5\\text{ m/s}^2$."
           }
         ]
       },
       {
-        id: "c12-1",
-        title: "Fisika Listrik & Magnet",
-        level: "XII",
-        className: "Kelas XII-1",
-        teacher: "Fadhillah Umar, S.Pd",
-        desc: "Hukum Coulomb, medan listrik, Hukum Ohm, dan rangkaian Kirchhoff.",
-        questions: [
-          {
-            id: 31,
-            text: "Kawat konduktor berhambatan $10\\,\\Omega$ dialiri arus listrik $2\\text{ A}$. Berapakah tegangan potensial pada kawat?",
-            options: ["$5\\text{ V}$", "$12\\text{ V}$", "$20\\text{ V}$", "$25\\text{ V}$"],
-            correct: 2,
-            discussion: "Hukum Ohm: $V = I \\cdot R = 2 \\cdot 10 = 20\\text{ Volt}$."
-          }
-        ]
-      },
-      {
-        id: "c10-1",
+        id: "m-10-besaran",
         title: "Besaran, Satuan & Pengukuran",
         level: "X",
-        className: "Kelas X",
-        teacher: "Fadhillah Umar, S.Pd",
-        desc: "Dimensi besaran pokok, aturan angka penting, dan ketidakpastian.",
+        desc: "Dimensi besaran pokok, aturan angka penting, dan resultan vektor dasar.",
         questions: [
           {
             id: 41,
-            text: "Dimensi dari besaran Gaya ($F = m \\cdot a$) adalah...",
-            options: ["$[M][L][T]^{-1}$", "$[M][L][T]^{-2}$", "$[M][L]^2[T]^{-2}$", "$[M][T]^{-2}$"],
+            text: "Dimensi dari besaran Usaha / Energi ($W = F \\cdot s$) adalah...",
+            options: ["$[M][L][T]^{-1}$", "$[M][L][T]^{-2}$", "$[M][L]^2[T]^{-2}$", "$[M][L]^2[T]^{-1}$"],
+            correct: 2,
+            discussion: "Satuan Usaha adalah $\\text{kg}\\cdot\\text{m}^2/\\text{s}^2$, sehingga dimensinya $[M][L]^2[T]^{-2}$."
+          }
+        ]
+      },
+      {
+        id: "m-12-listrik",
+        title: "Listrik Dinamis & Rangkaian",
+        level: "XII",
+        desc: "Hukum Ohm, Hukum Kirchhoff, hambatan jembatan wheatstone, dan energi listrik.",
+        questions: [
+          {
+            id: 61,
+            text: "Kawat konduktor $R = 12\\,\\Omega$ dihubungkan dengan sumber tegangan $24\\text{ V}$. Berapakah muatan listrik yang mengalir dalam waktu $5\\text{ detik}$?",
+            options: ["$5\\text{ C}$", "$10\\text{ C}$", "$15\\text{ C}$", "$20\\text{ C}$"],
             correct: 1,
-            discussion: "Satuan gaya adalah $\\text{kg}\\cdot\\text{m/s}^2$, sehingga dimensinya $[M][L][T]^{-2}$."
+            discussion: "Arus listrik $I = \\frac{V}{R} = \\frac{24}{12} = 2\\text{ A}$. Muatan $Q = I \\cdot t = 2 \\cdot 5 = 10\\text{ Coulomb}$."
           }
         ]
       }
     ];
 
-    // Soal Penyelamat Nilai
-    const rescueQuestions = [
+    // Soal Penyelamat Konsep (Rescue Mode)
+    const rescueQuestionSet = [
       {
-        id: 901,
-        text: "⭐ <b>[SOAL PENYELAMAT KONSEP]:</b> Satuan SI untuk mengukur besaran <i>Percepatan</i> adalah...",
+        id: 991,
+        text: "⭐ <b>[SOAL PENYELAMAT NILAI]</b> Satuan Standar Internasional (SI) untuk besaran <i>Percepatan</i> adalah...",
         options: ["$\\text{m/s}$", "$\\text{m/s}^2$", "$\\text{kg}\\cdot\\text{m}$", "$\\text{Joule}$"],
         correct: 1,
-        discussion: "Satuan percepatan adalah meter per sekon kuadrat ($\\text{m/s}^2$)."
+        discussion: "Satuan SI untuk kecepatan adalah $\\text{m/s}$, sedangkan percepatan adalah $\\text{m/s}^2$."
       },
       {
-        id: 902,
-        text: "⭐ <b>[SOAL PENYELAMAT KONSEP]:</b> Alat ukur yang tepat untuk mengukur Arus Listrik adalah...",
-        options: ["Voltmeter", "Amperemeter", "Termometer", "Barometer"],
+        id: 992,
+        text: "⭐ <b>[SOAL PENYELAMAT NILAI]</b> Alat yang digunakan untuk mengukur kuat arus listrik secara langsung adalah...",
+        options: ["Voltmeter", "Amperemeter", "Termometer", "Ohmmeter"],
         correct: 1,
-        discussion: "Amperemeter mengukur kuat arus listrik ($I$)."
+        discussion: "Amperemeter dipasang seri untuk mengukur arus listrik."
       }
     ];
 
     // 2. STATE APLIKASI
-    let currentUser = { role: "guru", name: "Fadhillah Umar, S.Pd", subtext: "Guru Fisika" };
+    let currentUser = { role: "siswa", name: "", sub: "" };
+    let currentClassFilter = "XI";
+    let activeModule = null;
     let currentExamQuestions = [];
     let currentQIdx = 0;
-    let userAnswers = {};
-    let bookmarkedQs = new Set();
+    let studentAnswers = {};
+    let doubtfulAnswers = new Set();
     let cheatCount = 0;
-    let timerInterval = null;
-    let timeRemaining = 0;
-    let activeModule = null;
+    let timerRef = null;
+    let timeLeft = 0;
 
-    // 3. INISIALISASI
+    // 3. INIT
     window.addEventListener('DOMContentLoaded', () => {
       lucide.createIcons();
       setupCanvas();
-      setupAntiCheat();
+      setupAntiCheatWatcher();
     });
 
-    // 4. SISTEM AUTH & LOGIN
-    let selectedRole = 'guru';
-    function setLoginRole(role) {
-      selectedRole = role;
-      const btnSiswa = document.getElementById('role-btn-siswa');
-      const btnGuru = document.getElementById('role-btn-guru');
-      const userLabel = document.getElementById('login-user-label');
-      const userInput = document.getElementById('login-username');
+    // 4. AUTH
+    function setRole(role) {
+      currentUser.role = role;
+      const sBtn = document.getElementById('role-siswa-btn');
+      const gBtn = document.getElementById('role-guru-btn');
+      const nLabel = document.getElementById('auth-name-label');
+      const sLabel = document.getElementById('auth-sub-label');
+      const nInput = document.getElementById('auth-name-input');
+      const sInput = document.getElementById('auth-sub-input');
 
       if (role === 'siswa') {
-        btnSiswa.className = "py-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 shadow";
-        btnGuru.className = "py-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-2 text-slate-400 hover:text-white";
-        userLabel.innerText = "Nama Lengkap Siswa";
-        userInput.placeholder = "Contoh: Muhammad Farhan";
-        userInput.value = "";
+        sBtn.className = "py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 bg-cyan-500 text-dark-950 shadow-md";
+        gBtn.className = "py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 text-slate-400 hover:text-white";
+        nLabel.innerText = "Nama Lengkap Siswa";
+        sLabel.innerText = "Kelas & No. Presensi";
+        nInput.placeholder = "Contoh: Muhammad Farhan";
+        sInput.placeholder = "Contoh: XI MIPA 1 / 18";
       } else {
-        btnGuru.className = "py-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 shadow";
-        btnSiswa.className = "py-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-2 text-slate-400 hover:text-white";
-        userLabel.innerText = "Nama Guru / Pengajar";
-        userInput.value = "Fadhillah Umar, S.Pd";
+        gBtn.className = "py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 bg-cyan-500 text-dark-950 shadow-md";
+        sBtn.className = "py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 text-slate-400 hover:text-white";
+        nLabel.innerText = "Nama Guru Pengajar";
+        sLabel.innerText = "NIP / Mata Pelajaran";
+        nInput.placeholder = "Contoh: Fadhillah Umar, S.Pd";
+        sInput.placeholder = "Contoh: Fisika SMA";
       }
     }
 
-    function handleLogin(e) {
+    function handleAuth(e) {
       e.preventDefault();
-      const name = document.getElementById('login-username').value;
-      const sub = document.getElementById('login-subtext').value;
+      currentUser.name = document.getElementById('auth-name-input').value;
+      currentUser.sub = document.getElementById('auth-sub-input').value;
 
-      currentUser = { role: selectedRole, name: name, subtext: sub };
+      document.getElementById('dash-user-name').innerText = currentUser.name;
+      document.getElementById('nav-user-label').innerText = `${currentUser.name} (${currentUser.sub})`;
 
-      // Update Sidebar UI
-      document.getElementById('sidebar-user-name').innerText = name;
-      document.getElementById('sidebar-user-role').innerText = selectedRole === 'guru' ? 'Guru Fisika' : sub;
-      document.getElementById('user-avatar').innerText = name.charAt(0).toUpperCase();
-
-      // Update Profile Tab UI
-      document.getElementById('prof-name').innerText = name;
-      document.getElementById('prof-role-label').innerText = `${selectedRole === 'guru' ? 'Guru Fisika' : 'Siswa'} SMA Muhammadiyah 18 Jakarta`;
-      document.getElementById('prof-uname').innerText = name.toLowerCase().replace(/[^a-z0-9]/g, '');
-      document.getElementById('prof-avatar-char').innerText = name.charAt(0).toUpperCase();
-
-      // Switch View
       document.getElementById('view-login').classList.add('hidden');
-      document.getElementById('app-shell').classList.remove('hidden');
+      document.getElementById('view-dashboard').classList.remove('hidden');
 
-      navSwitch('dashboard');
-      renderDashboardUI();
+      filterClass(currentClassFilter);
     }
 
-    function handleLogout() {
-      document.getElementById('app-shell').classList.add('hidden');
+    function logout() {
+      document.getElementById('view-dashboard').classList.add('hidden');
       document.getElementById('view-login').classList.remove('hidden');
     }
 
-    // 5. NAVIGATION SYSTEM (TABS)
-    function navSwitch(tabName) {
-      document.querySelectorAll('.tab-pane').forEach(el => el.classList.add('hidden'));
-      document.querySelectorAll('.nav-item').forEach(btn => {
-        btn.classList.remove('glass-card-active', 'text-cyan-400', 'font-bold');
-        btn.classList.add('text-slate-400');
+    // 5. DASHBOARD & FILTER
+    function filterClass(lvl) {
+      currentClassFilter = lvl;
+      document.querySelectorAll('.class-filter-btn').forEach(btn => {
+        btn.className = "class-filter-btn px-4 py-1.5 rounded-xl text-xs font-mono font-bold text-slate-400 hover:text-white transition";
       });
+      const activeBtn = document.getElementById(`tab-class-${lvl}`);
+      if (activeBtn) activeBtn.className = "class-filter-btn px-4 py-1.5 rounded-xl text-xs font-mono font-bold bg-cyan-500 text-dark-950 shadow transition";
 
-      document.getElementById(`tab-content-${tabName}`).classList.remove('hidden');
-      const activeNav = document.getElementById(`nav-${tabName}`);
-      if (activeNav) {
-        activeNav.classList.add('glass-card-active', 'text-cyan-400', 'font-bold');
-        activeNav.classList.remove('text-slate-400');
+      const grid = document.getElementById('module-cards-grid');
+      grid.innerHTML = '';
+
+      const filtered = databaseModules.filter(m => m.level === lvl);
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div class="col-span-3 text-center py-12 text-slate-500 font-mono text-xs">Belum ada modul untuk tingkat Kelas ${lvl}.</div>`;
+        return;
       }
 
-      if (tabName === 'dashboard') renderDashboardUI();
-      if (tabName === 'modul') renderModuleGrid();
-      lucide.createIcons();
-    }
-
-    // 6. RENDER DASHBOARD & MODULES
-    function renderDashboardUI() {
-      document.getElementById('dash-role-title').innerText = currentUser.role === 'guru' ? 'Guru' : 'Siswa';
-      document.getElementById('stat-total-modul').innerText = modules.length;
-
-      const quickBox = document.getElementById('dashboard-quick-list');
-      quickBox.innerHTML = '';
-
-      modules.forEach(m => {
-        const item = document.createElement('div');
-        item.className = "p-4 rounded-2xl bg-cosmic-900/80 border border-slate-800 flex items-center justify-between hover:border-cyan-500/40 transition";
-        item.innerHTML = `
-          <div class="flex items-center space-x-3.5">
-            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-xs border border-cyan-500/20">
-              ${m.level}
-            </div>
-            <div>
-              <h4 class="font-bold text-sm text-white">${m.title}</h4>
-              <p class="text-[11px] text-slate-400">${m.className} • ${m.questions.length} Soal</p>
-            </div>
-          </div>
-          <button onclick="startExam('${m.id}')" class="px-4 py-2 bg-gradient-to-r from-cyan-400 to-blue-600 hover:opacity-90 text-slate-950 font-bold text-xs rounded-xl transition shadow">
-            Buka Ujian
-          </button>
-        `;
-        quickBox.appendChild(item);
-      });
-      lucide.createIcons();
-    }
-
-    function renderModuleGrid() {
-      const container = document.getElementById('module-grid-container');
-      container.innerHTML = '';
-
-      modules.forEach(m => {
+      filtered.forEach(m => {
         const card = document.createElement('div');
-        card.className = "glass-card p-6 rounded-3xl flex flex-col justify-between hover:border-cyan-500/40 transition group";
+        card.className = "glass-panel p-6 rounded-3xl flex flex-col justify-between hover:border-cyan-500/40 transition group border-slate-800";
         card.innerHTML = `
           <div>
             <div class="flex items-center justify-between mb-4">
-              <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-cyan-500/20 to-blue-500/20 text-cyan-400 border border-cyan-500/30 flex items-center justify-center">
-                <i data-lucide="book-open" class="w-6 h-6"></i>
-              </div>
-              <div class="flex gap-1.5">
-                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Level ${m.level}</span>
-                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">${m.className}</span>
-              </div>
+              <span class="px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Kelas ${m.level}</span>
+              <span class="text-[11px] font-mono text-slate-500">${m.questions.length} Soal Ujian</span>
             </div>
-            <h3 class="font-extrabold text-base text-white group-hover:text-cyan-400 transition">${m.title}</h3>
+            <h4 class="font-bold text-base text-white group-hover:text-cyan-400 transition">${m.title}</h4>
             <p class="text-xs text-slate-400 mt-1 leading-relaxed">${m.desc}</p>
-            <p class="text-[11px] text-slate-500 mt-2 font-medium">Guru: ${m.teacher}</p>
           </div>
 
-          <div class="mt-6 pt-4 border-t border-slate-800 grid grid-cols-2 gap-2">
-            <button onclick="startExam('${m.id}', 'latihan')" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs rounded-xl transition">
+          <div class="mt-6 pt-4 border-t border-slate-800/80 grid grid-cols-2 gap-2">
+            <button onclick="launchExam('${m.id}', 'latihan')" class="py-2.5 rounded-xl bg-dark-900 hover:bg-slate-800 text-slate-300 font-bold text-xs font-mono transition">
               Latihan Soal
             </button>
-            <button onclick="startExam('${m.id}', 'ulangan')" class="py-2.5 bg-gradient-to-r from-cyan-400 to-blue-600 text-slate-950 font-black text-xs rounded-xl transition shadow-lg">
+            <button onclick="launchExam('${m.id}', 'ulangan')" class="py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-dark-950 font-bold text-xs font-mono transition shadow-lg">
               Ulangan Harian
             </button>
           </div>
         `;
-        container.appendChild(card);
+        grid.appendChild(card);
       });
       lucide.createIcons();
     }
 
-    // 7. TAMBAH MODUL BARU
-    function handleNewModule(e) {
-      e.preventDefault();
-      const title = document.getElementById('up-title').value;
-      const level = document.getElementById('up-level').value;
-      const className = document.getElementById('up-class').value;
-      const desc = document.getElementById('up-desc').value;
-
-      const newMod = {
-        id: "c-" + Date.now(),
-        title,
-        level,
-        className,
-        teacher: currentUser.name,
-        desc: desc || "Materi Fisika interaktif.",
-        questions: [
-          {
-            id: Date.now(),
-            text: "Contoh soal untuk bab " + title + ": Berapakah resultan dari gaya $F = 100\\text{ N}$?",
-            options: ["$10\\text{ N}$", "$50\\text{ N}$", "$100\\text{ N}$", "$200\\text{ N}$"],
-            correct: 2,
-            discussion: "Besar gaya yang diberikan adalah $100\\text{ N}$."
-          }
-        ]
-      };
-
-      modules.unshift(newMod);
-      alert("✅ Modul & Bab baru berhasil disimpan!");
-      navSwitch('modul');
-    }
-
-    // 8. ARENA UJIAN CBT
-    function startExam(moduleId, mode = 'ulangan') {
-      activeModule = modules.find(m => m.id === moduleId) || modules[0];
+    // 6. EXAM ARENA
+    function launchExam(moduleId, mode = 'ulangan') {
+      activeModule = databaseModules.find(m => m.id === moduleId);
       currentExamQuestions = activeModule.questions;
       currentQIdx = 0;
-      userAnswers = {};
-      bookmarkedQs.clear();
+      studentAnswers = {};
+      doubtfulAnswers.clear();
       cheatCount = 0;
 
-      // Update Labels
-      document.getElementById('exam-chapter-title').innerText = activeModule.title;
-      document.getElementById('exam-mode-badge').innerText = mode === 'ulangan' ? 'Ulangan Harian' : 'Latihan Soal';
-      document.getElementById('exam-user-label').innerText = `Peserta: ${currentUser.name} (${currentUser.subtext})`;
-      document.getElementById('cheat-warning-badge').classList.add('hidden');
+      document.getElementById('exam-header-title').innerText = activeModule.title;
+      document.getElementById('exam-badge-mode').innerText = mode === 'ulangan' ? 'Ulangan Harian' : 'Latihan Mandiri';
+      document.getElementById('exam-header-user').innerText = `Siswa: ${currentUser.name}`;
+      document.getElementById('cheat-alert-box').classList.add('hidden');
 
-      // Timer
       if (mode === 'ulangan') {
-        document.getElementById('exam-timer-box').classList.remove('hidden');
+        document.getElementById('exam-timer-wrapper').classList.remove('hidden');
         startTimer(currentExamQuestions.length * 5 * 60);
       } else {
-        document.getElementById('exam-timer-box').classList.add('hidden');
-        clearInterval(timerInterval);
+        document.getElementById('exam-timer-wrapper').classList.add('hidden');
+        clearInterval(timerRef);
       }
 
-      document.getElementById('app-shell').classList.add('hidden');
+      document.getElementById('view-dashboard').classList.add('hidden');
       document.getElementById('view-exam').classList.remove('hidden');
 
-      loadExamQuestion(0);
-      renderExamPalette();
+      loadQ(0);
+      renderPalette();
     }
 
-    function loadExamQuestion(idx) {
+    function loadQ(idx) {
       currentQIdx = idx;
       const q = currentExamQuestions[idx];
 
-      document.getElementById('exam-q-num-pill').innerText = `Soal #${idx + 1} dari ${currentExamQuestions.length}`;
-      document.getElementById('exam-q-text').innerHTML = q.text;
+      document.getElementById('exam-q-counter').innerText = `Soal ${idx + 1} dari ${currentExamQuestions.length}`;
+      document.getElementById('exam-q-prompt').innerHTML = q.text;
 
-      const optsBox = document.getElementById('exam-q-options');
-      optsBox.innerHTML = '';
+      const cBox = document.getElementById('exam-q-choices');
+      cBox.innerHTML = '';
 
       q.options.forEach((opt, i) => {
-        const isSelected = userAnswers[q.id] === i;
-        const optEl = document.createElement('div');
-        optEl.className = `p-4 rounded-2xl border cursor-pointer flex items-center gap-3 transition ${isSelected ? 'border-cyan-400 bg-cyan-500/10 font-bold text-white shadow-lg' : 'border-slate-800 bg-cosmic-900/60 hover:bg-slate-800'}`;
-        optEl.innerHTML = `
-          <div class="w-7 h-7 rounded-xl border flex items-center justify-center text-xs font-bold ${isSelected ? 'bg-cyan-400 text-slate-950 border-cyan-400' : 'bg-slate-800 text-slate-400 border-slate-700'}">
+        const isSelected = studentAnswers[q.id] === i;
+        const card = document.createElement('div');
+        card.className = `p-4 rounded-2xl border cursor-pointer flex items-center gap-3 transition ${isSelected ? 'border-cyan-400 bg-cyan-500/10 font-bold text-white shadow-lg' : 'border-slate-800 bg-dark-900/60 hover:bg-slate-800'}`;
+        card.innerHTML = `
+          <div class="w-7 h-7 rounded-xl border flex items-center justify-center text-xs font-mono font-bold ${isSelected ? 'bg-cyan-500 text-dark-950 border-cyan-500' : 'bg-dark-950 text-slate-400 border-slate-700'}">
             ${String.fromCharCode(65 + i)}
           </div>
           <span class="text-sm">${opt}</span>
         `;
-        optEl.onclick = () => {
-          userAnswers[q.id] = i;
-          loadExamQuestion(currentQIdx);
-          renderExamPalette();
+        card.onclick = () => {
+          studentAnswers[q.id] = i;
+          loadQ(currentQIdx);
+          renderPalette();
         };
-        optsBox.appendChild(optEl);
+        cBox.appendChild(card);
       });
 
-      document.getElementById('btn-prev-q').disabled = (idx === 0);
-      document.getElementById('btn-next-q').disabled = (idx === currentExamQuestions.length - 1);
+      document.getElementById('btn-q-prev').disabled = (idx === 0);
+      document.getElementById('btn-q-next').disabled = (idx === currentExamQuestions.length - 1);
 
-      // Bookmark Button State
-      const bm = document.getElementById('btn-bookmark');
-      bm.className = bookmarkedQs.has(q.id) ? "text-amber-400 font-bold flex items-center gap-1.5" : "text-slate-400 hover:text-amber-400 text-xs font-semibold flex items-center gap-1.5";
+      // Bookmark
+      const dBtn = document.getElementById('exam-doubt-btn');
+      dBtn.className = doubtfulAnswers.has(q.id) ? "text-xs font-mono text-amber-400 font-bold flex items-center gap-1.5" : "text-xs font-mono text-slate-400 hover:text-amber-400 flex items-center gap-1.5";
 
       if (window.renderMathInElement) {
-        renderMathInElement(document.getElementById('exam-q-text'), { delimiters: [{left: '$', right: '$', display: false}] });
-        renderMathInElement(optsBox, { delimiters: [{left: '$', right: '$', display: false}] });
+        renderMathInElement(document.getElementById('exam-q-prompt'), { delimiters: [{left: '$', right: '$', display: false}] });
+        renderMathInElement(cBox, { delimiters: [{left: '$', right: '$', display: false}] });
       }
     }
 
-    function toggleBookmarkCurrent() {
+    function toggleDoubt() {
       const q = currentExamQuestions[currentQIdx];
-      if (bookmarkedQs.has(q.id)) bookmarkedQs.delete(q.id);
-      else bookmarkedQs.add(q.id);
-      loadExamQuestion(currentQIdx);
-      renderExamPalette();
+      if (doubtfulAnswers.has(q.id)) doubtfulAnswers.delete(q.id);
+      else doubtfulAnswers.add(q.id);
+      loadQ(currentQIdx);
+      renderPalette();
     }
 
-    function prevQuestion() { if (currentQIdx > 0) loadExamQuestion(currentQIdx - 1); }
-    function nextQuestion() { if (currentQIdx < currentExamQuestions.length - 1) loadExamQuestion(currentQIdx + 1); }
+    function prevQ() { if (currentQIdx > 0) loadQ(currentQIdx - 1); }
+    function nextQ() { if (currentQIdx < currentExamQuestions.length - 1) loadQ(currentQIdx + 1); }
 
-    function renderExamPalette() {
-      const grid = document.getElementById('exam-palette-grid');
+    function renderPalette() {
+      const grid = document.getElementById('exam-palette-container');
       grid.innerHTML = '';
 
       currentExamQuestions.forEach((q, i) => {
-        const isAns = userAnswers[q.id] !== undefined;
-        const isBm = bookmarkedQs.has(q.id);
+        const isAns = studentAnswers[q.id] !== undefined;
+        const isDoubt = doubtfulAnswers.has(q.id);
         const isCur = i === currentQIdx;
 
-        let cls = "bg-slate-800 text-slate-400 border-slate-700";
-        if (isAns) cls = "bg-gradient-to-r from-cyan-400 to-blue-600 text-slate-950 font-black";
-        if (isBm) cls = "bg-amber-400 text-slate-950 font-black";
+        let styleClass = "bg-dark-900 text-slate-400 border-slate-800";
+        if (isAns) styleClass = "bg-cyan-500 text-dark-950 font-bold";
+        if (isDoubt) styleClass = "bg-amber-400 text-dark-950 font-bold";
 
         const btn = document.createElement('button');
-        btn.className = `h-10 rounded-xl text-xs font-bold border flex items-center justify-center transition ${cls} ${isCur ? 'ring-2 ring-white' : ''}`;
+        btn.className = `h-10 rounded-xl text-xs font-mono font-bold border flex items-center justify-center transition ${styleClass} ${isCur ? 'ring-2 ring-white ring-offset-2 ring-offset-dark-950' : ''}`;
         btn.innerText = i + 1;
-        btn.onclick = () => loadExamQuestion(i);
+        btn.onclick = () => loadQ(i);
         grid.appendChild(btn);
       });
     }
 
-    // 9. ANTI-CHEAT & RESCUE MODE
-    function setupAntiCheat() {
+    // 7. ANTI-CHEAT & RESCUE MODE
+    function setupAntiCheatWatcher() {
       document.addEventListener('visibilitychange', () => {
         if (document.hidden && !document.getElementById('view-exam').classList.contains('hidden')) {
           cheatCount++;
-          const badge = document.getElementById('cheat-warning-badge');
-          badge.classList.remove('hidden');
-          document.getElementById('cheat-count-text').innerText = cheatCount;
-          alert(`⚠️ PERINGATAN: Kamu terdeteksi berpindah tab (${cheatCount}x)! Tetap fokus pada lembar ujian.`);
+          const alertBox = document.getElementById('cheat-alert-box');
+          alertBox.classList.remove('hidden');
+          document.getElementById('cheat-count-num').innerText = cheatCount;
+          alert(`⚠️ PERINGATAN CURANG (#${cheatCount}): Terdeteksi membuka tab atau aplikasi lain! Tetap fokus pada lembar ujian.`);
         }
       });
     }
 
-    function triggerRescueMode() {
-      if (confirm("Kamu benar-benar buntu? Buka 'Mode Penyelamat' (soal konsep dasar) agar nilai kamu tidak nol.")) {
-        currentExamQuestions = rescueQuestions;
-        userAnswers = {};
-        bookmarkedQs.clear();
-        document.getElementById('exam-chapter-title').innerText = "Mode Penyelamat (Konsep Dasar)";
-        loadExamQuestion(0);
-        renderExamPalette();
+    function triggerRescuePrompt() {
+      if (confirm("Kamu benar-benar buntu? Buka 'Mode Penyelamat' (soal konsep dasar) agar nilaimu tidak nol.")) {
+        currentExamQuestions = rescueQuestionSet;
+        studentAnswers = {};
+        doubtfulAnswers.clear();
+        document.getElementById('exam-header-title').innerText = "Mode Penyelamat (Konsep Dasar)";
+        loadQ(0);
+        renderPalette();
       }
     }
 
-    function startTimer(duration) {
-      timeRemaining = duration;
-      clearInterval(timerInterval);
-      timerInterval = setInterval(() => {
-        timeRemaining--;
-        const m = Math.floor(timeRemaining / 60);
-        const s = timeRemaining % 60;
-        document.getElementById('exam-timer-text').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
-        if (timeRemaining <= 0) {
-          clearInterval(timerInterval);
+    function startTimer(sec) {
+      timeLeft = sec;
+      clearInterval(timerRef);
+      timerRef = setInterval(() => {
+        timeLeft--;
+        const m = Math.floor(timeLeft / 60);
+        const s = timeLeft % 60;
+        document.getElementById('exam-timer-val').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        if (timeLeft <= 0) {
+          clearInterval(timerRef);
           alert("Waktu ujian telah berakhir!");
-          confirmSubmitExam(true);
+          finishExamPrompt(true);
         }
       }, 1000);
     }
 
-    function exitExam() {
-      if (confirm("Yakin ingin keluar ke dashboard? Progres ujian saat ini akan ditutup.")) {
-        clearInterval(timerInterval);
+    function exitExamPrompt() {
+      if (confirm("Keluar dari ujian sekarang? Progres saat ini tidak akan disimpan.")) {
+        clearInterval(timerRef);
         document.getElementById('view-exam').classList.add('hidden');
-        document.getElementById('app-shell').classList.remove('hidden');
+        document.getElementById('view-dashboard').classList.remove('hidden');
       }
     }
 
-    // 10. SUBMIT HASIL
-    function confirmSubmitExam(force = false) {
-      if (!force && !confirm("Selesaikan dan kumpulkan ujian?")) return;
-      clearInterval(timerInterval);
+    // 8. RESULTS
+    function finishExamPrompt(force = false) {
+      if (!force && !confirm("Kumpulkan lembar jawaban ujian sekarang?")) return;
+      clearInterval(timerRef);
 
       let correct = 0, wrong = 0, empty = 0;
       currentExamQuestions.forEach(q => {
-        const a = userAnswers[q.id];
+        const a = studentAnswers[q.id];
         if (a === undefined) empty++;
         else if (a === q.correct) correct++;
         else wrong++;
@@ -1138,83 +830,82 @@
 
       const score = Math.round((correct / currentExamQuestions.length) * 100);
 
-      document.getElementById('res-title').innerText = document.getElementById('exam-chapter-title').innerText;
-      document.getElementById('res-student-info').innerText = `Peserta: ${currentUser.name} (${currentUser.subtext})`;
+      document.getElementById('res-module-title').innerText = document.getElementById('exam-header-title').innerText;
+      document.getElementById('res-user-info').innerText = `Peserta: ${currentUser.name} (${currentUser.sub})`;
       document.getElementById('res-score-num').innerText = score;
-      document.getElementById('res-stat-correct').innerText = correct;
-      document.getElementById('res-stat-wrong').innerText = wrong;
-      document.getElementById('res-stat-empty').innerText = empty;
-      document.getElementById('res-stat-cheat').innerText = `${cheatCount}x`;
+      document.getElementById('res-c-count').innerText = correct;
+      document.getElementById('res-w-count').innerText = wrong;
+      document.getElementById('res-e-count').innerText = empty;
+      document.getElementById('res-t-count').innerText = `${cheatCount}x`;
 
-      const statusEl = document.getElementById('res-grade-status');
-      statusEl.innerText = score >= 75 ? "SANGAT BAIK / LULUS" : "PERLU REMIDI / LATIHAN LAGI";
+      const statusEl = document.getElementById('res-score-status');
+      statusEl.innerText = score >= 75 ? "Sangat Baik (Tuntas)" : "Perlu Remidi & Latihan Lagi";
       statusEl.className = score >= 75 ? "text-xs font-bold text-emerald-400" : "text-xs font-bold text-rose-400";
 
-      // Render Pembahasan
-      const discBox = document.getElementById('res-discussion-box');
-      discBox.innerHTML = '';
+      const discList = document.getElementById('res-disc-list');
+      discList.innerHTML = '';
 
       currentExamQuestions.forEach((q, i) => {
-        const ua = userAnswers[q.id];
-        const isOk = ua === q.correct;
-        const item = document.createElement('div');
-        item.className = `p-4 rounded-2xl border ${isOk ? 'border-emerald-500/30 bg-emerald-500/10' : 'border-rose-500/30 bg-rose-500/10'}`;
-        item.innerHTML = `
-          <div class="text-xs font-bold mb-1 ${isOk ? 'text-emerald-400' : 'text-rose-400'}">Soal ${i+1}: ${isOk ? 'BENAR' : 'SALAH / TIDAK DIJAWAB'}</div>
+        const ans = studentAnswers[q.id];
+        const isOk = ans === q.correct;
+        const card = document.createElement('div');
+        card.className = `p-4 rounded-2xl border ${isOk ? 'border-emerald-500/30 bg-emerald-500/10' : 'border-rose-500/30 bg-rose-500/10'}`;
+        card.innerHTML = `
+          <div class="text-xs font-mono font-bold mb-1 ${isOk ? 'text-emerald-400' : 'text-rose-400'}">Soal ${i+1}: ${isOk ? 'BENAR' : 'SALAH / KOSONG'}</div>
           <p class="text-sm text-white mb-2">${q.text}</p>
-          <p class="text-xs text-slate-300">Jawaban Kamu: <b>${ua !== undefined ? q.options[ua] : '<i>Kosong</i>'}</b></p>
-          <p class="text-xs text-cyan-400 font-bold">Kunci: ${q.options[q.correct]}</p>
+          <p class="text-xs text-slate-400 font-mono">Jawaban Kamu: <b>${ans !== undefined ? q.options[ans] : '<i>Tidak dijawab</i>'}</b></p>
+          <p class="text-xs text-cyan-400 font-mono font-bold">Kunci: ${q.options[q.correct]}</p>
           <div class="mt-2 pt-2 border-t border-slate-700/60 text-xs text-slate-300">
             <b>💡 Pembahasan:</b> ${q.discussion}
           </div>
         `;
-        discBox.appendChild(item);
+        discList.appendChild(card);
       });
 
       if (window.renderMathInElement) {
-        renderMathInElement(discBox, { delimiters: [{left: '$', right: '$', display: false}] });
+        renderMathInElement(discList, { delimiters: [{left: '$', right: '$', display: false}] });
       }
 
       document.getElementById('view-exam').classList.add('hidden');
       document.getElementById('view-result').classList.remove('hidden');
     }
 
-    function returnToDashboard() {
+    function returnToDash() {
       document.getElementById('view-result').classList.add('hidden');
-      document.getElementById('app-shell').classList.remove('hidden');
-      navSwitch('dashboard');
+      document.getElementById('view-dashboard').classList.remove('hidden');
     }
 
-    // 11. CANVAS & CALCULATOR CONTROLLERS
-    let canvas, ctx, drawing = false;
+    // 9. UTILITIES (CANVAS, CALC, CHEATSHEET)
+    let pCanvas, pCtx, isDrawing = false;
     function setupCanvas() {
-      canvas = document.getElementById('scratch-canvas');
-      ctx = canvas.getContext('2d');
-      canvas.width = 800; canvas.height = 360;
-      canvas.addEventListener('mousedown', () => drawing = true);
-      canvas.addEventListener('mouseup', () => { drawing = false; ctx.beginPath(); });
-      canvas.addEventListener('mousemove', (e) => {
-        if (!drawing) return;
-        ctx.lineWidth = document.getElementById('pen-size').value;
-        ctx.strokeStyle = document.getElementById('pen-color').value;
-        ctx.lineCap = 'round';
-        const r = canvas.getBoundingClientRect();
-        ctx.lineTo(e.clientX - r.left, e.clientY - r.top);
-        ctx.stroke(); ctx.beginPath(); ctx.moveTo(e.clientX - r.left, e.clientY - r.top);
+      pCanvas = document.getElementById('pad-canvas');
+      pCtx = pCanvas.getContext('2d');
+      pCanvas.width = 800; pCanvas.height = 360;
+
+      pCanvas.addEventListener('mousedown', () => isDrawing = true);
+      pCanvas.addEventListener('mouseup', () => { isDrawing = false; pCtx.beginPath(); });
+      pCanvas.addEventListener('mousemove', (e) => {
+        if (!isDrawing) return;
+        pCtx.lineWidth = document.getElementById('pad-size').value;
+        pCtx.strokeStyle = document.getElementById('pad-color').value;
+        pCtx.lineCap = 'round';
+        const r = pCanvas.getBoundingClientRect();
+        pCtx.lineTo(e.clientX - r.left, e.clientY - r.top);
+        pCtx.stroke(); pCtx.beginPath(); pCtx.moveTo(e.clientX - r.left, e.clientY - r.top);
       });
     }
-    function openCanvas() { document.getElementById('modal-canvas').classList.remove('hidden'); }
-    function closeCanvas() { document.getElementById('modal-canvas').classList.add('hidden'); }
-    function clearCanvas() { ctx.clearRect(0, 0, canvas.width, canvas.height); }
+    function openCanvas() { document.getElementById('modal-scratchpad').classList.remove('hidden'); }
+    function closeCanvas() { document.getElementById('modal-scratchpad').classList.add('hidden'); }
+    function clearScratchpad() { pCtx.clearRect(0, 0, pCanvas.width, pCanvas.height); }
 
     let cVal = '0';
-    function toggleCalculator() { document.getElementById('modal-calc').classList.toggle('hidden'); }
-    function calcIn(v) { if (cVal === '0' && v !== '.') cVal = ''; cVal += v; document.getElementById('calc-screen').value = cVal; }
-    function calcClear() { cVal = '0'; document.getElementById('calc-screen').value = '0'; }
-    function calcEval() { try { cVal = eval(cVal).toString(); document.getElementById('calc-screen').value = cVal; } catch(e){ document.getElementById('calc-screen').value = 'Error'; } }
+    function toggleCalc() { document.getElementById('modal-calc').classList.toggle('hidden'); }
+    function calcPush(v) { if (cVal === '0' && v !== '.') cVal = ''; cVal += v; document.getElementById('calc-display').value = cVal; }
+    function calcReset() { cVal = '0'; document.getElementById('calc-display').value = '0'; }
+    function calcCompute() { try { cVal = eval(cVal).toString(); document.getElementById('calc-display').value = cVal; } catch(e){ document.getElementById('calc-display').value = 'Error'; } }
 
-    function openFormulaModal() { document.getElementById('modal-formula').classList.remove('hidden'); }
-    function closeFormulaModal() { document.getElementById('modal-formula').classList.add('hidden'); }
+    function openCheatsheet() { document.getElementById('modal-cheatsheet').classList.remove('hidden'); }
+    function closeCheatsheet() { document.getElementById('modal-cheatsheet').classList.add('hidden'); }
   </script>
 </body>
 </html>
