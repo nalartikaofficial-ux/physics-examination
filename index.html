@@ -248,7 +248,7 @@
             </a>
             <button onclick="openQuestionEditorModal()" class="px-3.5 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-300 text-xs font-bold flex items-center gap-1.5 transition cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
-              <span>Tambah Soal</span>
+              <span>Add Question</span>
             </button>
           </div>
 
@@ -833,22 +833,24 @@
       document.getElementById('user-avatar-badge').innerText = currentUser.nama.charAt(0).toUpperCase();
 
       if (currentUser.role === 'guru') {
-        document.getElementById('user-role-tag').innerText = "GURU FISIKA";
+        // Tampilan Guru (Lampiran 2)
+        document.getElementById('user-role-tag').innerText = "PHYSICS TEACHER";
         document.getElementById('user-role-tag').className = "px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300";
-        document.getElementById('user-display-sub').innerText = "Hak Akses Penuh Pengajar";
+        document.getElementById('user-display-sub').innerText = "Full Instructor Privileges";
         document.getElementById('guru-shortcuts').classList.remove('hidden');
         document.getElementById('grade-filter-bar').classList.remove('hidden');
-        document.getElementById('banner-greeting').innerText = "Panel Guru - Manajemen CBT Fisika";
-        document.getElementById('banner-subtext').innerText = "Guru dapat menambahkan soal, memonitor nilai siswa, dan mengaktifkan token ulangan.";
+        document.getElementById('banner-greeting').innerText = "Teacher Management Hub";
+        document.getElementById('banner-subtext').innerText = "Manage questions, monitor student scores, and activate daily exam tokens.";
         setGradeFilter("11");
       } else {
-        document.getElementById('user-role-tag').innerText = currentUser.kelas;
-        document.getElementById('user-role-tag').className = "px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800 border border-blue-200";
-        document.getElementById('user-display-sub').innerText = `Absen: ${currentUser.absen} • Siswa Terverifikasi`;
+        // Tampilan Siswa (Lampiran 1)
+        document.getElementById('user-role-tag').innerText = "Class " + currentUser.kelas;
+        document.getElementById('user-role-tag').className = "px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800 border border-blue-200 uppercase";
+        document.getElementById('user-display-sub').innerText = `Attendance No: ${currentUser.absen} • Verified Student`;
         document.getElementById('guru-shortcuts').classList.add('hidden');
         document.getElementById('grade-filter-bar').classList.add('hidden');
-        document.getElementById('banner-greeting').innerText = `Halo, ${currentUser.nama}`;
-        document.getElementById('banner-subtext').innerText = `Berikut adalah materi pembelajaran Fisika untuk tingkat Kelas ${currentUser.allowedGrade}. Selamat belajar!`;
+        document.getElementById('banner-greeting').innerText = `Welcome, ${currentUser.nama}!`;
+        document.getElementById('banner-subtext').innerText = `Here are the Physics assessment modules for Grade ${currentUser.allowedGrade}. Good luck with your study!`;
         setGradeFilter(currentUser.allowedGrade);
       }
     }
