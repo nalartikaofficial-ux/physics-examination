@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,7 +63,7 @@
   <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
       
-      <!-- Logo Resmi & Nama Sekolah (Satu Blok Saja) -->
+      <!-- Logo Resmi & Nama Sekolah -->
       <div class="flex items-center space-x-3.5">
         <div class="w-11 h-11 sm:w-13 sm:h-13 rounded-full overflow-hidden border border-slate-200 shadow-sm flex-shrink-0 bg-white flex items-center justify-center p-0.5">
           <img src="LOGO SMAM 18 JKT.png" alt="SMA Muhammadiyah 18 Jakarta" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/fadhillahumar/assets/main/logo-muh18.png';">
@@ -88,7 +88,7 @@
   <main id="view-auth" class="flex-grow flex items-center justify-center px-4 py-8 sm:py-12">
     <div class="w-full max-w-lg">
       
-      <!-- Top Title & Badge (English Version) -->
+      <!-- Top Title & Badge -->
       <div class="text-center mb-7">
         <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[11px] font-extrabold bg-blue-50 text-blue-800 border border-blue-200 mb-3 shadow-xs">
           <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-500 fill-amber-400"></i> Interactive Physics CBT & Practice Hub
@@ -101,16 +101,15 @@
         </p>
       </div>
 
-      <!-- Auth Box Card (Full English Version) -->
       <!-- Auth Box Card -->
       <div class="clean-card rounded-3xl p-6 sm:p-8">
         
         <!-- Toggle Tabs: Student vs Teacher -->
         <div class="grid grid-cols-2 gap-2 p-1.5 bg-slate-100 rounded-2xl mb-6 border border-slate-200">
-          <button type="button" onclick="setAuthMode('siswa')" id="tab-btn-siswa" class="py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 bg-white text-blue-900 shadow-sm border border-slate-200">
+          <button type="button" onclick="setAuthMode('siswa')" id="tab-btn-siswa" class="py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 bg-white text-blue-900 shadow-sm border border-slate-200 cursor-pointer">
             <i data-lucide="backpack" class="w-4 h-4 text-blue-700"></i> Student Login
           </button>
-          <button type="button" onclick="setAuthMode('guru')" id="tab-btn-guru" class="py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 text-slate-500 hover:text-slate-800">
+          <button type="button" onclick="setAuthMode('guru')" id="tab-btn-guru" class="py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 text-slate-500 hover:text-slate-800 cursor-pointer">
             <i data-lucide="presentation" class="w-4 h-4"></i> Teacher Access
           </button>
         </div>
@@ -148,11 +147,10 @@
             </div>
           </div>
 
-          <!-- Student Passcode with Lock Icon & Eye Toggle -->
+          <!-- Student Passcode with Lock & Eye Toggle -->
           <div>
             <label class="block text-xs font-bold text-slate-700 mb-1.5">Access Passcode <span class="text-rose-500">*</span></label>
             <div class="relative">
-              <!-- Ikon Gembok (Kiri) -->
               <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
@@ -160,7 +158,6 @@
                 </svg>
               </span>
               <input type="password" id="siswa-password" required class="w-full pl-10 pr-11 py-2.5 sm:py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition">
-              <!-- Tombol Mata (Kanan) -->
               <button type="button" onclick="togglePasswordVisibility('siswa-password', 'eye-svg-siswa')" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 hover:text-slate-700 cursor-pointer">
                 <span id="eye-svg-siswa">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -172,7 +169,7 @@
             </div>
           </div>
 
-          <button type="submit" class="w-full py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-sm transition shadow-md flex items-center justify-center gap-2">
+          <button type="submit" class="w-full py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-sm transition shadow-md flex items-center justify-center gap-2 cursor-pointer">
             <span>Enter Class Portal</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
@@ -202,14 +199,13 @@
               <input type="password" id="guru-pass-input" required class="w-full pl-10 pr-11 py-2.5 sm:py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition">
               <button type="button" onclick="togglePasswordVisibility('guru-pass-input', 'eye-svg-guru')" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 hover:text-slate-700 cursor-pointer">
                 <span id="eye-svg-guru">
-                  <!-- Eye Open Icon -->
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
                 </span>
               </button>
             </div>
           </div>
 
-          <button type="submit" class="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-sm transition shadow-md flex items-center justify-center gap-2">
+          <button type="submit" class="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-sm transition shadow-md flex items-center justify-center gap-2 cursor-pointer">
             <span>Open Teacher Dashboard</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
@@ -217,7 +213,7 @@
 
       </div>
 
-      <p class="text-center text-xs text-slate-400 mt-6">© 2026 SMA Muhammadiyah 18 Jakarta</p>
+      <p class="text-center text-xs text-slate-400 mt-6">&copy; SMA Muhammadiyah 18 Jakarta</p>
     </div>
   </main>
 
@@ -230,7 +226,7 @@
         
         <!-- Student / User Profile Badge -->
         <div class="flex items-center space-x-3">
-          <div class="w-10 h-10 rounded-2xl bg-blue-100 text-blue-800 border border-blue-200 flex items-center justify-center font-bold text-sm" id="user-avatar-badge">
+          <div class="w-10 h-10 rounded-2xl bg-blue-100 text-blue-800 border border-blue-200 flex items-center justify-center font-bold text-sm shadow-xs" id="user-avatar-badge">
             U
           </div>
           <div>
@@ -250,14 +246,14 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/></svg>
               <span class="hidden sm:inline">Google Sheets</span>
             </a>
-            <button onclick="openQuestionEditorModal()" class="px-3.5 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-300 text-xs font-bold flex items-center gap-1.5 transition">
+            <button onclick="openQuestionEditorModal()" class="px-3.5 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-300 text-xs font-bold flex items-center gap-1.5 transition cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
               <span>Tambah Soal</span>
             </button>
           </div>
 
-          <!-- Tombol Logout (Bahasa Inggris) -->
-          <button onclick="logoutPortal()" class="px-4 py-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-bold flex items-center gap-1.5 transition">
+          <!-- Tombol Logout -->
+          <button onclick="logoutPortal()" class="px-4 py-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-bold flex items-center gap-1.5 transition cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
             <span>Logout</span>
           </button>
@@ -283,9 +279,9 @@
       <!-- Filter Kelas (Khusus Guru) -->
       <div id="grade-filter-bar" class="flex items-center gap-2 border-b border-slate-200 pb-3">
         <span class="text-xs font-bold text-slate-500 uppercase mr-2">Pilih Tingkat:</span>
-        <button onclick="setGradeFilter('10')" id="tab-grade-10" class="filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-slate-200 text-slate-700">Kelas 10</button>
-        <button onclick="setGradeFilter('11')" id="tab-grade-11" class="filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-blue-800 text-white shadow-sm">Kelas 11</button>
-        <button onclick="setGradeFilter('12')" id="tab-grade-12" class="filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-slate-200 text-slate-700">Kelas 12</button>
+        <button onclick="setGradeFilter('10')" id="tab-grade-10" class="filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-slate-200 text-slate-700 cursor-pointer">Kelas 10</button>
+        <button onclick="setGradeFilter('11')" id="tab-grade-11" class="filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-blue-800 text-white shadow-sm cursor-pointer">Kelas 11</button>
+        <button onclick="setGradeFilter('12')" id="tab-grade-12" class="filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-slate-200 text-slate-700 cursor-pointer">Kelas 12</button>
       </div>
 
       <!-- Grid Kartu Bab Fisika -->
@@ -302,13 +298,13 @@
 
   </div>
 
-  <!-- ==================== VIEW 3: ARENA UJIAN & LATIHAN INTERAKTIF (CBT) ==================== -->
+  <!-- ==================== VIEW 3: ARENA UJIAN & CBT ==================== -->
   <div id="view-exam" class="hidden min-h-screen bg-slate-100 flex flex-col justify-between p-4 sm:p-6">
     
     <!-- Top Exam Header Bar -->
     <div class="max-w-6xl mx-auto w-full bg-white rounded-2xl p-4 shadow-sm border border-slate-200 flex flex-wrap justify-between items-center gap-4 mb-6">
       <div class="flex items-center space-x-3">
-        <button onclick="exitExamConfirm()" class="p-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl transition" title="Kembali ke Dashboard">
+        <button onclick="exitExamConfirm()" class="p-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl transition cursor-pointer" title="Kembali ke Dashboard">
           <i data-lucide="arrow-left" class="w-5 h-5"></i>
         </button>
         <div>
@@ -342,7 +338,7 @@
         <div>
           <div class="flex justify-between items-center border-b border-slate-100 pb-4 mb-6">
             <span id="exam-q-num-badge" class="text-xs font-bold text-blue-800 bg-blue-50 px-3 py-1 rounded-lg border border-blue-200">Soal 1 dari 5</span>
-            <button onclick="toggleDoubtful()" id="exam-doubt-btn" class="text-xs font-bold text-slate-400 hover:text-amber-500 flex items-center gap-1.5 transition">
+            <button onclick="toggleDoubtful()" id="exam-doubt-btn" class="text-xs font-bold text-slate-400 hover:text-amber-500 flex items-center gap-1.5 transition cursor-pointer">
               <i data-lucide="bookmark" class="w-4 h-4"></i> Ragu-ragu
             </button>
           </div>
@@ -360,13 +356,13 @@
 
         <!-- Footer Control Buttons inside Question Box -->
         <div class="mt-8 pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center gap-3">
-          <button onclick="triggerRescueMode()" class="px-3.5 py-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-bold transition flex items-center gap-1.5">
+          <button onclick="triggerRescueMode()" class="px-3.5 py-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer">
             <i data-lucide="flag" class="w-4 h-4"></i> Butuh Bantuan / Angkat Tangan? (Penyelamat)
           </button>
 
           <div class="flex space-x-2">
-            <button id="btn-prev-q" onclick="prevQuestion()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition">Sebelumnya</button>
-            <button id="btn-next-q" onclick="nextQuestion()" class="px-5 py-2 bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs rounded-xl transition shadow">Selanjutnya</button>
+            <button id="btn-prev-q" onclick="prevQuestion()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition cursor-pointer">Sebelumnya</button>
+            <button id="btn-next-q" onclick="nextQuestion()" class="px-5 py-2 bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs rounded-xl transition shadow cursor-pointer">Selanjutnya</button>
           </div>
         </div>
       </div>
@@ -385,7 +381,7 @@
           </div>
 
           <div class="mt-6 pt-4 border-t border-slate-100">
-            <button onclick="confirmFinishExam()" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition shadow flex items-center justify-center gap-2">
+            <button onclick="confirmFinishExam()" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition shadow flex items-center justify-center gap-2 cursor-pointer">
               <i data-lucide="check-circle-2" class="w-4 h-4"></i> Selesaikan Ujian
             </button>
           </div>
@@ -397,11 +393,11 @@
             <i data-lucide="wrench" class="w-4 h-4 text-blue-700"></i> Alat Ujian
           </h4>
           <div class="grid grid-cols-2 gap-3">
-            <button onclick="openCanvasModal()" class="p-3 bg-amber-50 hover:bg-amber-100 border border-amber-200 text-amber-800 rounded-2xl text-xs font-bold transition flex flex-col items-center gap-2">
+            <button onclick="openCanvasModal()" class="p-3 bg-amber-50 hover:bg-amber-100 border border-amber-200 text-amber-800 rounded-2xl text-xs font-bold transition flex flex-col items-center gap-2 cursor-pointer">
               <i data-lucide="pen-tool" class="w-5 h-5 text-amber-600"></i>
               <span>Coret-coretan</span>
             </button>
-            <button onclick="toggleCalcModal()" class="p-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-800 rounded-2xl text-xs font-bold transition flex flex-col items-center gap-2">
+            <button onclick="toggleCalcModal()" class="p-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-800 rounded-2xl text-xs font-bold transition flex flex-col items-center gap-2 cursor-pointer">
               <i data-lucide="calculator" class="w-5 h-5 text-blue-600"></i>
               <span>Kalkulator</span>
             </button>
@@ -448,7 +444,7 @@
         </div>
 
         <div class="pt-6 border-t border-slate-200 flex justify-between">
-          <button onclick="returnToDashboardFromResults()" class="px-6 py-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs transition shadow">
+          <button onclick="returnToDashboardFromResults()" class="px-6 py-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs transition shadow cursor-pointer">
             Kembali ke Halaman Materi
           </button>
         </div>
@@ -460,7 +456,7 @@
   <!-- ==================== MODAL TOKEN ULANGAN HARIAN ==================== -->
   <div id="modal-token" class="fixed inset-0 z-50 bg-slate-900/60 hidden flex items-center justify-center p-4 backdrop-blur-sm">
     <div class="bg-white w-full max-w-md rounded-3xl p-6 sm:p-8 clean-card relative">
-      <button onclick="closeTokenModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600"><i data-lucide="x" class="w-5 h-5"></i></button>
+      <button onclick="closeTokenModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
 
       <div class="text-center mb-5">
         <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-3 border border-amber-200">
@@ -481,7 +477,7 @@
           <span>Ulangan harian dilengkapi timer otomatis dan deteksi pindah tab.</span>
         </div>
 
-        <button type="submit" class="w-full py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-sm transition shadow-md flex items-center justify-center gap-2">
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-sm transition shadow-md flex items-center justify-center gap-2 cursor-pointer">
           <span>Mulai Kerjakan Ulangan</span>
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </button>
@@ -492,7 +488,7 @@
   <!-- ==================== MODAL GURU: EDITOR SOAL INTERAKTIF ==================== -->
   <div id="modal-editor" class="fixed inset-0 z-50 bg-slate-900/60 hidden flex items-center justify-center p-4 backdrop-blur-sm">
     <div class="bg-white w-full max-w-2xl rounded-3xl p-6 sm:p-8 clean-card relative max-h-[90vh] overflow-y-auto">
-      <button onclick="closeQuestionEditorModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600"><i data-lucide="x" class="w-5 h-5"></i></button>
+      <button onclick="closeQuestionEditorModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
 
       <div class="mb-6">
         <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
@@ -551,8 +547,8 @@
         </div>
 
         <div class="pt-2 flex justify-end gap-2">
-          <button type="button" onclick="closeQuestionEditorModal()" class="px-4 py-2 rounded-xl bg-slate-100 text-xs font-bold text-slate-700">Batal</button>
-          <button type="submit" class="px-5 py-2 rounded-xl bg-blue-700 text-xs font-bold text-white shadow">Simpan ke Bank Soal</button>
+          <button type="button" onclick="closeQuestionEditorModal()" class="px-4 py-2 rounded-xl bg-slate-100 text-xs font-bold text-slate-700 cursor-pointer">Batal</button>
+          <button type="submit" class="px-5 py-2 rounded-xl bg-blue-700 text-xs font-bold text-white shadow cursor-pointer">Simpan ke Bank Soal</button>
         </div>
 
       </form>
@@ -565,8 +561,8 @@
       <div class="bg-slate-900 text-white px-6 py-4 flex justify-between items-center">
         <h3 class="text-sm font-bold flex items-center gap-2"><i data-lucide="pen-tool" class="w-4 h-4 text-amber-400"></i> Papan Coret-Coretan Hitungan</h3>
         <div class="flex items-center space-x-3">
-          <button onclick="clearCanvas()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg">Hapus Semua</button>
-          <button onclick="closeCanvasModal()" class="text-slate-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+          <button onclick="clearCanvas()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg cursor-pointer">Hapus Semua</button>
+          <button onclick="closeCanvasModal()" class="text-slate-400 hover:text-white cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
         </div>
       </div>
       <div class="p-3 bg-slate-100 flex items-center gap-4 text-xs text-slate-700 border-b">
@@ -581,31 +577,31 @@
   <div id="modal-calc" class="fixed bottom-6 right-6 z-50 bg-white rounded-3xl p-4 w-72 hidden shadow-2xl border border-slate-200">
     <div class="flex justify-between items-center mb-2 pb-2 border-b border-slate-100">
       <span class="text-xs font-bold text-blue-700 flex items-center gap-1.5"><i data-lucide="calculator" class="w-4 h-4"></i> Kalkulator Fisika</span>
-      <button onclick="toggleCalcModal()" class="text-slate-400 hover:text-slate-700"><i data-lucide="x" class="w-4 h-4"></i></button>
+      <button onclick="toggleCalcModal()" class="text-slate-400 hover:text-slate-700 cursor-pointer"><i data-lucide="x" class="w-4 h-4"></i></button>
     </div>
     <input type="text" id="calc-display" readonly class="w-full bg-slate-100 text-right font-mono p-3 text-lg font-bold rounded-xl border border-slate-200 mb-3 text-slate-900" value="0">
     <div class="grid grid-cols-4 gap-1.5 text-xs font-bold">
-      <button onclick="calcPush('(')" class="p-2.5 bg-slate-100 hover:bg-slate-200 rounded-lg text-slate-700">(</button>
-      <button onclick="calcPush(')')" class="p-2.5 bg-slate-100 hover:bg-slate-200 rounded-lg text-slate-700">)</button>
-      <button onclick="calcPush('Math.sqrt(')" class="p-2.5 bg-blue-50 text-blue-700 rounded-lg">√</button>
-      <button onclick="calcReset()" class="p-2.5 bg-rose-50 text-rose-700 rounded-lg">C</button>
-      <button onclick="calcPush('7')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg">7</button>
-      <button onclick="calcPush('8')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg">8</button>
-      <button onclick="calcPush('9')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg">9</button>
-      <button onclick="calcPush('/')" class="p-2.5 bg-slate-200 rounded-lg text-blue-700">÷</button>
-      <button onclick="calcPush('4')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg">4</button>
-      <button onclick="calcPush('5')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg">5</button>
-      <button onclick="calcPush('6')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg">6</button>
-      <button onclick="calcPush('*')" class="p-2.5 bg-slate-200 rounded-lg text-blue-700">×</button>
-      <button onclick="calcPush('1')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg">1</button>
-      <button onclick="calcPush('2')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg">2</button>
-      <button onclick="calcPush('3')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg">3</button>
-      <button onclick="calcPush('-')" class="p-2.5 bg-slate-200 rounded-lg text-blue-700">-</button>
-      <button onclick="calcPush('0')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg">0</button>
-      <button onclick="calcPush('.')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg">.</button>
-      <button onclick="calcPush('Math.PI')" class="p-2.5 bg-blue-50 text-blue-700 rounded-lg">π</button>
-      <button onclick="calcPush('+')" class="p-2.5 bg-slate-200 rounded-lg text-blue-700">+</button>
-      <button onclick="calcCompute()" class="col-span-4 py-2.5 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl mt-1 text-sm">=</button>
+      <button onclick="calcPush('(')" class="p-2.5 bg-slate-100 hover:bg-slate-200 rounded-lg text-slate-700 cursor-pointer">(</button>
+      <button onclick="calcPush(')')" class="p-2.5 bg-slate-100 hover:bg-slate-200 rounded-lg text-slate-700 cursor-pointer">)</button>
+      <button onclick="calcPush('Math.sqrt(')" class="p-2.5 bg-blue-50 text-blue-700 rounded-lg cursor-pointer">√</button>
+      <button onclick="calcReset()" class="p-2.5 bg-rose-50 text-rose-700 rounded-lg cursor-pointer">C</button>
+      <button onclick="calcPush('7')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg cursor-pointer">7</button>
+      <button onclick="calcPush('8')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg cursor-pointer">8</button>
+      <button onclick="calcPush('9')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg cursor-pointer">9</button>
+      <button onclick="calcPush('/')" class="p-2.5 bg-slate-200 rounded-lg text-blue-700 cursor-pointer">÷</button>
+      <button onclick="calcPush('4')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg cursor-pointer">4</button>
+      <button onclick="calcPush('5')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg cursor-pointer">5</button>
+      <button onclick="calcPush('6')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg cursor-pointer">6</button>
+      <button onclick="calcPush('*')" class="p-2.5 bg-slate-200 rounded-lg text-blue-700 cursor-pointer">×</button>
+      <button onclick="calcPush('1')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg cursor-pointer">1</button>
+      <button onclick="calcPush('2')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg cursor-pointer">2</button>
+      <button onclick="calcPush('3')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg cursor-pointer">3</button>
+      <button onclick="calcPush('-')" class="p-2.5 bg-slate-200 rounded-lg text-blue-700 cursor-pointer">-</button>
+      <button onclick="calcPush('0')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg cursor-pointer">0</button>
+      <button onclick="calcPush('.')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg cursor-pointer">.</button>
+      <button onclick="calcPush('Math.PI')" class="p-2.5 bg-blue-50 text-blue-700 rounded-lg cursor-pointer">π</button>
+      <button onclick="calcPush('+')" class="p-2.5 bg-slate-200 rounded-lg text-blue-700 cursor-pointer">+</button>
+      <button onclick="calcCompute()" class="col-span-4 py-2.5 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl mt-1 text-sm cursor-pointer">=</button>
     </div>
   </div>
 
@@ -618,6 +614,22 @@
 
     // Bank Soal Fisika Master
     let masterBabData = [
+      {
+        id: "bab-10-besaran",
+        grade: "10",
+        title: "Besaran, Satuan & Pengukuran",
+        desc: "Dimensi besaran pokok/turunan, aturan angka penting, dan jangka sorong.",
+        token: "BESARAN10",
+        questions: [
+          {
+            id: 301,
+            text: "Dimensi dari besaran Usaha / Energi ($W = F \\cdot s$) adalah...",
+            options: ["$[M][L][T]^{-1}$", "$[M][L][T]^{-2}$", "$[M][L]^2[T]^{-2}$", "$[M][L]^2[T]^{-1}$"],
+            correct: 2,
+            discussion: "Satuan usaha $\\text{kg}\\cdot\\text{m}^2/\\text{s}^2$, sehingga dimensinya $[M][L]^2[T]^{-2}$."
+          }
+        ]
+      },
       {
         id: "bab-11-vektor",
         grade: "11",
@@ -661,22 +673,6 @@
             options: ["$1.5\\text{ m/s}^2$", "$2.5\\text{ m/s}^2$", "$3.0\\text{ m/s}^2$", "$4.0\\text{ m/s}^2$"],
             correct: 1,
             discussion: "$f_k = \\mu_k N = 0.25 \\times 40 = 10\\text{ N}$. $a = (20 - 10)/4 = 2.5\\text{ m/s}^2$."
-          }
-        ]
-      },
-      {
-        id: "bab-10-besaran",
-        grade: "10",
-        title: "Besaran, Satuan & Pengukuran",
-        desc: "Dimensi besaran pokok/turunan, aturan angka penting, dan jangka sorong.",
-        token: "BESARAN10",
-        questions: [
-          {
-            id: 301,
-            text: "Dimensi dari besaran Usaha / Energi ($W = F \\cdot s$) adalah...",
-            options: ["$[M][L][T]^{-1}$", "$[M][L][T]^{-2}$", "$[M][L]^2[T]^{-2}$", "$[M][L]^2[T]^{-1}$"],
-            correct: 2,
-            discussion: "Satuan usaha $\\text{kg}\\cdot\\text{m}^2/\\text{s}^2$, sehingga dimensinya $[M][L]^2[T]^{-2}$."
           }
         ]
       },
@@ -731,7 +727,7 @@
 
     // 3. INISIALISASI
     window.addEventListener('DOMContentLoaded', () => {
-      lucide.createIcons();
+      if (window.lucide) lucide.createIcons();
       document.getElementById('link-google-sheet').href = GOOGLE_SHEET_URL;
       setupCanvas();
       setupAntiCheat();
@@ -745,13 +741,13 @@
       const formGuru = document.getElementById('auth-form-guru');
 
       if (role === 'siswa') {
-        tabSiswa.className = "py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 bg-white text-blue-900 shadow-sm border border-slate-200";
-        tabGuru.className = "py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 text-slate-500 hover:text-slate-800";
+        tabSiswa.className = "py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 bg-white text-blue-900 shadow-sm border border-slate-200 cursor-pointer";
+        tabGuru.className = "py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 text-slate-500 hover:text-slate-800 cursor-pointer";
         formSiswa.classList.remove('hidden');
         formGuru.classList.add('hidden');
       } else {
-        tabGuru.className = "py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 bg-white text-blue-900 shadow-sm border border-slate-200";
-        tabSiswa.className = "py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 text-slate-500 hover:text-slate-800";
+        tabGuru.className = "py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 bg-white text-blue-900 shadow-sm border border-slate-200 cursor-pointer";
+        tabSiswa.className = "py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 text-slate-500 hover:text-slate-800 cursor-pointer";
         formGuru.classList.remove('hidden');
         formSiswa.classList.add('hidden');
       }
@@ -763,7 +759,7 @@
       const container = document.getElementById(containerId);
       
       const eyeOpenSVG = '<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>';
-      const eyeOffSVG = '<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-.722-3.25"/><path d="M2 8a10.645 10.645 0 0 0 20 0"/><path d="m20 15-1.726-2.05"/><path d="m4 15 1.726-2.05"/><path d="m9 18 .722-3.25"/></svg>';
+      const eyeOffSVG = '<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>';
 
       if (input.type === 'password') {
         input.type = 'text';
@@ -790,7 +786,7 @@
       const validPasscodeAlt = `${prefix}-${absen.padStart(2, '0')}`.toUpperCase();
 
       if (pass !== validPasscode && pass !== validPasscodeAlt && pass !== "MUH18") {
-        alert("❌ Invalid Passcode!\nPasscode does not match your selected class and attendance number.");
+        alert("❌ Invalid Passcode!\nPasscode does not match your selected class and attendance number (e.g. " + validPasscode + ")");
         return;
       }
 
@@ -837,24 +833,41 @@
       document.getElementById('user-avatar-badge').innerText = currentUser.nama.charAt(0).toUpperCase();
 
       if (currentUser.role === 'guru') {
-        document.getElementById('user-role-tag').innerText = "PHYSICS TEACHER";
+        document.getElementById('user-role-tag').innerText = "GURU FISIKA";
         document.getElementById('user-role-tag').className = "px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300";
-        document.getElementById('user-display-sub').innerText = "Full Instructor Privileges";
+        document.getElementById('user-display-sub').innerText = "Hak Akses Penuh Pengajar";
         document.getElementById('guru-shortcuts').classList.remove('hidden');
         document.getElementById('grade-filter-bar').classList.remove('hidden');
-        document.getElementById('banner-greeting').innerText = "Teacher Management Hub";
-        document.getElementById('banner-subtext').innerText = "Manage questions, monitor student scores, and activate daily exam tokens.";
+        document.getElementById('banner-greeting').innerText = "Panel Guru - Manajemen CBT Fisika";
+        document.getElementById('banner-subtext').innerText = "Guru dapat menambahkan soal, memonitor nilai siswa, dan mengaktifkan token ulangan.";
         setGradeFilter("11");
       } else {
-        document.getElementById('user-role-tag').innerText = "Class " + currentUser.kelas;
-        document.getElementById('user-role-tag').className = "px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800 border border-blue-200 uppercase";
-        document.getElementById('user-display-sub').innerText = `Attendance No: ${currentUser.absen} • Verified Student`;
+        document.getElementById('user-role-tag').innerText = currentUser.kelas;
+        document.getElementById('user-role-tag').className = "px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800 border border-blue-200";
+        document.getElementById('user-display-sub').innerText = `Absen: ${currentUser.absen} • Siswa Terverifikasi`;
         document.getElementById('guru-shortcuts').classList.add('hidden');
         document.getElementById('grade-filter-bar').classList.add('hidden');
-        document.getElementById('banner-greeting').innerText = `Welcome, ${currentUser.nama}!`;
-        document.getElementById('banner-subtext').innerText = `Here are the Physics assessment modules for Grade ${currentUser.allowedGrade}. Good luck with your study!`;
+        document.getElementById('banner-greeting').innerText = `Halo, ${currentUser.nama}`;
+        document.getElementById('banner-subtext').innerText = `Berikut adalah materi pembelajaran Fisika untuk tingkat Kelas ${currentUser.allowedGrade}. Selamat belajar!`;
         setGradeFilter(currentUser.allowedGrade);
       }
+    }
+
+    function logoutPortal() {
+      currentUser = null;
+      document.getElementById('view-dashboard').classList.add('hidden');
+      document.getElementById('view-auth').classList.remove('hidden');
+    }
+
+    function setGradeFilter(grade) {
+      selectedGrade = grade;
+      document.querySelectorAll('.filter-grade-btn').forEach(b => {
+        b.className = "filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-slate-200 text-slate-700 cursor-pointer";
+      });
+      const activeBtn = document.getElementById(`tab-grade-${grade}`);
+      if (activeBtn) activeBtn.className = "filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-blue-800 text-white shadow-sm cursor-pointer";
+
+      renderCards();
     }
 
     function renderCards() {
@@ -864,7 +877,7 @@
       const list = masterBabData.filter(b => b.grade === selectedGrade);
 
       if (list.length === 0) {
-        container.innerHTML = `<div class="col-span-3 text-center py-12 text-slate-400 text-xs">No active modules found for Grade ${selectedGrade}.</div>`;
+        container.innerHTML = `<div class="col-span-3 text-center py-12 text-slate-400 text-xs">Belum ada modul untuk tingkat Kelas ${selectedGrade}.</div>`;
         return;
       }
 
@@ -874,8 +887,8 @@
         card.innerHTML = `
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-blue-50 text-blue-800 border border-blue-200">Grade ${bab.grade} SMA</span>
-              <span class="text-xs font-semibold text-slate-400">${bab.questions.length} Question${bab.questions.length > 1 ? 's' : ''}</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-blue-50 text-blue-800 border border-blue-200">Kelas ${bab.grade} SMA</span>
+              <span class="text-xs font-semibold text-slate-400">${bab.questions.length} Soal</span>
             </div>
             <h3 class="font-extrabold text-base text-slate-900 mb-1.5">${bab.title}</h3>
             <p class="text-xs text-slate-500 leading-relaxed">${bab.desc}</p>
@@ -885,74 +898,20 @@
           <div class="mt-6 pt-4 border-t border-slate-100 grid grid-cols-2 gap-2.5">
             <button onclick="startExamSession('${bab.id}', 'latihan')" class="py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs transition flex items-center justify-center gap-1.5 cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-              <span>Self Practice</span>
+              <span>Latihan Soal</span>
             </button>
             <button onclick="openTokenDialog('${bab.id}')" class="py-2.5 px-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs transition shadow flex items-center justify-center gap-1.5 cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              <span>Daily Exam</span>
+              <span>Ulangan Harian</span>
             </button>
           </div>
         `;
         container.appendChild(card);
       });
+      if (window.lucide) lucide.createIcons();
     }
 
-    function logoutPortal() {
-      currentUser = null;
-      document.getElementById('view-dashboard').classList.add('hidden');
-      document.getElementById('view-auth').classList.remove('hidden');
-    }
-
-    // 5. MATERI & KARTU SOAL
-    function setGradeFilter(grade) {
-      selectedGrade = grade;
-      document.querySelectorAll('.filter-grade-btn').forEach(b => {
-        b.className = "filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-slate-200 text-slate-700";
-      });
-      const activeBtn = document.getElementById(`tab-grade-${grade}`);
-      if (activeBtn) activeBtn.className = "filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-blue-800 text-white shadow-sm";
-
-      function renderCards() {
-      const container = document.getElementById('cards-container');
-      container.innerHTML = '';
-
-      const list = masterBabData.filter(b => b.grade === selectedGrade);
-
-      if (list.length === 0) {
-        container.innerHTML = `<div class="col-span-3 text-center py-12 text-slate-400 text-xs">No active modules found for Grade ${selectedGrade}.</div>`;
-        return;
-      }
-
-      list.forEach(bab => {
-        const card = document.createElement('div');
-        card.className = "bg-white p-6 rounded-3xl border border-slate-200 clean-card flex flex-col justify-between hover:border-blue-300 hover:shadow-md transition duration-200";
-        card.innerHTML = `
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-blue-50 text-blue-800 border border-blue-200">Grade ${bab.grade} SMA</span>
-              <span class="text-xs font-semibold text-slate-400">${bab.questions.length} Question${bab.questions.length > 1 ? 's' : ''}</span>
-            </div>
-            <h3 class="font-extrabold text-base text-slate-900 mb-1.5">${bab.title}</h3>
-            <p class="text-xs text-slate-500 leading-relaxed">${bab.desc}</p>
-            ${currentUser.role === 'guru' ? `<div class="mt-3 p-2 bg-amber-50 rounded-xl border border-amber-200 text-[11px] text-amber-800 font-mono font-bold">🔑 Token: ${bab.token}</div>` : ''}
-          </div>
-
-          <div class="mt-6 pt-4 border-t border-slate-100 grid grid-cols-2 gap-2.5">
-            <button onclick="startExamSession('${bab.id}', 'latihan')" class="py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs transition flex items-center justify-center gap-1.5 cursor-pointer">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-              <span>Self Practice</span>
-            </button>
-            <button onclick="openTokenDialog('${bab.id}')" class="py-2.5 px-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs transition shadow flex items-center justify-center gap-1.5 cursor-pointer">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              <span>Daily Exam</span>
-            </button>
-          </div>
-        `;
-        container.appendChild(card);
-      });
-    }
-
-    // 6. TOKEN ULANGAN
+    // 7. TOKEN EXAM DIALOG
     function openTokenDialog(babId) {
       activeBabForExam = masterBabData.find(b => b.id === babId);
       document.getElementById('token-modal-title').innerText = `Bab: ${activeBabForExam.title}`;
@@ -976,7 +935,7 @@
       }
     }
 
-    // 7. ARENA UJIAN CBT ENGINE
+    // 8. CBT EXAM ARENA
     function startExamSession(babId, mode) {
       activeBabForExam = masterBabData.find(b => b.id === babId);
       currentExamQuestions = activeBabForExam.questions;
@@ -1037,14 +996,14 @@
       document.getElementById('btn-prev-q').disabled = (idx === 0);
       document.getElementById('btn-next-q').disabled = (idx === currentExamQuestions.length - 1);
 
-      // Bookmark state
       const dBtn = document.getElementById('exam-doubt-btn');
-      dBtn.className = doubtfulAnswers.has(q.id) ? "text-xs font-bold text-amber-500 flex items-center gap-1.5" : "text-xs font-bold text-slate-400 hover:text-amber-500 flex items-center gap-1.5";
+      dBtn.className = doubtfulAnswers.has(q.id) ? "text-xs font-bold text-amber-500 flex items-center gap-1.5 cursor-pointer" : "text-xs font-bold text-slate-400 hover:text-amber-500 flex items-center gap-1.5 cursor-pointer";
 
       if (window.renderMathInElement) {
         renderMathInElement(document.getElementById('exam-q-text'), { delimiters: [{left: '$', right: '$', display: false}] });
         renderMathInElement(optsBox, { delimiters: [{left: '$', right: '$', display: false}] });
       }
+      if (window.lucide) lucide.createIcons();
     }
 
     function toggleDoubtful() {
@@ -1072,14 +1031,14 @@
         if (isDoubt) styleClass = "bg-amber-400 text-slate-900 font-bold border-amber-400";
 
         const btn = document.createElement('button');
-        btn.className = `h-10 rounded-xl text-xs font-bold border flex items-center justify-center transition ${styleClass} ${isCur ? 'ring-2 ring-slate-900 ring-offset-2' : ''}`;
+        btn.className = `h-10 rounded-xl text-xs font-bold border flex items-center justify-center transition cursor-pointer ${styleClass} ${isCur ? 'ring-2 ring-slate-900 ring-offset-2' : ''}`;
         btn.innerText = i + 1;
         btn.onclick = () => loadExamQuestion(i);
         grid.appendChild(btn);
       });
     }
 
-    // 8. ANTI-CHEAT & RESCUE MODE
+    // 9. ANTI-CHEAT & RESCUE MODE
     function setupAntiCheat() {
       document.addEventListener('visibilitychange', () => {
         if (document.hidden && !document.getElementById('view-exam').classList.contains('hidden')) {
@@ -1128,7 +1087,7 @@
       }
     }
 
-    // 9. RESULTS EVALUATION
+    // 10. RESULTS EVALUATION
     function confirmFinishExam(force = false) {
       if (!force && !confirm("Selesaikan dan kumpulkan lembar jawaban?")) return;
       clearInterval(timerRef);
@@ -1155,7 +1114,6 @@
       statusEl.innerText = score >= 75 ? "Sangat Baik (Tuntas)" : "Perlu Remidi & Latihan Lagi";
       statusEl.className = score >= 75 ? "text-xs font-bold text-emerald-400" : "text-xs font-bold text-rose-400";
 
-      // Render Pembahasan
       const discBox = document.getElementById('res-discussion-container');
       discBox.innerHTML = '';
 
@@ -1182,6 +1140,7 @@
 
       document.getElementById('view-exam').classList.add('hidden');
       document.getElementById('view-result').classList.remove('hidden');
+      if (window.lucide) lucide.createIcons();
     }
 
     function returnToDashboardFromResults() {
@@ -1189,7 +1148,7 @@
       document.getElementById('view-dashboard').classList.remove('hidden');
     }
 
-    // 10. EDITOR SOAL GURU
+    // 11. QUESTION EDITOR GURU
     function openQuestionEditorModal() {
       const select = document.getElementById('edit-bab-select');
       select.innerHTML = '';
@@ -1200,6 +1159,7 @@
         select.appendChild(opt);
       });
       document.getElementById('modal-editor').classList.remove('hidden');
+      if (window.lucide) lucide.createIcons();
     }
 
     function closeQuestionEditorModal() {
@@ -1230,10 +1190,11 @@
       renderCards();
     }
 
-    // 11. CANVAS & CALCULATOR CONTROLLERS
+    // 12. CANVAS & CALCULATOR CONTROLLERS
     let canvas, ctx, isDrawing = false;
     function setupCanvas() {
       canvas = document.getElementById('scratchpad-canvas');
+      if (!canvas) return;
       ctx = canvas.getContext('2d');
       canvas.width = 800; canvas.height = 340;
       canvas.addEventListener('mousedown', () => isDrawing = true);
@@ -1248,12 +1209,18 @@
         ctx.stroke(); ctx.beginPath(); ctx.moveTo(e.clientX - r.left, e.clientY - r.top);
       });
     }
-    function openCanvasModal() { document.getElementById('modal-canvas').classList.remove('hidden'); }
+    function openCanvasModal() { 
+      document.getElementById('modal-canvas').classList.remove('hidden'); 
+      if (window.lucide) lucide.createIcons();
+    }
     function closeCanvasModal() { document.getElementById('modal-canvas').classList.add('hidden'); }
-    function clearCanvas() { ctx.clearRect(0, 0, canvas.width, canvas.height); }
+    function clearCanvas() { if (ctx && canvas) ctx.clearRect(0, 0, canvas.width, canvas.height); }
 
     let cVal = '0';
-    function toggleCalcModal() { document.getElementById('modal-calc').classList.toggle('hidden'); }
+    function toggleCalcModal() { 
+      document.getElementById('modal-calc').classList.toggle('hidden'); 
+      if (window.lucide) lucide.createIcons();
+    }
     function calcPush(v) { if (cVal === '0' && v !== '.') cVal = ''; cVal += v; document.getElementById('calc-display').value = cVal; }
     function calcReset() { cVal = '0'; document.getElementById('calc-display').value = '0'; }
     function calcCompute() { try { cVal = eval(cVal).toString(); document.getElementById('calc-display').value = cVal; } catch(e){ document.getElementById('calc-display').value = 'Error'; } }
