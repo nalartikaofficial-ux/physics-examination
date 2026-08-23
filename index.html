@@ -221,24 +221,24 @@
     </div>
   </main>
 
-  <!-- ==================== VIEW 2: PORTAL DASHBOARD (FULL ENGLISH) ==================== -->
+  <!-- ==================== VIEW 2: PORTAL DASHBOARD ==================== -->
   <div id="view-dashboard" class="hidden flex-grow flex flex-col justify-between">
     
     <!-- Top Sub-Bar Info -->
     <div class="bg-white border-b border-slate-200 px-4 sm:px-8 py-3.5 shadow-sm">
       <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-3">
         
-        <!-- User Profile Badge -->
+        <!-- Student / User Profile Badge -->
         <div class="flex items-center space-x-3">
-          <div class="w-10 h-10 rounded-2xl bg-blue-100 text-blue-800 border border-blue-200 flex items-center justify-center font-bold text-sm shadow-xs" id="user-avatar-badge">
+          <div class="w-10 h-10 rounded-2xl bg-blue-100 text-blue-800 border border-blue-200 flex items-center justify-center font-bold text-sm" id="user-avatar-badge">
             U
           </div>
           <div>
             <div class="flex items-center gap-2">
-              <h3 class="font-extrabold text-sm sm:text-base text-slate-900 leading-tight" id="user-display-name">Student Name</h3>
-              <span id="user-role-tag" class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800 border border-blue-200 uppercase">Class X-1</span>
+              <h3 class="font-extrabold text-sm sm:text-base text-slate-900 leading-tight" id="user-display-name">umar</h3>
+              <span id="user-role-tag" class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800 border border-blue-200">X-1</span>
             </div>
-            <p class="text-xs text-slate-500 font-medium" id="user-display-sub">Attendance No: 1 • Verified Student</p>
+            <p class="text-xs text-slate-500 font-medium" id="user-display-sub">Absen: 1 • Siswa Terverifikasi</p>
           </div>
         </div>
 
@@ -248,16 +248,16 @@
           <div id="guru-shortcuts" class="hidden flex items-center gap-2">
             <a id="link-google-sheet" href="https://docs.google.com/spreadsheets" target="_blank" class="px-3.5 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs font-bold flex items-center gap-1.5 transition">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/></svg>
-              <span class="hidden sm:inline">Google Sheets Scores</span>
+              <span class="hidden sm:inline">Google Sheets</span>
             </a>
             <button onclick="openQuestionEditorModal()" class="px-3.5 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-300 text-xs font-bold flex items-center gap-1.5 transition">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
-              <span>Add Question</span>
+              <span>Tambah Soal</span>
             </button>
           </div>
 
-          <!-- Logout Button (English) -->
-          <button onclick="logoutPortal()" class="px-4 py-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-bold flex items-center gap-1.5 transition cursor-pointer">
+          <!-- Tombol Logout (Bahasa Inggris) -->
+          <button onclick="logoutPortal()" class="px-4 py-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-bold flex items-center gap-1.5 transition">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
             <span>Logout</span>
           </button>
@@ -266,32 +266,21 @@
       </div>
     </div>
 
-    <!-- Main Content Area -->
+    <!-- Main Content Materi Cards -->
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full space-y-6">
       
-      <!-- Greeting Banner with Accent Watermark -->
-      <div class="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-lg relative overflow-hidden border border-blue-800/40">
+      <!-- Greeting Banner -->
+      <div class="bg-gradient-to-r from-blue-900 to-indigo-800 text-white rounded-3xl p-6 sm:p-8 shadow-lg relative overflow-hidden">
         <div class="relative z-10 max-w-2xl">
-          <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-400 text-slate-950 inline-block mb-3 shadow-xs">
-            Academic Year 2026/2027
-          </span>
-          <h2 class="text-xl sm:text-3xl font-black leading-tight" id="banner-greeting">Welcome, Student</h2>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-400 text-slate-950 inline-block mb-3">Tahun Ajaran 2026/2027</span>
+          <h2 class="text-xl sm:text-3xl font-black leading-tight" id="banner-greeting">Halo, umar</h2>
           <p class="text-xs sm:text-sm text-blue-100 mt-2 leading-relaxed" id="banner-subtext">
-            Here are your active Physics assessment modules. Practice anytime or enter an exam token for daily tests.
+            Berikut adalah materi pembelajaran Fisika untuk tingkat Kelas 10. Selamat belajar!
           </p>
-        </div>
-
-        <!-- Decorative Physics Watermark Icon in Banner -->
-        <div class="absolute -right-6 -bottom-8 opacity-10 pointer-events-none text-white hidden sm:block">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-64 h-64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="1"/>
-            <path d="M20.2 20.2c2.4-2.4 2.4-6.3 0-8.7L12 3.3 3.8 11.5c-2.4 2.4-2.4 6.3 0 8.7s6.3 2.4 8.7 0l7.7-7.7"/>
-            <path d="m5 5 14 14"/>
-          </svg>
         </div>
       </div>
 
-      <!-- Filter Kelas (Hanya Muncul Jika Guru) -->
+      <!-- Filter Kelas (Khusus Guru) -->
       <div id="grade-filter-bar" class="flex items-center gap-2 border-b border-slate-200 pb-3">
         <span class="text-xs font-bold text-slate-500 uppercase mr-2">Pilih Tingkat:</span>
         <button onclick="setGradeFilter('10')" id="tab-grade-10" class="filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-slate-200 text-slate-700">Kelas 10</button>
@@ -301,14 +290,14 @@
 
       <!-- Grid Kartu Bab Fisika -->
       <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Injected via JS -->
+        <!-- Kartu di-render otomatis oleh JavaScript -->
       </div>
 
     </div>
 
     <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-500">
-      <p>SMA Muhammadiyah 18 Jakarta • Media Digital Pembelajaran Fisika</p>
+      <p>&copy; SMA Muhammadiyah 18 Jakarta</p>
     </footer>
 
   </div>
