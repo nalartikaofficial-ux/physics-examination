@@ -831,10 +831,9 @@
 
     function loginTeacher(e) {
       e.preventDefault();
-      // Konversi input ke huruf kapital otomatis
       const pass = document.getElementById('guru-pass-input').value.trim().toUpperCase();
 
-      if (GURU_PASSWORDS.includes(pass)) {
+      if (pass === "UMAR18") {
         currentUser = {
           role: "guru",
           nama: "Fadhillah Umar, S.Pd",
@@ -847,6 +846,7 @@
         alert("❌ Incorrect teacher password!");
       }
     }
+    
     function enterDashboard() {
       document.getElementById('view-auth').classList.add('hidden');
       document.getElementById('view-dashboard').classList.remove('hidden');
