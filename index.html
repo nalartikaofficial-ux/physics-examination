@@ -35,9 +35,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
   <!-- KaTeX for Formula Rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -90,8 +87,8 @@
       
       <!-- Top Title & Gateway Welcome -->
       <div class="text-center mb-6">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-blue-50 text-blue-800 border border-blue-200 mb-2">
-          <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-500 fill-amber-400"></i> Portal Gateway
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[11px] font-bold bg-blue-50 text-blue-800 border border-blue-200 mb-2 shadow-xs">
+          ⚡ Portal Gateway
         </span>
         <h2 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
           Sign In to Physics CBT Portal
@@ -107,10 +104,12 @@
         <!-- Toggle Tabs: Student vs Teacher -->
         <div class="grid grid-cols-2 gap-2 p-1.5 bg-slate-100 rounded-2xl mb-6 border border-slate-200">
           <button type="button" onclick="setAuthMode('siswa')" id="tab-btn-siswa" class="py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 bg-white text-blue-900 shadow-sm border border-slate-200 cursor-pointer">
-            <i data-lucide="backpack" class="w-4 h-4 text-blue-700"></i> Student Login
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-blue-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M8 21v-4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4"/><path d="M8 10h8"/><path d="M8 14h8"/></svg>
+            <span>Student Login</span>
           </button>
           <button type="button" onclick="setAuthMode('guru')" id="tab-btn-guru" class="py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 text-slate-500 hover:text-slate-800 cursor-pointer">
-            <i data-lucide="presentation" class="w-4 h-4"></i> Teacher Access
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
+            <span>Teacher Access</span>
           </button>
         </div>
 
@@ -121,7 +120,7 @@
             <label class="block text-xs font-bold text-slate-700 mb-1.5">Full Student Name <span class="text-rose-500">*</span></label>
             <div class="relative">
               <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                <i data-lucide="user" class="w-4 h-4"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
               </span>
               <input type="text" id="siswa-nama" required placeholder="e.g. Muhammad Farhan" class="w-full pl-10 pr-4 py-2.5 sm:py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition">
             </div>
@@ -147,23 +146,17 @@
             </div>
           </div>
 
-          <!-- Student Passcode with Lock & Eye Toggle -->
+          <!-- Student Passcode with Auto-Uppercase & Eye Toggle -->
           <div>
             <label class="block text-xs font-bold text-slate-700 mb-1.5">Access Passcode <span class="text-rose-500">*</span></label>
             <div class="relative">
               <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </span>
               <input type="password" id="siswa-password" required class="uppercase font-mono w-full pl-10 pr-11 py-2.5 sm:py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition">
               <button type="button" onclick="togglePasswordVisibility('siswa-password', 'eye-svg-siswa')" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 hover:text-slate-700 cursor-pointer">
                 <span id="eye-svg-siswa">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
-                    <circle cx="12" cy="12" r="3"/>
-                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
                 </span>
               </button>
             </div>
@@ -171,7 +164,7 @@
 
           <button type="submit" class="w-full py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-sm transition shadow-md flex items-center justify-center gap-2 cursor-pointer">
             <span>Enter Class Portal</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </button>
         </form>
 
@@ -182,14 +175,14 @@
             <label class="block text-xs font-bold text-slate-700 mb-1.5">Physics Instructor</label>
             <div class="relative">
               <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-blue-700">
-                <i data-lucide="award" class="w-4 h-4"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
               </span>
               <input type="text" value="Fadhillah Umar, S.Pd" readonly class="w-full pl-10 pr-4 py-2.5 sm:py-3 rounded-xl bg-slate-100 border border-slate-300 text-slate-800 font-bold text-xs sm:text-sm cursor-not-allowed">
             </div>
             <p class="text-[10px] text-blue-700 font-semibold mt-1">Physics Teacher • SMA Muhammadiyah 18 Jakarta</p>
           </div>
 
-          <!-- Teacher Password -->
+          <!-- Teacher Password with Auto-Uppercase & Eye Toggle -->
           <div>
             <label class="block text-xs font-bold text-slate-700 mb-1.5">Teacher Password <span class="text-rose-500">*</span></label>
             <div class="relative">
@@ -207,13 +200,13 @@
 
           <button type="submit" class="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-sm transition shadow-md flex items-center justify-center gap-2 cursor-pointer">
             <span>Open Teacher Dashboard</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </button>
         </form>
 
       </div>
 
-      <p class="text-center text-xs text-slate-400 mt-6">&copy; SMA Muhammadiyah 18 Jakarta</p>
+      <p class="text-center text-xs text-slate-400 mt-6">&copy; 2026 SMA Muhammadiyah 18 Jakarta</p>
     </div>
   </main>
 
@@ -231,10 +224,11 @@
           </div>
           <div>
             <div class="flex items-center gap-2">
-              <h3 class="font-extrabold text-sm sm:text-base text-slate-900 leading-tight" id="user-display-name">umar</h3>
-              <span id="user-role-tag" class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800 border border-blue-200">X-1</span>
+              <h3 class="font-extrabold text-sm sm:text-base text-slate-900 leading-tight" id="user-display-name">Student Name</h3>
+              <span id="user-role-tag" class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800 border border-blue-200 uppercase">Class X-1</span>
             </div>
-            <p class="text-xs text-slate-500 font-medium" id="user-display-sub">Absen: 1 • Siswa Terverifikasi</p>
+            <!-- Subtitle Profil dengan Pulsing Green Dot -->
+            <div id="user-display-sub" class="mt-0.5"></div>
           </div>
         </div>
 
@@ -266,27 +260,29 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full space-y-6">
       
       <!-- Greeting Banner -->
-      <div class="bg-gradient-to-r from-blue-900 to-indigo-800 text-white rounded-3xl p-6 sm:p-8 shadow-lg relative overflow-hidden">
+      <div class="bg-gradient-to-r from-blue-900 to-indigo-800 text-white rounded-3xl p-6 sm:p-8 shadow-lg relative overflow-hidden border border-blue-800/40">
         <div class="relative z-10 max-w-2xl">
-          <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-400 text-slate-950 inline-block mb-3">Academic Year 2026/2027</span>
-          <h2 class="text-xl sm:text-3xl font-black leading-tight" id="banner-greeting">Halo, umar</h2>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-400 text-slate-950 inline-block mb-3 shadow-xs">
+            Academic Year 2026/2027
+          </span>
+          <h2 class="text-xl sm:text-3xl font-black leading-tight" id="banner-greeting">Physics Assessment Modules</h2>
           <p class="text-xs sm:text-sm text-blue-100 mt-2 leading-relaxed" id="banner-subtext">
-            Berikut adalah materi pembelajaran Fisika untuk tingkat Kelas 10. Selamat belajar!
+            Students can only access modules assigned to their class level.
           </p>
         </div>
       </div>
 
       <!-- Filter Kelas (Khusus Guru) -->
-      <div id="grade-filter-bar" class="flex items-center gap-2 border-b border-slate-200 pb-3">
-  <span class="text-xs font-bold text-slate-500 uppercase mr-2">Grade Level:</span>
-  <button onclick="setGradeFilter('10')" id="tab-grade-10" class="filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-slate-200 text-slate-700 cursor-pointer">Grade 10</button>
-  <button onclick="setGradeFilter('11')" id="tab-grade-11" class="filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-blue-800 text-white shadow-sm cursor-pointer">Grade 11</button>
-  <button onclick="setGradeFilter('12')" id="tab-grade-12" class="filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-slate-200 text-slate-700 cursor-pointer">Grade 12</button>
-</div>
+      <div id="grade-filter-bar" class="hidden flex items-center gap-2 border-b border-slate-200 pb-3">
+        <span class="text-xs font-bold text-slate-500 uppercase mr-2">Grade Level:</span>
+        <button onclick="setGradeFilter('10')" id="tab-grade-10" class="filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-slate-200 text-slate-700 cursor-pointer">Grade 10</button>
+        <button onclick="setGradeFilter('11')" id="tab-grade-11" class="filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-blue-800 text-white shadow-sm cursor-pointer">Grade 11</button>
+        <button onclick="setGradeFilter('12')" id="tab-grade-12" class="filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-slate-200 text-slate-700 cursor-pointer">Grade 12</button>
+      </div>
 
       <!-- Grid Kartu Bab Fisika -->
       <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Kartu di-render otomatis oleh JavaScript -->
+        <!-- Injected via JS -->
       </div>
 
     </div>
@@ -298,33 +294,33 @@
 
   </div>
 
-  <!-- ==================== VIEW 3: ARENA UJIAN & CBT ==================== -->
+  <!-- ==================== VIEW 3: ARENA UJIAN CBT ==================== -->
   <div id="view-exam" class="hidden min-h-screen bg-slate-100 flex flex-col justify-between p-4 sm:p-6">
     
     <!-- Top Exam Header Bar -->
     <div class="max-w-6xl mx-auto w-full bg-white rounded-2xl p-4 shadow-sm border border-slate-200 flex flex-wrap justify-between items-center gap-4 mb-6">
       <div class="flex items-center space-x-3">
-        <button onclick="exitExamConfirm()" class="p-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl transition cursor-pointer" title="Kembali ke Dashboard">
-          <i data-lucide="arrow-left" class="w-5 h-5"></i>
+        <button onclick="exitExamConfirm()" class="p-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl transition cursor-pointer" title="Back to Dashboard">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
         </button>
         <div>
           <div class="flex items-center gap-2">
-            <span id="exam-mode-badge" class="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-blue-100 text-blue-800 uppercase">Ulangan Harian</span>
-            <h3 id="exam-chapter-title" class="font-extrabold text-sm sm:text-base text-slate-900">Bab: Vektor & Kinematika</h3>
+            <span id="exam-mode-badge" class="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-blue-100 text-blue-800 uppercase">Daily Exam</span>
+            <h3 id="exam-chapter-title" class="font-extrabold text-sm sm:text-base text-slate-900">Chapter Title</h3>
           </div>
-          <p class="text-[11px] text-slate-500 font-medium" id="exam-student-label">Peserta: -</p>
+          <p class="text-[11px] text-slate-500 font-medium" id="exam-student-label">Candidate: -</p>
         </div>
       </div>
 
       <!-- Anti-Cheat & Timer Counters -->
       <div class="flex items-center space-x-3">
         <div id="cheat-badge" class="hidden bg-rose-50 text-rose-700 border border-rose-200 px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 animate-pulse">
-          <i data-lucide="alert-triangle" class="w-4 h-4 text-rose-600"></i>
-          <span>Pindah Tab: <span id="cheat-count-num">0</span>x</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-rose-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span>Tab Switches: <span id="cheat-count-num">0</span>x</span>
         </div>
 
         <div id="exam-timer-box" class="bg-slate-900 text-white px-4 py-2 rounded-xl flex items-center gap-2">
-          <i data-lucide="clock" class="w-4 h-4 text-amber-400"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           <span id="exam-timer-text" class="font-mono text-sm sm:text-base font-bold text-amber-400">20:00</span>
         </div>
       </div>
@@ -337,9 +333,10 @@
       <div class="lg:col-span-2 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 flex flex-col justify-between min-h-[440px]">
         <div>
           <div class="flex justify-between items-center border-b border-slate-100 pb-4 mb-6">
-            <span id="exam-q-num-badge" class="text-xs font-bold text-blue-800 bg-blue-50 px-3 py-1 rounded-lg border border-blue-200">Soal 1 dari 5</span>
+            <span id="exam-q-num-badge" class="text-xs font-bold text-blue-800 bg-blue-50 px-3 py-1 rounded-lg border border-blue-200">Question 1 of 5</span>
             <button onclick="toggleDoubtful()" id="exam-doubt-btn" class="text-xs font-bold text-slate-400 hover:text-amber-500 flex items-center gap-1.5 transition cursor-pointer">
-              <i data-lucide="bookmark" class="w-4 h-4"></i> Ragu-ragu
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+              <span>Mark as Doubtful</span>
             </button>
           </div>
 
@@ -357,12 +354,13 @@
         <!-- Footer Control Buttons inside Question Box -->
         <div class="mt-8 pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center gap-3">
           <button onclick="triggerRescueMode()" class="px-3.5 py-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer">
-            <i data-lucide="flag" class="w-4 h-4"></i> Butuh Bantuan / Angkat Tangan? (Penyelamat)
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+            <span>Need Help? (Rescue Mode)</span>
           </button>
 
           <div class="flex space-x-2">
-            <button id="btn-prev-q" onclick="prevQuestion()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition cursor-pointer">Sebelumnya</button>
-            <button id="btn-next-q" onclick="nextQuestion()" class="px-5 py-2 bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs rounded-xl transition shadow cursor-pointer">Selanjutnya</button>
+            <button id="btn-prev-q" onclick="prevQuestion()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition cursor-pointer">Previous</button>
+            <button id="btn-next-q" onclick="nextQuestion()" class="px-5 py-2 bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs rounded-xl transition shadow cursor-pointer">Next</button>
           </div>
         </div>
       </div>
@@ -373,7 +371,8 @@
         <!-- Palette Numbers Grid -->
         <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200">
           <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4 flex items-center gap-2">
-            <i data-lucide="grid" class="w-4 h-4 text-blue-700"></i> Nomor Soal
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-blue-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>
+            <span>Question Navigator</span>
           </h4>
 
           <div id="exam-palette-grid" class="grid grid-cols-5 gap-2">
@@ -382,7 +381,8 @@
 
           <div class="mt-6 pt-4 border-t border-slate-100">
             <button onclick="confirmFinishExam()" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition shadow flex items-center justify-center gap-2 cursor-pointer">
-              <i data-lucide="check-circle-2" class="w-4 h-4"></i> Selesaikan Ujian
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Submit Exam</span>
             </button>
           </div>
         </div>
@@ -390,16 +390,17 @@
         <!-- Tools Shortcuts -->
         <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200">
           <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3 flex items-center gap-2">
-            <i data-lucide="wrench" class="w-4 h-4 text-blue-700"></i> Alat Ujian
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-blue-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            <span>Exam Tools</span>
           </h4>
           <div class="grid grid-cols-2 gap-3">
             <button onclick="openCanvasModal()" class="p-3 bg-amber-50 hover:bg-amber-100 border border-amber-200 text-amber-800 rounded-2xl text-xs font-bold transition flex flex-col items-center gap-2 cursor-pointer">
-              <i data-lucide="pen-tool" class="w-5 h-5 text-amber-600"></i>
-              <span>Coret-coretan</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+              <span>Scratchpad</span>
             </button>
             <button onclick="toggleCalcModal()" class="p-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-800 rounded-2xl text-xs font-bold transition flex flex-col items-center gap-2 cursor-pointer">
-              <i data-lucide="calculator" class="w-5 h-5 text-blue-600"></i>
-              <span>Kalkulator</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+              <span>Calculator</span>
             </button>
           </div>
         </div>
@@ -408,36 +409,37 @@
     </div>
   </div>
 
-  <!-- ==================== VIEW 4: HASIL NILAI & PEMBAHASAN ==================== -->
+  <!-- ==================== VIEW 4: SCORE & REVIEW ==================== -->
   <div id="view-result" class="hidden min-h-screen bg-slate-50 flex items-center justify-center p-4 sm:p-8">
     <div class="bg-white max-w-3xl w-full rounded-3xl overflow-hidden border border-slate-200 clean-card shadow-2xl">
       
       <div class="p-8 text-center bg-slate-900 text-white relative">
         <span class="px-3 py-1 bg-blue-500/20 text-blue-300 border border-blue-500/30 rounded-full text-xs font-bold inline-block mb-3">
-          Rekapitulasi Evaluasi Fisika
+          Physics Assessment Results
         </span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold" id="res-chapter-title">Bab: Vektor & Kinematika</h2>
-        <p class="text-xs text-slate-300 mt-1" id="res-student-info">Peserta: -</p>
+        <h2 class="text-2xl sm:text-3xl font-extrabold" id="res-chapter-title">Chapter Title</h2>
+        <p class="text-xs text-slate-300 mt-1" id="res-student-info">Candidate: -</p>
 
         <!-- Big Score Display -->
         <div class="mt-6 inline-flex flex-col items-center justify-center p-6 bg-slate-800/90 rounded-2xl border border-slate-700 min-w-[200px]">
-          <span class="text-[10px] font-bold tracking-widest text-slate-400 uppercase">NILAI AKHIR</span>
+          <span class="text-[10px] font-bold tracking-widest text-slate-400 uppercase">FINAL SCORE</span>
           <span class="text-6xl font-black text-amber-400 my-1 font-mono" id="res-score-number">0</span>
-          <span class="text-xs font-bold text-emerald-400" id="res-score-status">Tuntas</span>
+          <span class="text-xs font-bold text-emerald-400" id="res-score-status">Passed</span>
         </div>
       </div>
 
       <div class="grid grid-cols-4 gap-2 p-4 bg-slate-100 border-b border-slate-200 text-center text-xs">
-        <div><span class="text-slate-500 font-semibold">Benar</span><p class="text-lg font-bold text-emerald-600 mt-0.5" id="res-stat-correct">0</p></div>
-        <div><span class="text-slate-500 font-semibold">Salah</span><p class="text-lg font-bold text-rose-600 mt-0.5" id="res-stat-wrong">0</p></div>
-        <div><span class="text-slate-500 font-semibold">Kosong</span><p class="text-lg font-bold text-amber-600 mt-0.5" id="res-stat-empty">0</p></div>
-        <div><span class="text-slate-500 font-semibold">Pindah Tab</span><p class="text-lg font-bold text-blue-700 mt-0.5" id="res-stat-cheat">0x</p></div>
+        <div><span class="text-slate-500 font-semibold">Correct</span><p class="text-lg font-bold text-emerald-600 mt-0.5" id="res-stat-correct">0</p></div>
+        <div><span class="text-slate-500 font-semibold">Wrong</span><p class="text-lg font-bold text-rose-600 mt-0.5" id="res-stat-wrong">0</p></div>
+        <div><span class="text-slate-500 font-semibold">Unanswered</span><p class="text-lg font-bold text-amber-600 mt-0.5" id="res-stat-empty">0</p></div>
+        <div><span class="text-slate-500 font-semibold">Tab Switches</span><p class="text-lg font-bold text-blue-700 mt-0.5" id="res-stat-cheat">0x</p></div>
       </div>
 
       <!-- Discussions -->
       <div class="p-6 sm:p-8 space-y-6">
         <h4 class="text-sm font-bold text-slate-900 flex items-center gap-2 uppercase tracking-wider">
-          <i data-lucide="book-open-check" class="w-4 h-4 text-blue-700"></i> Kunci Jawaban & Pembahasan
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-blue-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span>Answer Key & Solutions</span>
         </h4>
         <div id="res-discussion-container" class="space-y-4">
           <!-- Rendered by JS -->
@@ -445,7 +447,7 @@
 
         <div class="pt-6 border-t border-slate-200 flex justify-between">
           <button onclick="returnToDashboardFromResults()" class="px-6 py-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs transition shadow cursor-pointer">
-            Kembali ke Halaman Materi
+            Return to Modules
           </button>
         </div>
       </div>
@@ -453,61 +455,66 @@
     </div>
   </div>
 
-  <!-- ==================== MODAL TOKEN ULANGAN HARIAN ==================== -->
+  <!-- ==================== MODAL TOKEN DAILY EXAM ==================== -->
   <div id="modal-token" class="fixed inset-0 z-50 bg-slate-900/60 hidden flex items-center justify-center p-4 backdrop-blur-sm">
     <div class="bg-white w-full max-w-md rounded-3xl p-6 sm:p-8 clean-card relative">
-      <button onclick="closeTokenModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
+      <button onclick="closeTokenModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
 
       <div class="text-center mb-5">
         <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-3 border border-amber-200">
-          <i data-lucide="key" class="w-6 h-6"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
         </div>
-        <h3 class="text-lg font-black text-slate-900">Token Ulangan Harian</h3>
-        <p class="text-xs text-slate-500 mt-1" id="token-modal-title">Bab: Vektor & Kinematika</p>
+        <h3 class="text-lg font-black text-slate-900">Exam Access Token</h3>
+        <p class="text-xs text-slate-500 mt-1" id="token-modal-title">Chapter Title</p>
       </div>
 
       <form onsubmit="submitExamToken(event)" class="space-y-4">
         <div>
-          <label class="block text-xs font-bold text-slate-700 mb-1.5">Masukkan Token Rahasia dari Guru</label>
-          <input type="text" id="input-token-value" required placeholder="Contoh: FISIKA11" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-center font-mono font-black tracking-widest text-slate-900 uppercase text-base focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition">
+          <label class="block text-xs font-bold text-slate-700 mb-1.5">Enter Secret Token from Instructor</label>
+          <input type="text" id="input-token-value" required placeholder="e.g. FISIKA11" class="uppercase font-mono w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-center font-black tracking-widest text-slate-900 text-base focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition">
         </div>
 
         <div class="p-3 bg-blue-50 border border-blue-200 rounded-xl text-[11px] text-blue-900 flex items-start gap-2">
-          <i data-lucide="info" class="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5"></i>
-          <span>Ulangan harian dilengkapi timer otomatis dan deteksi pindah tab.</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          <span>Daily exams are equipped with an auto-timer and tab-switch detection system.</span>
         </div>
 
         <button type="submit" class="w-full py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-sm transition shadow-md flex items-center justify-center gap-2 cursor-pointer">
-          <span>Mulai Kerjakan Ulangan</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          <span>Start Assessment</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </button>
       </form>
     </div>
   </div>
 
-  <!-- ==================== MODAL GURU: EDITOR SOAL INTERAKTIF ==================== -->
+  <!-- ==================== MODAL GURU: QUESTION EDITOR ==================== -->
   <div id="modal-editor" class="fixed inset-0 z-50 bg-slate-900/60 hidden flex items-center justify-center p-4 backdrop-blur-sm">
     <div class="bg-white w-full max-w-2xl rounded-3xl p-6 sm:p-8 clean-card relative max-h-[90vh] overflow-y-auto">
-      <button onclick="closeQuestionEditorModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
+      <button onclick="closeQuestionEditorModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
 
       <div class="mb-6">
         <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
-          <i data-lucide="edit-3" class="w-5 h-5 text-blue-700"></i> Editor Bank Soal & Token
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+          <span>Question & Token Editor</span>
         </h3>
-        <p class="text-xs text-slate-500 mt-1">Tambahkan soal baru secara visual langsung dari browser.</p>
+        <p class="text-xs text-slate-500 mt-1">Add new physics questions or manage exam content.</p>
       </div>
 
       <form onsubmit="handleSaveNewQuestion(event)" class="space-y-4">
         
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="block text-xs font-bold text-slate-700 mb-1">Target Bab</label>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Target Chapter</label>
             <select id="edit-bab-select" class="w-full p-2.5 rounded-xl border text-xs font-bold bg-slate-50">
               <!-- Injected by JS -->
             </select>
           </div>
           <div>
-            <label class="block text-xs font-bold text-slate-700 mb-1">Kunci Jawaban</label>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Correct Answer</label>
             <select id="edit-kunci-select" class="w-full p-2.5 rounded-xl border text-xs font-bold bg-slate-50">
               <option value="0">A</option>
               <option value="1">B</option>
@@ -518,37 +525,37 @@
         </div>
 
         <div>
-          <label class="block text-xs font-bold text-slate-700 mb-1">Pertanyaan Soal (Bisa rumus LaTeX: $v = s/t$)</label>
-          <textarea id="edit-soal-text" rows="3" required placeholder="Contoh: Sebuah benda bergerak dengan percepatan $a = 4\text{ m/s}^2$..." class="w-full p-3 rounded-xl border text-xs sm:text-sm bg-slate-50"></textarea>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Question Prompt (KaTeX LaTeX: $v = s/t$)</label>
+          <textarea id="edit-soal-text" rows="3" required placeholder="e.g. An object accelerates at $a = 4\text{ m/s}^2$..." class="w-full p-3 rounded-xl border text-xs sm:text-sm bg-slate-50"></textarea>
         </div>
 
         <div class="grid grid-cols-2 gap-2 text-xs">
           <div>
-            <label class="font-bold text-slate-600">Pilihan A</label>
-            <input type="text" id="edit-opt-0" required placeholder="Opsi A" class="w-full p-2 rounded-lg border bg-slate-50">
+            <label class="font-bold text-slate-600">Option A</label>
+            <input type="text" id="edit-opt-0" required placeholder="Option A" class="w-full p-2 rounded-lg border bg-slate-50">
           </div>
           <div>
-            <label class="font-bold text-slate-600">Pilihan B</label>
-            <input type="text" id="edit-opt-1" required placeholder="Opsi B" class="w-full p-2 rounded-lg border bg-slate-50">
+            <label class="font-bold text-slate-600">Option B</label>
+            <input type="text" id="edit-opt-1" required placeholder="Option B" class="w-full p-2 rounded-lg border bg-slate-50">
           </div>
           <div>
-            <label class="font-bold text-slate-600">Pilihan C</label>
-            <input type="text" id="edit-opt-2" required placeholder="Opsi C" class="w-full p-2 rounded-lg border bg-slate-50">
+            <label class="font-bold text-slate-600">Option C</label>
+            <input type="text" id="edit-opt-2" required placeholder="Option C" class="w-full p-2 rounded-lg border bg-slate-50">
           </div>
           <div>
-            <label class="font-bold text-slate-600">Pilihan D</label>
-            <input type="text" id="edit-opt-3" required placeholder="Opsi D" class="w-full p-2 rounded-lg border bg-slate-50">
+            <label class="font-bold text-slate-600">Option D</label>
+            <input type="text" id="edit-opt-3" required placeholder="Option D" class="w-full p-2 rounded-lg border bg-slate-50">
           </div>
         </div>
 
         <div>
-          <label class="block text-xs font-bold text-slate-700 mb-1">Pembahasan / Solusi Rumus</label>
-          <input type="text" id="edit-pembahasan" required placeholder="Contoh: Menggunakan rumus $v = v_0 + at$" class="w-full p-2.5 rounded-xl border text-xs bg-slate-50">
+          <label class="block text-xs font-bold text-slate-700 mb-1">Solution / Discussion</label>
+          <input type="text" id="edit-pembahasan" required placeholder="e.g. Using formula $v = v_0 + at$" class="w-full p-2.5 rounded-xl border text-xs bg-slate-50">
         </div>
 
         <div class="pt-2 flex justify-end gap-2">
-          <button type="button" onclick="closeQuestionEditorModal()" class="px-4 py-2 rounded-xl bg-slate-100 text-xs font-bold text-slate-700 cursor-pointer">Batal</button>
-          <button type="submit" class="px-5 py-2 rounded-xl bg-blue-700 text-xs font-bold text-white shadow cursor-pointer">Simpan ke Bank Soal</button>
+          <button type="button" onclick="closeQuestionEditorModal()" class="px-4 py-2 rounded-xl bg-slate-100 text-xs font-bold text-slate-700 cursor-pointer">Cancel</button>
+          <button type="submit" class="px-5 py-2 rounded-xl bg-blue-700 text-xs font-bold text-white shadow cursor-pointer">Save Question</button>
         </div>
 
       </form>
@@ -559,25 +566,35 @@
   <div id="modal-canvas" class="fixed inset-0 z-50 bg-slate-900/70 hidden flex items-center justify-center p-4">
     <div class="bg-white w-full max-w-3xl rounded-3xl overflow-hidden clean-card flex flex-col">
       <div class="bg-slate-900 text-white px-6 py-4 flex justify-between items-center">
-        <h3 class="text-sm font-bold flex items-center gap-2"><i data-lucide="pen-tool" class="w-4 h-4 text-amber-400"></i> Papan Coret-Coretan Hitungan</h3>
+        <h3 class="text-sm font-bold flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>
+          <span>Physics Digital Scratchpad</span>
+        </h3>
         <div class="flex items-center space-x-3">
-          <button onclick="clearCanvas()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg cursor-pointer">Hapus Semua</button>
-          <button onclick="closeCanvasModal()" class="text-slate-400 hover:text-white cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
+          <button onclick="clearCanvas()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg cursor-pointer">Clear All</button>
+          <button onclick="closeCanvasModal()" class="text-slate-400 hover:text-white cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
         </div>
       </div>
       <div class="p-3 bg-slate-100 flex items-center gap-4 text-xs text-slate-700 border-b">
-        <label class="flex items-center gap-2"><span>Warna:</span><input type="color" id="pen-color" value="#1e40af" class="cursor-pointer bg-transparent"></label>
-        <label class="flex items-center gap-2"><span>Tebal:</span><input type="range" id="pen-size" min="1" max="10" value="3"></label>
+        <label class="flex items-center gap-2"><span>Color:</span><input type="color" id="pen-color" value="#1e40af" class="cursor-pointer bg-transparent"></label>
+        <label class="flex items-center gap-2"><span>Size:</span><input type="range" id="pen-size" min="1" max="10" value="3"></label>
       </div>
       <canvas id="scratchpad-canvas" class="w-full h-80 bg-amber-50/40 cursor-crosshair"></canvas>
     </div>
   </div>
 
-  <!-- ==================== MODAL TOOLS: SCIENTIFIC CALCULATOR ==================== -->
+  <!-- ==================== MODAL TOOLS: CALCULATOR ==================== -->
   <div id="modal-calc" class="fixed bottom-6 right-6 z-50 bg-white rounded-3xl p-4 w-72 hidden shadow-2xl border border-slate-200">
     <div class="flex justify-between items-center mb-2 pb-2 border-b border-slate-100">
-      <span class="text-xs font-bold text-blue-700 flex items-center gap-1.5"><i data-lucide="calculator" class="w-4 h-4"></i> Kalkulator Fisika</span>
-      <button onclick="toggleCalcModal()" class="text-slate-400 hover:text-slate-700 cursor-pointer"><i data-lucide="x" class="w-4 h-4"></i></button>
+      <span class="text-xs font-bold text-blue-700 flex items-center gap-1.5">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/></svg>
+        <span>Calculator</span>
+      </span>
+      <button onclick="toggleCalcModal()" class="text-slate-400 hover:text-slate-700 cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
     </div>
     <input type="text" id="calc-display" readonly class="w-full bg-slate-100 text-right font-mono p-3 text-lg font-bold rounded-xl border border-slate-200 mb-3 text-slate-900" value="0">
     <div class="grid grid-cols-4 gap-1.5 text-xs font-bold">
@@ -607,69 +624,104 @@
 
   <!-- ==================== JAVASCRIPT MASTER ENGINE ==================== -->
   <script>
-    // 1. CONFIGURATION & MASTER DATA
-    const GURU_PASSWORDS = ["fisika18", "umar18"]; 
-    const SISWA_DEFAULT_PIN = "muh18";              
-    const GOOGLE_SHEET_URL = "https://docs.google.com/spreadsheets/d/your-spreadsheet-id"; 
+    // 1. CONFIGURATION & 12 BAB DATA
+    const GURU_PASSWORDS = ["FISIKA18", "UMAR18"]; 
+    const GOOGLE_SHEET_URL = "https://docs.google.com/spreadsheets"; 
 
-    // Bank Soal Fisika Master
     let masterBabData = [
+      // GRADE 10
       {
-        id: "bab-10-besaran",
+        id: "x-pengukuran",
         grade: "10",
-        title: "Besaran, Satuan & Pengukuran",
-        desc: "Dimensi besaran pokok/turunan, aturan angka penting, dan jangka sorong.",
-        token: "BESARAN10",
+        title: "Scientific Measurement & Lab Work",
+        desc: "Base/derived dimensions, significant figures, vernier calipers, and uncertainty.",
+        token: "UKUR10",
         questions: [
           {
-            id: 301,
-            text: "Dimensi dari besaran Usaha / Energi ($W = F \\cdot s$) adalah...",
+            id: 1001,
+            text: "The dimension of Work / Energy ($W = F \\cdot s$) in SI base units is...",
             options: ["$[M][L][T]^{-1}$", "$[M][L][T]^{-2}$", "$[M][L]^2[T]^{-2}$", "$[M][L]^2[T]^{-1}$"],
             correct: 2,
-            discussion: "Satuan usaha $\\text{kg}\\cdot\\text{m}^2/\\text{s}^2$, sehingga dimensinya $[M][L]^2[T]^{-2}$."
+            discussion: "Work unit is $\\text{kg}\\cdot\\text{m}^2/\\text{s}^2$, giving dimension $[M][L]^2[T]^{-2}$."
           }
         ]
       },
       {
-        id: "bab-11-vektor",
-        grade: "11",
-        title: "Vektor & Analisis Kinematika",
-        desc: "Posisi vektor, kecepatan sudut, percepatan sesaat, dan gerak parabola.",
-        token: "FISIKA11",
+        id: "x-energi",
+        grade: "10",
+        title: "Renewable Energy Sources",
+        desc: "Kinetic & potential energy, solar, wind, biomass, and energy conservation.",
+        token: "ENERGI10",
         questions: [
           {
-            id: 101,
-            text: "Sebuah partikel bergerak lurus dengan persamaan posisi $x(t) = 2t^3 - 4t + 5\\text{ m}$. Berapakah percepatan partikel pada saat $t = 3\\text{ s}$?",
-            options: ["$18\\text{ m/s}^2$", "$36\\text{ m/s}^2$", "$48\\text{ m/s}^2$", "$54\\text{ m/s}^2$"],
-            correct: 1,
-            discussion: "Kecepatan $v(t) = 6t^2 - 4$. Percepatan $a(t) = 12t$. Pada saat $t=3\\text{ s} \\rightarrow a(3) = 12(3) = 36\\text{ m/s}^2$."
-          },
+            id: 1002,
+            text: "Which of the following is considered a non-renewable energy source?",
+            options: ["Solar Power", "Geothermal Energy", "Coal / Fossil Fuel", "Wind Turbine"],
+            correct: 2,
+            discussion: "Coal is a finite fossil fuel and therefore non-renewable."
+          }
+        ]
+      },
+      {
+        id: "x-pemanasan-global",
+        grade: "10",
+        title: "Global Warming: Concepts & Solutions",
+        desc: "Greenhouse gases, carbon emissions, climate change, and renewable mitigation.",
+        token: "IKLIM10",
+        questions: [
           {
-            id: 102,
-            text: "Dua vektor gaya $\\vec{F}_1 = 6\\hat{i} + 8\\hat{j}\\text{ N}$ dan $\\vec{F}_2 = 2\\hat{i} - 2\\hat{j}\\text{ N}$. Tentukan besar resultan gaya $(\\vec{F}_1 + \\vec{F}_2)$!",
+            id: 1003,
+            text: "The primary greenhouse gas emitted through anthropogenic activities is...",
+            options: ["$\\text{CO}_2$", "$\\text{O}_2$", "$\\text{N}_2$", "$\\text{He}$"],
+            correct: 0,
+            discussion: "Carbon dioxide ($\\text{CO}_2$) is the most prevalent anthropogenic greenhouse gas."
+          }
+        ]
+      },
+
+      // GRADE 11
+      {
+        id: "xi-vektor",
+        grade: "11",
+        title: "Vector Analysis & Decomposition",
+        desc: "Unit vectors, dot and cross products, analytical addition of vector components.",
+        token: "VEKTOR11",
+        questions: [
+          {
+            id: 1101,
+            text: "Two force vectors act on a particle: $\\vec{F}_1 = 6\\hat{i} + 8\\hat{j}\\text{ N}$ and $\\vec{F}_2 = 2\\hat{i} - 2\\hat{j}\\text{ N}$. Find the resultant magnitude $|\\vec{F}_1 + \\vec{F}_2|$!",
             options: ["$8\\text{ N}$", "$10\\text{ N}$", "$12\\text{ N}$", "$14\\text{ N}$"],
             correct: 1,
-            discussion: "$\\vec{R} = 8\\hat{i} + 6\\hat{j}$. Besar resultan $|\\vec{R}| = \\sqrt{8^2 + 6^2} = 10\\text{ N}$."
-          },
-          {
-            id: 103,
-            text: "Peluru ditembakkan dengan kecepatan awal $v_0 = 50\\text{ m/s}$ pada sudut elevasi $\\theta = 37^\\circ$ ($\\sin 37^\\circ = 0.6, g = 10\\text{ m/s}^2$). Berapakah tinggi maksimum yang dicapai peluru?",
-            options: ["$30\\text{ m}$", "$45\\text{ m}$", "$60\\text{ m}$", "$75\\text{ m}$"],
-            correct: 1,
-            discussion: "$h_{\\max} = \\frac{v_0^2 \\sin^2 \\theta}{2g} = \\frac{50^2 \\cdot (0.6)^2}{2(10)} = \\frac{2500 \\cdot 0.36}{20} = 45\\text{ m}$."
+            discussion: "$\\vec{R} = 8\\hat{i} + 6\\hat{j}\\text{ N}$. Magnitude $|\\vec{R}| = \\sqrt{8^2 + 6^2} = 10\\text{ N}$."
           }
         ]
       },
       {
-        id: "bab-11-dinamika",
+        id: "xi-kinematika",
         grade: "11",
-        title: "Dinamika Gerak (Hukum Newton)",
-        desc: "Hukum I, II, III Newton, gaya gesekan lantai balok, dan tegangan tali.",
-        token: "NEWTON11",
+        title: "Kinematics Analysis (1D & 2D)",
+        desc: "Position vector, instantaneous velocity/acceleration, projectile and circular motion.",
+        token: "GERAK11",
         questions: [
           {
-            id: 201,
-            text: "Balok bermassa $4\\text{ kg}$ berada di lantai kasar ($\\mu_k = 0.25$). Jika ditarik gaya horizontal $F = 20\\text{ N}$ ($g = 10\\text{ m/s}^2$), percepatan balok adalah...",
+            id: 1102,
+            text: "A particle moves with position function $x(t) = 2t^3 - 4t + 5\\text{ m}$. What is the acceleration at $t = 3\\text{ s}$?",
+            options: ["$18\\text{ m/s}^2$", "$36\\text{ m/s}^2$", "$48\\text{ m/s}^2$", "$54\\text{ m/s}^2$"],
+            correct: 1,
+            discussion: "$v(t) = 6t^2 - 4$, $a(t) = 12t$. At $t=3\\text{ s} \\rightarrow a(3) = 36\\text{ m/s}^2$."
+          }
+        ]
+      },
+      {
+        id: "xi-dinamika",
+        grade: "11",
+        title: "Dynamics of Motion (Newton's Laws)",
+        desc: "Newton's laws, kinetic/static friction, incline planes, and pulley systems.",
+        token: "GAYA11",
+        questions: [
+          {
+            id: 1103,
+            text: "A $4\\text{ kg}$ block is pulled on a rough surface ($\\mu_k = 0.25$) by $F = 20\\text{ N}$ ($g = 10\\text{ m/s}^2$). The acceleration is...",
             options: ["$1.5\\text{ m/s}^2$", "$2.5\\text{ m/s}^2$", "$3.0\\text{ m/s}^2$", "$4.0\\text{ m/s}^2$"],
             correct: 1,
             discussion: "$f_k = \\mu_k N = 0.25 \\times 40 = 10\\text{ N}$. $a = (20 - 10)/4 = 2.5\\text{ m/s}^2$."
@@ -677,42 +729,123 @@
         ]
       },
       {
-        id: "bab-12-listrik",
+        id: "xi-fluida",
+        grade: "11",
+        title: "Fluid Mechanics (Static & Dynamic)",
+        desc: "Hydrostatic pressure, Pascal's principle, Archimedes, continuity, and Bernoulli.",
+        token: "FLUIDA11",
+        questions: [
+          {
+            id: 1104,
+            text: "Hydrostatic pressure at depth $2\\text{ m}$ under water ($\\rho = 1000\\text{ kg/m}^3, g = 10\\text{ m/s}^2$) is...",
+            options: ["$10.000\\text{ Pa}$", "$20.000\\text{ Pa}$", "$30.000\\text{ Pa}$", "$40.000\\text{ Pa}$"],
+            correct: 1,
+            discussion: "$P_h = \\rho g h = 1000 \\times 10 \\times 2 = 20.000\\text{ Pa}$."
+          }
+        ]
+      },
+
+      // GRADE 12
+      {
+        id: "xii-statis",
         grade: "12",
-        title: "Listrik Dinamis & Rangkaian",
-        desc: "Hukum Ohm, Hukum Kirchhoff, hambatan jembatan wheatstone, dan energi listrik.",
+        title: "Electrostatics & Capacitance",
+        desc: "Coulomb's Law, electric field, potential, Gauss's Law, parallel plate capacitors.",
+        token: "STATIK12",
+        questions: [
+          {
+            id: 1201,
+            text: "Two charges $q_1 = 2\\,\\mu\\text{C}$ and $q_2 = 3\\,\\mu\\text{C}$ are $3\\text{ cm}$ apart ($k = 9\\times 10^9\\text{ N m}^2/\\text{C}^2$). The Coulomb force is...",
+            options: ["$30\\text{ N}$", "$60\\text{ N}$", "$90\\text{ N}$", "$120\\text{ N}$"],
+            correct: 1,
+            discussion: "$F = \\frac{k q_1 q_2}{r^2} = \\frac{9\\times 10^9 \\times 6\\times 10^{-12}}{(0.03)^2} = 60\\text{ N}$."
+          }
+        ]
+      },
+      {
+        id: "xii-dc",
+        grade: "12",
+        title: "Direct Current Electricity (DC)",
+        desc: "Ohm's Law, Kirchhoff's loop laws, resistor circuits, electrical power and energy.",
         token: "LISTRIK12",
         questions: [
           {
-            id: 401,
-            text: "Kawat konduktor berhambatan $12\\,\\Omega$ dialiri arus $2\\text{ A}$ selama $5\\text{ detik}$. Muatan listrik yang mengalir adalah...",
+            id: 1202,
+            text: "A conductor with $R = 12\\,\\Omega$ carries a current of $2\\text{ A}$ for $5\\text{ s}$. The total charge passed is...",
             options: ["$5\\text{ C}$", "$10\\text{ C}$", "$15\\text{ C}$", "$20\\text{ C}$"],
             correct: 1,
-            discussion: "$Q = I \\cdot t = 2 \\times 5 = 10\\text{ Coulomb}$."
+            discussion: "$Q = I \\cdot t = 2 \\times 5 = 10\\text{ C}$."
+          }
+        ]
+      },
+      {
+        id: "xii-magnet",
+        grade: "12",
+        title: "Magnetism & Magnetic Induction",
+        desc: "Lorentz force, Biot-Savart, solenoids, toroids, Faraday's & Lenz's Laws.",
+        token: "MAGNET12",
+        questions: [
+          {
+            id: 1203,
+            text: "A straight wire carries $5\\text{ A}$. Magnetic field at distance $10\\text{ cm}$ ($\\mu_0 = 4\\pi\\times 10^{-7}$) is...",
+            options: ["$10^{-5}\\text{ T}$", "$2\\times 10^{-5}\\text{ T}$", "$10^{-6}\\text{ T}$", "$2\\times 10^{-6}\\text{ T}$"],
+            correct: 0,
+            discussion: "$B = \\frac{\\mu_0 I}{2\\pi a} = \\frac{4\\pi \\times 10^{-7} \\times 5}{2\\pi \\times 0.1} = 10^{-5}\\text{ Tesla}$."
+          }
+        ]
+      },
+      {
+        id: "xii-ac",
+        grade: "12",
+        title: "Alternating Current Circuits (AC)",
+        desc: "Sinusoidal AC, R-L-C series circuits, impedance, phase difference, and resonance.",
+        token: "AC12",
+        questions: [
+          {
+            id: 1204,
+            text: "In an RLC series circuit, resonance occurs when...",
+            options: ["$X_L = X_C$", "$X_L > X_C$", "$R = 0$", "$Z = 0$"],
+            correct: 0,
+            discussion: "Resonance happens when inductive reactance equals capacitive reactance ($X_L = X_C$)."
+          }
+        ]
+      },
+      {
+        id: "xii-gelombang-em",
+        grade: "12",
+        title: "Electromagnetic Waves & Spectrum",
+        desc: "EM wave spectrum, wavelength/frequency relationships, radiation, and applications.",
+        token: "GELOMBANG12",
+        questions: [
+          {
+            id: 1205,
+            text: "Which electromagnetic wave has the highest photon energy?",
+            options: ["Radio Waves", "Microwaves", "Visible Light", "Gamma Rays"],
+            correct: 3,
+            discussion: "Gamma rays have the highest frequency and therefore highest photon energy ($E = hf$)."
           }
         ]
       }
     ];
 
-    // Soal Penyelamat Konsep (Rescue Mode)
     const rescueQuestionsList = [
       {
         id: 991,
-        text: "⭐ <b>[SOAL PENYELAMAT NILAI]</b> Satuan Standar Internasional (SI) untuk besaran <i>Percepatan</i> adalah...",
+        text: "⭐ <b>[RESCUE BONUS QUESTION]</b> The SI unit for measuring <i>Acceleration</i> is...",
         options: ["$\\text{m/s}$", "$\\text{m/s}^2$", "$\\text{kg}\\cdot\\text{m}$", "$\\text{Joule}$"],
         correct: 1,
-        discussion: "Satuan SI untuk kecepatan adalah $\\text{m/s}$, sedangkan untuk percepatan adalah $\\text{m/s}^2$."
+        discussion: "SI unit of velocity is $\\text{m/s}$, while acceleration is $\\text{m/s}^2$."
       },
       {
         id: 992,
-        text: "⭐ <b>[SOAL PENYELAMAT NILAI]</b> Alat ukur yang tepat untuk mengukur Arus Listrik adalah...",
-        options: ["Voltmeter", "Amperemeter", "Termometer", "Barometer"],
+        text: "⭐ <b>[RESCUE BONUS QUESTION]</b> The instrument specifically designed to measure electric current is...",
+        options: ["Voltmeter", "Ammeter", "Thermometer", "Barometer"],
         correct: 1,
-        discussion: "Amperemeter digunakan untuk mengukur kuat arus listrik ($I$)."
+        discussion: "An Ammeter measures electric current in Amperes ($A$)."
       }
     ];
 
-    // 2. STATE APLIKASI
+    // 2. STATE MANAGEMENT
     let currentUser = null;
     let selectedGrade = "11";
     let activeBabForExam = null;
@@ -723,16 +856,13 @@
     let cheatCount = 0;
     let timerRef = null;
     let timeRemaining = 0;
-    let isRescueActive = false;
 
-    // 3. INISIALISASI
+    // 3. INITIALIZATION ON LOAD (DENGAN AUTO-LOAD LOGIN SISWA)
     window.addEventListener('DOMContentLoaded', () => {
-      if (window.lucide) lucide.createIcons();
       document.getElementById('link-google-sheet').href = GOOGLE_SHEET_URL;
       setupCanvas();
       setupAntiCheat();
 
-      // Fitur Auto-Load Data Siswa yang Tersimpan
       try {
         const savedNama = localStorage.getItem('muh18_saved_nama');
         const savedKelas = localStorage.getItem('muh18_saved_kelas');
@@ -741,11 +871,29 @@
         if (savedNama) document.getElementById('siswa-nama').value = savedNama;
         if (savedKelas) document.getElementById('siswa-kelas').value = savedKelas;
         if (savedAbsen) document.getElementById('siswa-absen').value = savedAbsen;
-      } catch (err) {
-        console.log("Storage load skipped", err);
+      } catch (e) {
+        console.warn("Storage load skipped", e);
       }
     });
-    // 4. AUTHENTICATION (SISWA VS GURU)
+
+    // 4. PASSWORD TOGGLE
+    function togglePasswordVisibility(inputId, spanId) {
+      const input = document.getElementById(inputId);
+      const span = document.getElementById(spanId);
+
+      const eyeOpenSVG = '<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>';
+      const eyeOffSVG = '<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>';
+
+      if (input.type === 'password') {
+        input.type = 'text';
+        span.innerHTML = eyeOffSVG;
+      } else {
+        input.type = 'password';
+        span.innerHTML = eyeOpenSVG;
+      }
+    }
+
+    // 5. AUTHENTICATION (STUDENT VS TEACHER)
     function setAuthMode(role) {
       const tabSiswa = document.getElementById('tab-btn-siswa');
       const tabGuru = document.getElementById('tab-btn-guru');
@@ -765,24 +913,6 @@
       }
     }
 
-    // Toggle Show/Hide Password dengan SVG Dinamis
-    function togglePasswordVisibility(inputId, containerId) {
-      const input = document.getElementById(inputId);
-      const container = document.getElementById(containerId);
-      
-      const eyeOpenSVG = '<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>';
-      const eyeOffSVG = '<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>';
-
-      if (input.type === 'password') {
-        input.type = 'text';
-        container.innerHTML = eyeOffSVG;
-      } else {
-        input.type = 'password';
-        container.innerHTML = eyeOpenSVG;
-      }
-    }
-
-    // Validasi Login Siswa Berdasarkan Nomor Absen
     function loginStudent(e) {
       e.preventDefault();
       const nama = document.getElementById('siswa-nama').value.trim();
@@ -790,7 +920,6 @@
       const absen = document.getElementById('siswa-absen').value.trim();
       const pass = document.getElementById('siswa-password').value.trim().toUpperCase();
 
-      // Format Passcode Otomatis: X1-18, XI1-5, XT-12
       let prefix = kelas.replace("-", "");
       if (kelas === "X-Tahfidz") prefix = "XT";
 
@@ -798,17 +927,16 @@
       const validPasscodeAlt = `${prefix}-${absen.padStart(2, '0')}`.toUpperCase();
 
       if (pass !== validPasscode && pass !== validPasscodeAlt && pass !== "MUH18") {
-        alert("❌ Invalid Passcode!\nPasscode must match your selected class and attendance number (e.g. " + validPasscode + ")");
+        alert("❌ Invalid Passcode!\nPasscode must match your class and attendance number (e.g. " + validPasscode + ")");
         return;
       }
 
-      // Simpan data login siswa agar tidak perlu ketik ulang di browser ini
       try {
         localStorage.setItem('muh18_saved_nama', nama);
         localStorage.setItem('muh18_saved_kelas', kelas);
         localStorage.setItem('muh18_saved_absen', absen);
       } catch (err) {
-        console.log("Storage save skipped", err);
+        console.warn("Storage save skipped", err);
       }
 
       let grade = "11";
@@ -826,14 +954,12 @@
 
       enterDashboard();
     }
-    // Daftar Password Guru (Otomatis Cocok Huruf Besar/Kecil)
-    const GURU_PASSWORDS = ["FISIKA18", "UMAR18"];
 
     function loginTeacher(e) {
       e.preventDefault();
       const pass = document.getElementById('guru-pass-input').value.trim().toUpperCase();
 
-      if (pass === "UMAR18") {
+      if (GURU_PASSWORDS.includes(pass)) {
         currentUser = {
           role: "guru",
           nama: "Fadhillah Umar, S.Pd",
@@ -846,7 +972,7 @@
         alert("❌ Incorrect teacher password!");
       }
     }
-    
+
     function enterDashboard() {
       document.getElementById('view-auth').classList.add('hidden');
       document.getElementById('view-dashboard').classList.remove('hidden');
@@ -855,24 +981,42 @@
       document.getElementById('user-avatar-badge').innerText = currentUser.nama.charAt(0).toUpperCase();
 
       if (currentUser.role === 'guru') {
-        // Tampilan Guru (Lampiran 2)
         document.getElementById('user-role-tag').innerText = "PHYSICS TEACHER";
         document.getElementById('user-role-tag').className = "px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300";
-        document.getElementById('user-display-sub').innerText = "Full Instructor Privileges";
+        document.getElementById('user-display-sub').innerHTML = `
+          <div class="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
+            <span>Access: Full Admin</span>
+            <span class="text-slate-300">•</span>
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span class="text-emerald-700 font-bold">Verified Instructor</span>
+          </div>
+        `;
         document.getElementById('guru-shortcuts').classList.remove('hidden');
         document.getElementById('grade-filter-bar').classList.remove('hidden');
         document.getElementById('banner-greeting').innerText = "Teacher Management Hub";
-        document.getElementById('banner-subtext').innerText = "Manage questions, monitor student scores, and activate daily exam tokens.";
+        document.getElementById('banner-subtext').innerText = "Manage questions, monitor student scores, and view active daily exam tokens.";
         setGradeFilter("11");
       } else {
-        // Tampilan Siswa (Lampiran 1)
         document.getElementById('user-role-tag').innerText = "Class " + currentUser.kelas;
         document.getElementById('user-role-tag').className = "px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800 border border-blue-200 uppercase";
-        document.getElementById('user-display-sub').innerText = `Attendance No: ${currentUser.absen} • Verified Student`;
+        document.getElementById('user-display-sub').innerHTML = `
+          <div class="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
+            <span>Attendance No: ${currentUser.absen}</span>
+            <span class="text-slate-300">•</span>
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span class="text-emerald-700 font-bold">Verified Student</span>
+          </div>
+        `;
         document.getElementById('guru-shortcuts').classList.add('hidden');
         document.getElementById('grade-filter-bar').classList.add('hidden');
         document.getElementById('banner-greeting').innerText = `Welcome, ${currentUser.nama}!`;
-        document.getElementById('banner-subtext').innerText = `Here are the Physics assessment modules for Grade ${currentUser.allowedGrade}. Good luck with your study!`;
+        document.getElementById('banner-subtext').innerText = `Here are the active Physics assessment modules for Grade ${currentUser.allowedGrade}. Good luck with your study!`;
         setGradeFilter(currentUser.allowedGrade);
       }
     }
@@ -883,7 +1027,7 @@
       document.getElementById('view-auth').classList.remove('hidden');
     }
 
-    // 1. Fungsi Filter Kelas (Sudah Ditutup dengan Rapi)
+    // 6. GRADE FILTER & RENDER CHAPTER MODULES
     function setGradeFilter(grade) {
       selectedGrade = grade;
       document.querySelectorAll('.filter-grade-btn').forEach(b => {
@@ -895,7 +1039,6 @@
       renderCards();
     }
 
-    // 2. Fungsi Render Kartu Bab
     function renderCards() {
       const container = document.getElementById('cards-container');
       container.innerHTML = '';
@@ -918,7 +1061,7 @@
             </div>
             <h3 class="font-extrabold text-base text-slate-900 mb-1.5">${bab.title}</h3>
             <p class="text-xs text-slate-500 leading-relaxed">${bab.desc}</p>
-            ${currentUser && currentUser.role === 'guru' ? `<div class="mt-3 p-2 bg-amber-50 rounded-xl border border-amber-200 text-[11px] text-amber-800 font-mono font-bold">🔑 Token: ${bab.token}</div>` : ''}
+            ${currentUser.role === 'guru' ? `<div class="mt-3 p-2 bg-amber-50 rounded-xl border border-amber-200 text-[11px] text-amber-800 font-mono font-bold">🔑 Token: ${bab.token}</div>` : ''}
           </div>
 
           <div class="mt-6 pt-4 border-t border-slate-100 grid grid-cols-2 gap-2.5">
@@ -939,7 +1082,7 @@
     // 7. TOKEN EXAM DIALOG
     function openTokenDialog(babId) {
       activeBabForExam = masterBabData.find(b => b.id === babId);
-      document.getElementById('token-modal-title').innerText = `Bab: ${activeBabForExam.title}`;
+      document.getElementById('token-modal-title').innerText = activeBabForExam.title;
       document.getElementById('input-token-value').value = '';
       document.getElementById('modal-token').classList.remove('hidden');
     }
@@ -956,11 +1099,11 @@
         closeTokenModal();
         startExamSession(activeBabForExam.id, 'ulangan');
       } else {
-        alert("❌ Token Ujian Salah atau Belum Diaktifkan oleh Guru!");
+        alert("❌ Invalid Exam Token! Please ask your teacher for the active token.");
       }
     }
 
-    // 8. CBT EXAM ARENA
+    // 8. CBT EXAM ARENA ENGINE
     function startExamSession(babId, mode) {
       activeBabForExam = masterBabData.find(b => b.id === babId);
       currentExamQuestions = activeBabForExam.questions;
@@ -968,11 +1111,10 @@
       userAnswers = {};
       doubtfulAnswers.clear();
       cheatCount = 0;
-      isRescueActive = false;
 
       document.getElementById('exam-chapter-title').innerText = activeBabForExam.title;
-      document.getElementById('exam-mode-badge').innerText = mode === 'ulangan' ? 'Ulangan Harian' : 'Latihan Soal';
-      document.getElementById('exam-student-label').innerText = `Peserta: ${currentUser.nama} (${currentUser.kelas})`;
+      document.getElementById('exam-mode-badge').innerText = mode === 'ulangan' ? 'Daily Exam' : 'Self Practice';
+      document.getElementById('exam-student-label').innerText = `Candidate: ${currentUser.nama} (${currentUser.kelas})`;
       document.getElementById('cheat-badge').classList.add('hidden');
 
       if (mode === 'ulangan') {
@@ -994,7 +1136,7 @@
       currentQIdx = idx;
       const q = currentExamQuestions[idx];
 
-      document.getElementById('exam-q-num-badge').innerText = `Soal ${idx + 1} dari ${currentExamQuestions.length}`;
+      document.getElementById('exam-q-num-badge').innerText = `Question ${idx + 1} of ${currentExamQuestions.length}`;
       document.getElementById('exam-q-text').innerHTML = q.text;
 
       const optsBox = document.getElementById('exam-q-options');
@@ -1028,7 +1170,6 @@
         renderMathInElement(document.getElementById('exam-q-text'), { delimiters: [{left: '$', right: '$', display: false}] });
         renderMathInElement(optsBox, { delimiters: [{left: '$', right: '$', display: false}] });
       }
-      if (window.lucide) lucide.createIcons();
     }
 
     function toggleDoubtful() {
@@ -1071,18 +1212,17 @@
           const badge = document.getElementById('cheat-badge');
           badge.classList.remove('hidden');
           document.getElementById('cheat-count-num').innerText = cheatCount;
-          alert(`⚠️ PERINGATAN CURANG (#${cheatCount}): Terdeteksi berpindah tab! Tetap fokus pada lembar ujian.`);
+          alert(`⚠️ WARNING (#${cheatCount}): Tab switch detected! Please stay on the test window.`);
         }
       });
     }
 
     function triggerRescueMode() {
-      if (confirm("Kamu benar-benar buntu? Buka 'Mode Penyelamat' (soal konsep dasar) agar nilaimu tidak nol.")) {
-        isRescueActive = true;
+      if (confirm("Enable Rescue Mode? This provides fundamental concept questions so you do not receive a zero score.")) {
         currentExamQuestions = rescueQuestionsList;
         userAnswers = {};
         doubtfulAnswers.clear();
-        document.getElementById('exam-chapter-title').innerText = "Mode Penyelamat (Konsep Dasar)";
+        document.getElementById('exam-chapter-title').innerText = "Rescue Mode (Core Concepts)";
         loadExamQuestion(0);
         renderExamPalette();
       }
@@ -1098,23 +1238,23 @@
         document.getElementById('exam-timer-text').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
         if (timeRemaining <= 0) {
           clearInterval(timerRef);
-          alert("Waktu ujian telah habis!");
+          alert("Time is up!");
           confirmFinishExam(true);
         }
       }, 1000);
     }
 
     function exitExamConfirm() {
-      if (confirm("Keluar dari ujian? Progres saat ini tidak akan disimpan.")) {
+      if (confirm("Exit exam? Unsaved answers will not be recorded.")) {
         clearInterval(timerRef);
         document.getElementById('view-exam').classList.add('hidden');
         document.getElementById('view-dashboard').classList.remove('hidden');
       }
     }
 
-    // 10. RESULTS EVALUATION
+    // 10. EVALUATION & RESULTS
     function confirmFinishExam(force = false) {
-      if (!force && !confirm("Selesaikan dan kumpulkan lembar jawaban?")) return;
+      if (!force && !confirm("Submit your answers and finalize this evaluation?")) return;
       clearInterval(timerRef);
 
       let correct = 0, wrong = 0, empty = 0;
@@ -1128,7 +1268,7 @@
       const score = Math.round((correct / currentExamQuestions.length) * 100);
 
       document.getElementById('res-chapter-title').innerText = document.getElementById('exam-chapter-title').innerText;
-      document.getElementById('res-student-info').innerText = `Peserta: ${currentUser.nama} (${currentUser.kelas} / Absen: ${currentUser.absen})`;
+      document.getElementById('res-student-info').innerText = `Candidate: ${currentUser.nama} (${currentUser.kelas} / No: ${currentUser.absen})`;
       document.getElementById('res-score-number').innerText = score;
       document.getElementById('res-stat-correct').innerText = correct;
       document.getElementById('res-stat-wrong').innerText = wrong;
@@ -1136,7 +1276,7 @@
       document.getElementById('res-stat-cheat').innerText = `${cheatCount}x`;
 
       const statusEl = document.getElementById('res-score-status');
-      statusEl.innerText = score >= 75 ? "Sangat Baik (Tuntas)" : "Perlu Remidi & Latihan Lagi";
+      statusEl.innerText = score >= 75 ? "Passed (Mastered)" : "Needs Further Practice";
       statusEl.className = score >= 75 ? "text-xs font-bold text-emerald-400" : "text-xs font-bold text-rose-400";
 
       const discBox = document.getElementById('res-discussion-container');
@@ -1148,12 +1288,12 @@
         const item = document.createElement('div');
         item.className = `p-4 rounded-2xl border ${isOk ? 'border-emerald-200 bg-emerald-50/50' : 'border-rose-200 bg-rose-50/50'}`;
         item.innerHTML = `
-          <div class="text-xs font-bold mb-1 ${isOk ? 'text-emerald-700' : 'text-rose-700'}">Soal ${i+1}: ${isOk ? 'BENAR' : 'SALAH / KOSONG'}</div>
+          <div class="text-xs font-bold mb-1 ${isOk ? 'text-emerald-700' : 'text-rose-700'}">Question ${i+1}: ${isOk ? 'CORRECT' : 'INCORRECT / EMPTY'}</div>
           <p class="text-sm text-slate-800 mb-2 font-medium">${q.text}</p>
-          <p class="text-xs text-slate-600">Jawaban Kamu: <b>${ua !== undefined ? q.options[ua] : '<i>Kosong</i>'}</b></p>
-          <p class="text-xs text-blue-700 font-bold">Kunci: ${q.options[q.correct]}</p>
+          <p class="text-xs text-slate-600">Your Answer: <b>${ua !== undefined ? q.options[ua] : '<i>None</i>'}</b></p>
+          <p class="text-xs text-blue-700 font-bold">Correct Key: ${q.options[q.correct]}</p>
           <div class="mt-2 pt-2 border-t border-slate-200 text-xs text-slate-700 bg-white p-2.5 rounded-xl border">
-            <b>💡 Pembahasan:</b> ${q.discussion}
+            <b>💡 Solution:</b> ${q.discussion}
           </div>
         `;
         discBox.appendChild(item);
@@ -1165,7 +1305,6 @@
 
       document.getElementById('view-exam').classList.add('hidden');
       document.getElementById('view-result').classList.remove('hidden');
-      if (window.lucide) lucide.createIcons();
     }
 
     function returnToDashboardFromResults() {
@@ -1180,11 +1319,10 @@
       masterBabData.forEach(b => {
         const opt = document.createElement('option');
         opt.value = b.id;
-        opt.innerText = `[Kelas ${b.grade}] ${b.title}`;
+        opt.innerText = `[Grade ${b.grade}] ${b.title}`;
         select.appendChild(opt);
       });
       document.getElementById('modal-editor').classList.remove('hidden');
-      if (window.lucide) lucide.createIcons();
     }
 
     function closeQuestionEditorModal() {
@@ -1210,7 +1348,7 @@
       };
 
       targetBab.questions.push(newQ);
-      alert(`✅ Berhasil menambahkan 1 soal baru ke bab: ${targetBab.title}!`);
+      alert(`✅ Successfully added 1 question to: ${targetBab.title}!`);
       closeQuestionEditorModal();
       renderCards();
     }
@@ -1234,18 +1372,12 @@
         ctx.stroke(); ctx.beginPath(); ctx.moveTo(e.clientX - r.left, e.clientY - r.top);
       });
     }
-    function openCanvasModal() { 
-      document.getElementById('modal-canvas').classList.remove('hidden'); 
-      if (window.lucide) lucide.createIcons();
-    }
+    function openCanvasModal() { document.getElementById('modal-canvas').classList.remove('hidden'); }
     function closeCanvasModal() { document.getElementById('modal-canvas').classList.add('hidden'); }
     function clearCanvas() { if (ctx && canvas) ctx.clearRect(0, 0, canvas.width, canvas.height); }
 
     let cVal = '0';
-    function toggleCalcModal() { 
-      document.getElementById('modal-calc').classList.toggle('hidden'); 
-      if (window.lucide) lucide.createIcons();
-    }
+    function toggleCalcModal() { document.getElementById('modal-calc').classList.toggle('hidden'); }
     function calcPush(v) { if (cVal === '0' && v !== '.') cVal = ''; cVal += v; document.getElementById('calc-display').value = cVal; }
     function calcReset() { cVal = '0'; document.getElementById('calc-display').value = '0'; }
     function calcCompute() { try { cVal = eval(cVal).toString(); document.getElementById('calc-display').value = cVal; } catch(e){ document.getElementById('calc-display').value = 'Error'; } }
