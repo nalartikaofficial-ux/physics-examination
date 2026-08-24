@@ -157,7 +157,7 @@
                   <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                 </svg>
               </span>
-              <input type="password" id="siswa-password" required class="w-full pl-10 pr-11 py-2.5 sm:py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition">
+              <input type="password" id="siswa-password" required class="uppercase font-mono w-full pl-10 pr-11 py-2.5 sm:py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition">
               <button type="button" onclick="togglePasswordVisibility('siswa-password', 'eye-svg-siswa')" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 hover:text-slate-700 cursor-pointer">
                 <span id="eye-svg-siswa">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -731,8 +731,20 @@
       document.getElementById('link-google-sheet').href = GOOGLE_SHEET_URL;
       setupCanvas();
       setupAntiCheat();
-    });
 
+      // Fitur Auto-Load Data Siswa yang Tersimpan
+      try {
+        const savedNama = localStorage.getItem('muh18_saved_nama');
+        const savedKelas = localStorage.getItem('muh18_saved_kelas');
+        const savedAbsen = localStorage.getItem('muh18_saved_absen');
+
+        if (savedNama) document.getElementById('siswa-nama').value = savedNama;
+        if (savedKelas) document.getElementById('siswa-kelas').value = savedKelas;
+        if (savedAbsen) document.getElementById('siswa-absen').value = savedAbsen;
+      } catch (err) {
+        console.log("Storage load skipped", err);
+      }
+    });
     // 4. AUTHENTICATION (SISWA VS GURU)
     function setAuthMode(role) {
       const tabSiswa = document.getElementById('tab-btn-siswa');
@@ -786,8 +798,17 @@
       const validPasscodeAlt = `${prefix}-${absen.padStart(2, '0')}`.toUpperCase();
 
       if (pass !== validPasscode && pass !== validPasscodeAlt && pass !== "MUH18") {
-        alert("❌ Invalid Passcode!\nPasscode does not match your selected class and attendance number (e.g. " + validPasscode + ")");
+        alert("❌ Invalid Passcode!\nPasscode must match your selected class and attendance number (e.g. " + validPasscode + ")");
         return;
+      }
+
+      // Simpan data login siswa agar tidak perlu ketik ulang di browser ini
+      try {
+        localStorage.setItem('muh18_saved_nama', nama);
+        localStorage.setItem('muh18_saved_kelas', kelas);
+        localStorage.setItem('muh18_saved_absen', absen);
+      } catch (err) {
+        console.log("Storage save skipped", err);
       }
 
       let grade = "11";
@@ -805,7 +826,6 @@
 
       enterDashboard();
     }
-
     // Validasi Login Guru
     function loginTeacher(e) {
       e.preventDefault();
