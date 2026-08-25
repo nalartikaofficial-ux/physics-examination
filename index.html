@@ -623,6 +623,9 @@
   </div>
 
   <!-- ==================== JAVASCRIPT MASTER ENGINE ==================== -->
+  <!-- PANGGIL BANK SOAL TERLEBIH DAHULU -->
+  <script src="bankSoal.js"></script>
+  
   <script>
     // 1. CONFIGURATION & 12 BAB DATA
     const GURU_PASSWORDS = ["FISIKA18", "UMAR18"]; 
@@ -1104,22 +1107,32 @@
     }
 
     // 8. CBT EXAM ARENA ENGINE
-    function startExamSession(babId, mode) {
+    function startExamSession(babId, mode, packageNum = 1) {
       activeBabForExam = masterBabData.find(b => b.id === babId);
-      currentExamQuestions = activeBabForExam.questions;
+
+      // MENGAMBIL 20 SOAL DARI bankSoal.js
+      if (window.MASTER_BANK_SOAL && 
+          window.MASTER_BANK_SOAL[babId] && 
+          window.MASTER_BANK_SOAL[babId][mode] && 
+          window.MASTER_BANK_SOAL[babId][mode][packageNum]) {
+        currentExamQuestions = window.MASTER_BANK_SOAL[babId][mode][packageNum];
+      } else {
+        currentExamQuestions = activeBabForExam.questions; // Fallback jika bank soal belum dibuat
+      }
+
       currentQIdx = 0;
       userAnswers = {};
       doubtfulAnswers.clear();
       cheatCount = 0;
 
-      document.getElementById('exam-chapter-title').innerText = activeBabForExam.title;
+      document.getElementById('exam-chapter-title').innerText = `${activeBabForExam.title} (Package ${packageNum})`;
       document.getElementById('exam-mode-badge').innerText = mode === 'ulangan' ? 'Daily Exam' : 'Self Practice';
       document.getElementById('exam-student-label').innerText = `Candidate: ${currentUser.nama} (${currentUser.kelas})`;
       document.getElementById('cheat-badge').classList.add('hidden');
 
       if (mode === 'ulangan') {
         document.getElementById('exam-timer-box').classList.remove('hidden');
-        startTimer(currentExamQuestions.length * 5 * 60);
+        startTimer(currentExamQuestions.length * 2.5 * 60);
       } else {
         document.getElementById('exam-timer-box').classList.add('hidden');
         clearInterval(timerRef);
