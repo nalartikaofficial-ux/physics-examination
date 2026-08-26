@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Physics CBT & Practice Portal - SMA Muhammadiyah 18 Jakarta</title>
-  
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -59,7 +59,7 @@
   <!-- ==================== HEADER RESMI SMA MUHAMMADIYAH 18 JAKARTA ==================== -->
   <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
-      
+
       <!-- Logo Resmi & Nama Sekolah -->
       <div class="flex items-center space-x-3.5">
         <div class="w-11 h-11 sm:w-13 sm:h-13 rounded-full overflow-hidden border border-slate-200 shadow-sm flex-shrink-0 bg-white flex items-center justify-center p-0.5">
@@ -84,7 +84,7 @@
   <!-- ==================== VIEW 1: AUTHENTICATION PORTAL (LANDING) ==================== -->
   <main id="view-auth" class="flex-grow flex items-center justify-center px-4 py-8 sm:py-12">
     <div class="w-full max-w-lg">
-      
+
       <!-- Top Title & Gateway Welcome -->
       <div class="text-center mb-6">
         <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[11px] font-bold bg-blue-50 text-blue-800 border border-blue-200 mb-2 shadow-xs">
@@ -100,7 +100,7 @@
 
       <!-- Auth Box Card -->
       <div class="clean-card rounded-3xl p-6 sm:p-8">
-        
+
         <!-- Toggle Tabs: Student vs Teacher -->
         <div class="grid grid-cols-2 gap-2 p-1.5 bg-slate-100 rounded-2xl mb-6 border border-slate-200">
           <button type="button" onclick="setAuthMode('siswa')" id="tab-btn-siswa" class="py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 bg-white text-blue-900 shadow-sm border border-slate-200 cursor-pointer">
@@ -115,7 +115,7 @@
 
         <!-- ================= STUDENT LOGIN FORM ================= -->
         <form id="auth-form-siswa" onsubmit="loginStudent(event)" class="space-y-4">
-          
+
           <div>
             <label class="block text-xs font-bold text-slate-700 mb-1.5">Full Student Name <span class="text-rose-500">*</span></label>
             <div class="relative">
@@ -170,7 +170,7 @@
 
         <!-- ================= TEACHER LOGIN FORM ================= -->
         <form id="auth-form-guru" onsubmit="loginTeacher(event)" class="hidden space-y-4">
-          
+
           <div>
             <label class="block text-xs font-bold text-slate-700 mb-1.5">Physics Instructor</label>
             <div class="relative">
@@ -212,11 +212,11 @@
 
   <!-- ==================== VIEW 2: PORTAL DASHBOARD ==================== -->
   <div id="view-dashboard" class="hidden flex-grow flex flex-col justify-between">
-    
+
     <!-- Top Sub-Bar Info -->
     <div class="bg-white border-b border-slate-200 px-4 sm:px-8 py-3.5 shadow-sm">
       <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-3">
-        
+
         <!-- Student / User Profile Badge -->
         <div class="flex items-center space-x-3">
           <div class="w-10 h-10 rounded-2xl bg-blue-100 text-blue-800 border border-blue-200 flex items-center justify-center font-bold text-sm shadow-xs" id="user-avatar-badge">
@@ -258,7 +258,7 @@
 
     <!-- Main Content Materi Cards -->
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full space-y-6">
-      
+
       <!-- Greeting Banner -->
       <div class="bg-gradient-to-r from-blue-900 to-indigo-800 text-white rounded-3xl p-6 sm:p-8 shadow-lg relative overflow-hidden border border-blue-800/40">
         <div class="relative z-10 max-w-2xl">
@@ -296,7 +296,7 @@
 
   <!-- ==================== VIEW 3: ARENA UJIAN CBT ==================== -->
   <div id="view-exam" class="hidden min-h-screen bg-slate-100 flex flex-col justify-between p-4 sm:p-6">
-    
+
     <!-- Top Exam Header Bar -->
     <div class="max-w-6xl mx-auto w-full bg-white rounded-2xl p-4 shadow-sm border border-slate-200 flex flex-wrap justify-between items-center gap-4 mb-6">
       <div class="flex items-center space-x-3">
@@ -328,7 +328,7 @@
 
     <!-- Main Exam Body Grid -->
     <div class="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-3 gap-6 flex-1">
-      
+
       <!-- Question Container (2 Cols) -->
       <div class="lg:col-span-2 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 flex flex-col justify-between min-h-[440px]">
         <div>
@@ -367,7 +367,7 @@
 
       <!-- Right Sidebar: Palette & Tools -->
       <div class="space-y-6">
-        
+
         <!-- Palette Numbers Grid -->
         <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200">
           <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4 flex items-center gap-2">
@@ -412,7 +412,7 @@
   <!-- ==================== VIEW 4: SCORE & REVIEW ==================== -->
   <div id="view-result" class="hidden min-h-screen bg-slate-50 flex items-center justify-center p-4 sm:p-8">
     <div class="bg-white max-w-3xl w-full rounded-3xl overflow-hidden border border-slate-200 clean-card shadow-2xl">
-      
+
       <div class="p-8 text-center bg-slate-900 text-white relative">
         <span class="px-3 py-1 bg-blue-500/20 text-blue-300 border border-blue-500/30 rounded-full text-xs font-bold inline-block mb-3">
           Physics Assessment Results
@@ -578,7 +578,7 @@
       </div>
 
       <form onsubmit="handleSaveNewQuestion(event)" class="space-y-4">
-        
+
         <div class="grid grid-cols-2 gap-3">
           <div>
             <label class="block text-xs font-bold text-slate-700 mb-1">Target Chapter</label>
@@ -658,40 +658,62 @@
     </div>
   </div>
 
-  <!-- ==================== MODAL TOOLS: CALCULATOR ==================== -->
-  <div id="modal-calc" class="fixed bottom-6 right-6 z-50 bg-white rounded-3xl p-4 w-72 hidden shadow-2xl border border-slate-200">
+  <!-- ==================== MODAL TOOLS: CALCULATOR (SCIENTIFIC) ==================== -->
+  <div id="modal-calc" class="fixed bottom-6 right-6 z-50 bg-white rounded-3xl p-4 w-80 sm:w-96 hidden shadow-2xl border border-slate-200 select-none">
     <div class="flex justify-between items-center mb-2 pb-2 border-b border-slate-100">
       <span class="text-xs font-bold text-blue-700 flex items-center gap-1.5">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/></svg>
-        <span>Calculator</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+        <span>Scientific Calculator</span>
       </span>
       <button onclick="toggleCalcModal()" class="text-slate-400 hover:text-slate-700 cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
       </button>
     </div>
-    <input type="text" id="calc-display" readonly class="w-full bg-slate-100 text-right font-mono p-3 text-lg font-bold rounded-xl border border-slate-200 mb-3 text-slate-900" value="0">
-    <div class="grid grid-cols-4 gap-1.5 text-xs font-bold">
-      <button onclick="calcPush('(')" class="p-2.5 bg-slate-100 hover:bg-slate-200 rounded-lg text-slate-700 cursor-pointer">(</button>
-      <button onclick="calcPush(')')" class="p-2.5 bg-slate-100 hover:bg-slate-200 rounded-lg text-slate-700 cursor-pointer">)</button>
-      <button onclick="calcPush('Math.sqrt(')" class="p-2.5 bg-blue-50 text-blue-700 rounded-lg cursor-pointer">√</button>
-      <button onclick="calcReset()" class="p-2.5 bg-rose-50 text-rose-700 rounded-lg cursor-pointer">C</button>
-      <button onclick="calcPush('7')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg cursor-pointer">7</button>
-      <button onclick="calcPush('8')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg cursor-pointer">8</button>
-      <button onclick="calcPush('9')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg cursor-pointer">9</button>
-      <button onclick="calcPush('/')" class="p-2.5 bg-slate-200 rounded-lg text-blue-700 cursor-pointer">÷</button>
-      <button onclick="calcPush('4')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg cursor-pointer">4</button>
-      <button onclick="calcPush('5')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg cursor-pointer">5</button>
-      <button onclick="calcPush('6')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg cursor-pointer">6</button>
-      <button onclick="calcPush('*')" class="p-2.5 bg-slate-200 rounded-lg text-blue-700 cursor-pointer">×</button>
-      <button onclick="calcPush('1')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg cursor-pointer">1</button>
-      <button onclick="calcPush('2')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg cursor-pointer">2</button>
-      <button onclick="calcPush('3')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg cursor-pointer">3</button>
-      <button onclick="calcPush('-')" class="p-2.5 bg-slate-200 rounded-lg text-blue-700 cursor-pointer">-</button>
-      <button onclick="calcPush('0')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg cursor-pointer">0</button>
-      <button onclick="calcPush('.')" class="p-2.5 bg-slate-50 hover:bg-slate-100 rounded-lg cursor-pointer">.</button>
-      <button onclick="calcPush('Math.PI')" class="p-2.5 bg-blue-50 text-blue-700 rounded-lg cursor-pointer">π</button>
-      <button onclick="calcPush('+')" class="p-2.5 bg-slate-200 rounded-lg text-blue-700 cursor-pointer">+</button>
-      <button onclick="calcCompute()" class="col-span-4 py-2.5 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl mt-1 text-sm cursor-pointer">=</button>
+    <input type="text" id="calc-display" readonly class="w-full bg-slate-100 text-right font-mono p-3 text-base sm:text-lg font-bold rounded-xl border border-slate-200 mb-3 text-slate-900 tracking-wider overflow-x-auto" value="0">
+    
+    <!-- Tombol Fungsi Sains & Angka Lengkap -->
+    <div class="grid grid-cols-5 gap-1.5 text-[11px] font-bold">
+      <!-- Baris 1 -->
+      <button onclick="calcPush('sin(')" class="p-2 bg-blue-50 hover:bg-blue-100 text-blue-800 rounded-lg cursor-pointer transition">sin</button>
+      <button onclick="calcPush('cos(')" class="p-2 bg-blue-50 hover:bg-blue-100 text-blue-800 rounded-lg cursor-pointer transition">cos</button>
+      <button onclick="calcPush('tan(')" class="p-2 bg-blue-50 hover:bg-blue-100 text-blue-800 rounded-lg cursor-pointer transition">tan</button>
+      <button onclick="calcDel()" class="p-2 bg-amber-50 hover:bg-amber-100 text-amber-700 rounded-lg cursor-pointer transition">DEL</button>
+      <button onclick="calcReset()" class="p-2 bg-rose-50 hover:bg-rose-100 text-rose-700 rounded-lg cursor-pointer transition">AC</button>
+
+      <!-- Baris 2 -->
+      <button onclick="calcPush('log(')" class="p-2 bg-blue-50 hover:bg-blue-100 text-blue-800 rounded-lg cursor-pointer transition">log</button>
+      <button onclick="calcPush('ln(')" class="p-2 bg-blue-50 hover:bg-blue-100 text-blue-800 rounded-lg cursor-pointer transition">ln</button>
+      <button onclick="calcPush('^')" class="p-2 bg-blue-50 hover:bg-blue-100 text-blue-800 rounded-lg cursor-pointer transition">xʸ</button>
+      <button onclick="calcPush('(')" class="p-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg cursor-pointer transition">(</button>
+      <button onclick="calcPush(')')" class="p-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg cursor-pointer transition">)</button>
+
+      <!-- Baris 3 -->
+      <button onclick="calcPush('√(')" class="p-2 bg-blue-50 hover:bg-blue-100 text-blue-800 rounded-lg cursor-pointer transition">√</button>
+      <button onclick="calcPush('7')" class="p-2 bg-slate-50 hover:bg-slate-100 text-slate-800 rounded-lg cursor-pointer transition">7</button>
+      <button onclick="calcPush('8')" class="p-2 bg-slate-50 hover:bg-slate-100 text-slate-800 rounded-lg cursor-pointer transition">8</button>
+      <button onclick="calcPush('9')" class="p-2 bg-slate-50 hover:bg-slate-100 text-slate-800 rounded-lg cursor-pointer transition">9</button>
+      <button onclick="calcPush('÷')" class="p-2 bg-slate-200 hover:bg-slate-300 text-blue-800 rounded-lg cursor-pointer transition">÷</button>
+
+      <!-- Baris 4 -->
+      <button onclick="calcPush('π')" class="p-2 bg-blue-50 hover:bg-blue-100 text-blue-800 rounded-lg cursor-pointer transition">π</button>
+      <button onclick="calcPush('4')" class="p-2 bg-slate-50 hover:bg-slate-100 text-slate-800 rounded-lg cursor-pointer transition">4</button>
+      <button onclick="calcPush('5')" class="p-2 bg-slate-50 hover:bg-slate-100 text-slate-800 rounded-lg cursor-pointer transition">5</button>
+      <button onclick="calcPush('6')" class="p-2 bg-slate-50 hover:bg-slate-100 text-slate-800 rounded-lg cursor-pointer transition">6</button>
+      <button onclick="calcPush('×')" class="p-2 bg-slate-200 hover:bg-slate-300 text-blue-800 rounded-lg cursor-pointer transition">×</button>
+
+      <!-- Baris 5 -->
+      <button onclick="calcPush('e')" class="p-2 bg-blue-50 hover:bg-blue-100 text-blue-800 rounded-lg cursor-pointer transition">e</button>
+      <button onclick="calcPush('1')" class="p-2 bg-slate-50 hover:bg-slate-100 text-slate-800 rounded-lg cursor-pointer transition">1</button>
+      <button onclick="calcPush('2')" class="p-2 bg-slate-50 hover:bg-slate-100 text-slate-800 rounded-lg cursor-pointer transition">2</button>
+      <button onclick="calcPush('3')" class="p-2 bg-slate-50 hover:bg-slate-100 text-slate-800 rounded-lg cursor-pointer transition">3</button>
+      <button onclick="calcPush('-')" class="p-2 bg-slate-200 hover:bg-slate-300 text-blue-800 rounded-lg cursor-pointer transition">-</button>
+
+      <!-- Baris 6 -->
+      <button onclick="calcPush('×10^(')" class="p-2 bg-blue-50 hover:bg-blue-100 text-blue-800 rounded-lg cursor-pointer transition text-[9px]">EXP</button>
+      <button onclick="calcPush('0')" class="p-2 bg-slate-50 hover:bg-slate-100 text-slate-800 rounded-lg cursor-pointer transition">0</button>
+      <button onclick="calcPush('.')" class="p-2 bg-slate-50 hover:bg-slate-100 text-slate-800 rounded-lg cursor-pointer transition">.</button>
+      <button onclick="calcPush('+')" class="p-2 bg-slate-200 hover:bg-slate-300 text-blue-800 rounded-lg cursor-pointer transition">+</button>
+      <button onclick="calcCompute()" class="p-2 bg-blue-700 hover:bg-blue-800 text-white font-black rounded-lg cursor-pointer shadow transition text-xs">=</button>
     </div>
   </div>
 
@@ -1486,7 +1508,7 @@
       renderCards();
     }
 
-    // 12. CANVAS & CALCULATOR CONTROLLERS
+    // 12. CANVAS & SCIENTIFIC CALCULATOR CONTROLLERS
     let canvas, ctx, isDrawing = false;
     function setupCanvas() {
       canvas = document.getElementById('scratchpad-canvas');
@@ -1509,11 +1531,52 @@
     function closeCanvasModal() { document.getElementById('modal-canvas').classList.add('hidden'); }
     function clearCanvas() { if (ctx && canvas) ctx.clearRect(0, 0, canvas.width, canvas.height); }
 
+    // Controller Scientific Calculator
     let cVal = '0';
     function toggleCalcModal() { document.getElementById('modal-calc').classList.toggle('hidden'); }
-    function calcPush(v) { if (cVal === '0' && v !== '.') cVal = ''; cVal += v; document.getElementById('calc-display').value = cVal; }
+    function calcPush(v) { 
+      if (cVal === '0' && v !== '.' && !['+', '-', '×', '÷', '^'].includes(v)) cVal = ''; 
+      cVal += v; 
+      document.getElementById('calc-display').value = cVal; 
+    }
+    function calcDel() {
+      if (cVal.length > 1) {
+        cVal = cVal.slice(0, -1);
+      } else {
+        cVal = '0';
+      }
+      document.getElementById('calc-display').value = cVal;
+    }
     function calcReset() { cVal = '0'; document.getElementById('calc-display').value = '0'; }
-    function calcCompute() { try { cVal = eval(cVal).toString(); document.getElementById('calc-display').value = cVal; } catch(e){ document.getElementById('calc-display').value = 'Error'; } }
+    function calcCompute() { 
+      try { 
+        let expr = cVal;
+        expr = expr.replace(/×10\^\(/g, '*Math.pow(10,');
+        expr = expr.replace(/×/g, '*');
+        expr = expr.replace(/÷/g, '/');
+        expr = expr.replace(/π/g, 'Math.PI');
+        expr = expr.replace(/e/g, 'Math.E');
+        expr = expr.replace(/\^/g, '**');
+        expr = expr.replace(/√\(/g, 'Math.sqrt(');
+        expr = expr.replace(/log\(/g, 'Math.log10(');
+        expr = expr.replace(/ln\(/g, 'Math.log(');
+        
+        // Mode Derajat Trigonometri Fisika SMA
+        expr = expr.replace(/sin\(([^)]+)\)/g, 'Math.sin(($1) * Math.PI / 180)');
+        expr = expr.replace(/cos\(([^)]+)\)/g, 'Math.cos(($1) * Math.PI / 180)');
+        expr = expr.replace(/tan\(([^)]+)\)/g, 'Math.tan(($1) * Math.PI / 180)');
+
+        let res = Function('"use strict";return (' + expr + ')')();
+        if (typeof res === 'number') {
+          res = Math.round((res + Number.EPSILON) * 100000000) / 100000000;
+        }
+        cVal = res.toString(); 
+        document.getElementById('calc-display').value = cVal; 
+      } catch(e){ 
+        document.getElementById('calc-display').value = 'Format Error'; 
+        cVal = '0';
+      } 
+    }
   </script>
 </body>
 </html>
