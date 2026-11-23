@@ -59,57 +59,48 @@
   <!-- ==================== HEADER RESMI SMA MUHAMMADIYAH 18 JAKARTA ==================== -->
   <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
-
-      <!-- Logo Resmi & Nama Sekolah -->
       <div class="flex items-center space-x-3.5">
         <div class="w-11 h-11 sm:w-13 sm:h-13 rounded-full overflow-hidden border border-slate-200 shadow-sm flex-shrink-0 bg-white flex items-center justify-center p-0.5">
           <img src="LOGO SMAM 18 JKT.png" alt="SMA Muhammadiyah 18 Jakarta" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/fadhillahumar/assets/main/logo-muh18.png';">
         </div>
         <div>
           <h1 class="font-extrabold text-xs sm:text-base text-slate-900 tracking-tight leading-tight">SMA MUHAMMADIYAH 18 JAKARTA</h1>
-          <p class="text-[10px] sm:text-xs font-bold text-amber-600 tracking-wide uppercase">PHYSICS VIRTUAL LAB & CBT PORTAL</p>
+          <p class="text-[10px] sm:text-xs font-bold text-amber-600 tracking-wide uppercase">PHYSICS VIRTUAL LAB & CBT PORTAL • SEMESTER 1</p>
         </div>
       </div>
 
-      <!-- Badge & Fullscreen Toggle -->
       <div class="flex items-center space-x-2">
-        <button onclick="toggleFullScreenPortal()" id="btn-fullscreen-global" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 text-[11px] font-bold flex items-center gap-1.5 transition cursor-pointer" title="Toggle Fullscreen">
+        <button onclick="toggleFullScreenPortal()" id="btn-fullscreen-global" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 text-[11px] font-bold flex items-center gap-1.5 transition cursor-pointer">
           <span>⛶</span> <span class="hidden sm:inline" id="fs-label-text">Fullscreen</span>
         </button>
         <span class="text-[11px] font-bold bg-blue-50 text-blue-800 border border-blue-200 px-3.5 py-1 rounded-full hidden md:inline-block">
           School of Champion
         </span>
       </div>
-
     </div>
   </header>
 
-  <!-- ==================== VIEW 1: AUTHENTICATION PORTAL (LANDING) ==================== -->
+  <!-- ==================== VIEW 1: AUTHENTICATION PORTAL ==================== -->
   <main id="view-auth" class="flex-grow flex items-center justify-center px-4 py-8 sm:py-12">
     <div class="w-full max-w-lg">
-
       <div class="text-center mb-6">
         <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[11px] font-bold bg-blue-50 text-blue-800 border border-blue-200 mb-2 shadow-xs">
-          ⚡ Portal Gateway
+          ⚡ Portal Gateway • Semester 1
         </span>
         <h2 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
           Sign In to Physics Learning & CBT Portal
         </h2>
         <p class="text-xs text-slate-500 mt-1 max-w-xs mx-auto leading-relaxed">
-          Access interactive virtual labs, concept modules, practice sets, and daily evaluations.
+          Access interactive virtual labs, essential concept modules, practice sets, and daily evaluations.
         </p>
       </div>
 
       <div class="clean-card rounded-3xl p-6 sm:p-8">
-
-        <!-- Toggle Tabs: Student vs Teacher -->
         <div class="grid grid-cols-2 gap-2 p-1.5 bg-slate-100 rounded-2xl mb-6 border border-slate-200">
           <button type="button" onclick="setAuthMode('siswa')" id="tab-btn-siswa" class="py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 bg-white text-blue-900 shadow-sm border border-slate-200 cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-blue-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M8 21v-4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4"/><path d="M8 10h8"/><path d="M8 14h8"/></svg>
             <span>Student Login</span>
           </button>
           <button type="button" onclick="setAuthMode('guru')" id="tab-btn-guru" class="py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 text-slate-500 hover:text-slate-800 cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
             <span>Teacher Access</span>
           </button>
         </div>
@@ -118,18 +109,13 @@
         <form id="auth-form-siswa" onsubmit="loginStudent(event)" class="space-y-4">
           <div>
             <label class="block text-xs font-bold text-slate-700 mb-1.5">Full Student Name <span class="text-rose-500">*</span></label>
-            <div class="relative">
-              <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              </span>
-              <input type="text" id="siswa-nama" required placeholder="e.g. Muhammad Farhan" class="w-full pl-10 pr-4 py-2.5 sm:py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition">
-            </div>
+            <input type="text" id="siswa-nama" required placeholder="e.g. Muhammad Farhan" class="w-full px-4 py-2.5 sm:py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-blue-600">
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label class="block text-xs font-bold text-slate-700 mb-1.5">Select Class <span class="text-rose-500">*</span></label>
-              <select id="siswa-kelas" required class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition">
+              <select id="siswa-kelas" required class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-blue-600">
                 <option value="" disabled selected>-- Select Class --</option>
                 <option value="X-1">Class X-1</option>
                 <option value="X-2">Class X-2</option>
@@ -140,31 +126,24 @@
                 <option value="XII-1">Class XII-1</option>
               </select>
             </div>
-
             <div>
               <label class="block text-xs font-bold text-slate-700 mb-1.5">Attendance No. <span class="text-rose-500">*</span></label>
-              <input type="number" id="siswa-absen" min="1" max="50" required placeholder="e.g. 18" class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition">
+              <input type="number" id="siswa-absen" min="1" max="50" required placeholder="e.g. 18" class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-blue-600">
             </div>
           </div>
 
           <div>
             <label class="block text-xs font-bold text-slate-700 mb-1.5">Access Passcode <span class="text-rose-500">*</span></label>
             <div class="relative">
-              <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              </span>
-              <input type="password" id="siswa-password" required class="uppercase font-mono w-full pl-10 pr-11 py-2.5 sm:py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition">
+              <input type="password" id="siswa-password" required class="uppercase font-mono w-full pl-4 pr-11 py-2.5 sm:py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-blue-600">
               <button type="button" onclick="togglePasswordVisibility('siswa-password', 'eye-svg-siswa')" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 hover:text-slate-700 cursor-pointer">
-                <span id="eye-svg-siswa">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-                </span>
+                <span id="eye-svg-siswa">👁️</span>
               </button>
             </div>
           </div>
 
-          <button type="submit" class="w-full py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-sm transition shadow-md flex items-center justify-center gap-2 cursor-pointer">
-            <span>Enter Class Portal</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <button type="submit" class="w-full py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-sm transition shadow-md cursor-pointer">
+            Enter Class Portal →
           </button>
         </form>
 
@@ -172,50 +151,35 @@
         <form id="auth-form-guru" onsubmit="loginTeacher(event)" class="hidden space-y-4">
           <div>
             <label class="block text-xs font-bold text-slate-700 mb-1.5">Physics Instructor</label>
-            <div class="relative">
-              <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-blue-700">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-              </span>
-              <input type="text" value="Fadhillah Umar, S.Pd" readonly class="w-full pl-10 pr-4 py-2.5 sm:py-3 rounded-xl bg-slate-100 border border-slate-300 text-slate-800 font-bold text-xs sm:text-sm cursor-not-allowed">
-            </div>
+            <input type="text" value="Fadhillah Umar, S.Pd" readonly class="w-full px-4 py-2.5 sm:py-3 rounded-xl bg-slate-100 border border-slate-300 text-slate-800 font-bold text-xs sm:text-sm cursor-not-allowed">
             <p class="text-[10px] text-blue-700 font-semibold mt-1">Physics Teacher • SMA Muhammadiyah 18 Jakarta</p>
           </div>
 
           <div>
             <label class="block text-xs font-bold text-slate-700 mb-1.5">Teacher Password <span class="text-rose-500">*</span></label>
             <div class="relative">
-              <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              </span>
-              <input type="password" id="guru-pass-input" required class="uppercase font-mono w-full pl-10 pr-11 py-2.5 sm:py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition">
+              <input type="password" id="guru-pass-input" required class="uppercase font-mono w-full pl-4 pr-11 py-2.5 sm:py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-blue-600">
               <button type="button" onclick="togglePasswordVisibility('guru-pass-input', 'eye-svg-guru')" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 hover:text-slate-700 cursor-pointer">
-                <span id="eye-svg-guru">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-                </span>
+                <span id="eye-svg-guru">👁️</span>
               </button>
             </div>
           </div>
 
-          <button type="submit" class="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-sm transition shadow-md flex items-center justify-center gap-2 cursor-pointer">
-            <span>Open Teacher Dashboard</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <button type="submit" class="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-sm transition shadow-md cursor-pointer">
+            Open Teacher Dashboard →
           </button>
         </form>
-
       </div>
-
       <p class="text-center text-xs text-slate-400 mt-6">© 2026 SMA Muhammadiyah 18 Jakarta</p>
     </div>
   </main>
 
   <!-- ==================== VIEW 2: PORTAL DASHBOARD ==================== -->
   <div id="view-dashboard" class="hidden flex-grow flex flex-col justify-between">
-
-    <!-- Top Sub-Bar Info -->
     <div class="bg-white border-b border-slate-200 px-4 sm:px-8 py-3.5 shadow-sm">
       <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-3">
         <div class="flex items-center space-x-3">
-          <div class="w-10 h-10 rounded-2xl bg-blue-100 text-blue-800 border border-blue-200 flex items-center justify-center font-bold text-sm shadow-xs" id="user-avatar-badge">U</div>
+          <div class="w-10 h-10 rounded-2xl bg-blue-100 text-blue-800 border border-blue-200 flex items-center justify-center font-bold text-sm" id="user-avatar-badge">U</div>
           <div>
             <div class="flex items-center gap-2">
               <h3 class="font-extrabold text-sm sm:text-base text-slate-900 leading-tight" id="user-display-name">Student Name</h3>
@@ -235,40 +199,34 @@
             </button>
           </div>
 
-          <button onclick="logoutPortal()" class="px-4 py-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-bold flex items-center gap-1.5 transition cursor-pointer">
-            <span>Logout</span>
+          <button onclick="logoutPortal()" class="px-4 py-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-bold transition cursor-pointer">
+            Logout
           </button>
         </div>
       </div>
     </div>
 
-    <!-- Main Content Materi Cards -->
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full space-y-6">
-
-      <!-- Greeting Banner -->
-      <div class="bg-gradient-to-r from-blue-900 to-indigo-800 text-white rounded-3xl p-6 sm:p-8 shadow-lg relative overflow-hidden border border-blue-800/40">
-        <div class="relative z-10 max-w-2xl">
-          <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-400 text-slate-950 inline-block mb-3 shadow-xs">
-            Academic Year 2026/2027 • Kurikulum Merdeka Esensial
+      <div class="bg-gradient-to-r from-blue-900 to-indigo-800 text-white rounded-3xl p-6 sm:p-8 shadow-lg border border-blue-800/40">
+        <div class="max-w-2xl">
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-400 text-slate-950 inline-block mb-3">
+            Semester 1 • Kurikulum Merdeka Materi Esensial
           </span>
           <h2 class="text-xl sm:text-3xl font-black leading-tight" id="banner-greeting">Physics Learning & Assessment Modules</h2>
           <p class="text-xs sm:text-sm text-blue-100 mt-2 leading-relaxed" id="banner-subtext">
-            Explore concepts & virtual labs first, then test your mastery with Self Practice and Daily Exam.
+            Explore concepts & topic-specific virtual labs first, then test your mastery with Self Practice and Daily Exam.
           </p>
         </div>
       </div>
 
-      <!-- Filter Kelas (Khusus Guru) -->
       <div id="grade-filter-bar" class="hidden flex items-center gap-2 border-b border-slate-200 pb-3">
-        <span class="text-xs font-bold text-slate-500 uppercase mr-2">Grade Level:</span>
+        <span class="text-xs font-bold text-slate-500 uppercase mr-2">Grade Level (Semester 1):</span>
         <button onclick="setGradeFilter('10')" id="tab-grade-10" class="filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-slate-200 text-slate-700 cursor-pointer">Grade 10</button>
         <button onclick="setGradeFilter('11')" id="tab-grade-11" class="filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-blue-800 text-white shadow-sm cursor-pointer">Grade 11</button>
         <button onclick="setGradeFilter('12')" id="tab-grade-12" class="filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-slate-200 text-slate-700 cursor-pointer">Grade 12</button>
       </div>
 
-      <!-- Grid Kartu Bab Fisika -->
       <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-
     </div>
 
     <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-500">
@@ -278,57 +236,53 @@
 
   <!-- ==================== VIEW 2B: INTERACTIVE STUDY & VIRTUAL LAB HUB ==================== -->
   <div id="view-study" class="hidden min-h-screen bg-slate-50 flex flex-col justify-between">
-    <!-- Top Study Header -->
     <div class="bg-white border-b-2 border-amber-400 px-4 sm:px-8 py-4 sticky top-16 sm:top-20 z-20 shadow-sm">
       <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-3">
         <div class="flex items-center gap-3">
-          <button onclick="closeStudyHub()" class="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs flex items-center gap-1.5 cursor-pointer">
-            <span>←</span> Back to Modules
+          <button onclick="closeStudyHub()" class="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs cursor-pointer">
+            ← Back to Modules
           </button>
           <div>
-            <span id="study-grade-tag" class="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-blue-100 text-blue-800">Grade 11 • Essential Physics</span>
+            <span id="study-grade-tag" class="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-blue-100 text-blue-800">Grade 11 • Semester 1</span>
             <h2 id="study-chapter-title" class="text-base sm:text-xl font-black text-slate-900 leading-tight">Chapter Title</h2>
           </div>
         </div>
 
-        <!-- Tab Switcher Inside Study Hub -->
         <div class="flex flex-wrap gap-1.5 bg-slate-100 p-1 rounded-xl border border-slate-200">
-          <button onclick="switchStudyTab('concept')" id="stab-concept" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-800 text-white shadow-xs cursor-pointer">1. Concept & Formulas</button>
-          <button onclick="switchStudyTab('lab')" id="stab-lab" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 cursor-pointer">2. Virtual Lab & LKPD</button>
-          <button onclick="switchStudyTab('video')" id="stab-video" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 cursor-pointer">3. Video & Summary</button>
+          <button onclick="switchStudyTab('concept')" id="stab-concept" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-800 text-white cursor-pointer">1. Deep Concept & Formulas</button>
+          <button onclick="switchStudyTab('lab')" id="stab-lab" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 cursor-pointer">2. Interactive Virtual Lab</button>
+          <button onclick="switchStudyTab('video')" id="stab-video" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 cursor-pointer">3. Video & Key Summary</button>
         </div>
       </div>
     </div>
 
-    <!-- Main Study Content -->
     <div class="max-w-6xl mx-auto w-full px-4 sm:px-6 py-6 flex-1">
-
-      <!-- TAB 1: CONCEPT & FORMULAS + QUICK DRILL -->
+      <!-- TAB 1: DEEP CONCEPT -->
       <div id="study-pane-concept" class="grid lg:grid-cols-12 gap-6">
         <div class="lg:col-span-7 clean-card rounded-3xl p-6 space-y-4">
-          <span class="text-xs font-extrabold uppercase tracking-wider text-blue-700">Essential Concept Summary</span>
+          <span class="text-xs font-extrabold uppercase tracking-wider text-blue-700">Comprehensive Essential Module</span>
           <div id="study-concept-body" class="text-sm text-slate-700 leading-relaxed space-y-3"></div>
         </div>
         <div class="lg:col-span-5 clean-card rounded-3xl p-6 flex flex-col justify-between bg-gradient-to-b from-white to-blue-50/40">
           <div>
-            <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-700">Quick Concept Check</span>
-            <h3 class="text-base font-extrabold text-slate-900 mt-1 mb-3">Test Your Intuition Before Lab</h3>
+            <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-700">Diagnostic Concept Check</span>
+            <h3 class="text-base font-extrabold text-slate-900 mt-1 mb-3">Verify Your Understanding</h3>
             <div id="study-quick-quiz" class="space-y-3"></div>
           </div>
-          <div class="mt-6 pt-4 border-t border-slate-200 flex gap-2">
+          <div class="mt-6 pt-4 border-t border-slate-200">
             <button onclick="switchStudyTab('lab')" class="w-full py-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs shadow cursor-pointer">
-              Launch Interactive Virtual Lab →
+              Launch Topic Virtual Lab →
             </button>
           </div>
         </div>
       </div>
 
-      <!-- TAB 2: INTERACTIVE VIRTUAL LAB & LKPD -->
+      <!-- TAB 2: TOPIC-SPECIFIC VIRTUAL LAB & LKPD -->
       <div id="study-pane-lab" class="hidden space-y-6">
         <div class="clean-card rounded-3xl p-6">
           <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-200 mb-4">
             <div>
-              <span class="text-xs font-extrabold text-blue-700 uppercase tracking-wider">Real-Time Physics Simulation</span>
+              <span class="text-xs font-extrabold text-blue-700 uppercase tracking-wider">Real-Time Interactive Simulation</span>
               <h3 id="vlab-sim-title" class="text-lg font-black text-slate-900">Virtual Experiment</h3>
             </div>
             <div class="flex items-center gap-2">
@@ -339,15 +293,13 @@
           </div>
 
           <div class="grid lg:grid-cols-12 gap-6">
-            <!-- Canvas -->
             <div class="lg:col-span-8">
               <div class="rounded-2xl overflow-hidden border-2 border-slate-300 bg-white relative">
-                <canvas id="vlab-canvas" width="720" height="340" class="w-full h-auto block"></canvas>
+                <canvas id="vlab-canvas" width="720" height="350" class="w-full h-auto block"></canvas>
                 <div id="vlab-hud" class="absolute top-3 left-3 bg-white/95 backdrop-blur px-3 py-2 rounded-xl border border-slate-200 text-xs font-mono space-y-0.5 shadow-sm"></div>
               </div>
             </div>
 
-            <!-- Controls & Live Bar Readout -->
             <div class="lg:col-span-4 space-y-4">
               <div id="vlab-controls" class="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-3"></div>
               <div id="vlab-telemetry" class="bg-white p-4 rounded-2xl border border-slate-200 space-y-2 text-xs"></div>
@@ -355,12 +307,11 @@
           </div>
         </div>
 
-        <!-- Digital LKPD Table -->
         <div class="clean-card rounded-3xl p-6 border-t-4 border-t-amber-400">
           <div class="flex items-center justify-between mb-3">
             <div>
               <span class="text-xs font-bold text-amber-700 uppercase">Digital Worksheet (LKPD)</span>
-              <h4 class="text-base font-extrabold text-slate-900">Observation Data Log</h4>
+              <h4 class="text-base font-extrabold text-slate-900">Experiment Observation Table</h4>
             </div>
             <button onclick="clearVLabTable()" class="text-xs text-rose-600 hover:underline font-bold cursor-pointer">Clear Table</button>
           </div>
@@ -389,16 +340,11 @@
             <div id="study-conclusion-body" class="text-xs sm:text-sm text-slate-700 space-y-2.5 leading-relaxed"></div>
           </div>
           <div class="mt-6 pt-4 border-t border-slate-200 grid grid-cols-2 gap-2">
-            <button onclick="closeStudyHub(); openPackageModal(activeStudyBab.id, 'latihan')" class="py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs cursor-pointer">
-              Self Practice
-            </button>
-            <button onclick="closeStudyHub(); openTokenDialog(activeStudyBab.id)" class="py-2.5 px-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs shadow cursor-pointer">
-              Daily Exam
-            </button>
+            <button onclick="closeStudyHub(); openPackageModal(activeStudyBab.id, 'latihan')" class="py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs cursor-pointer">Self Practice</button>
+            <button onclick="closeStudyHub(); openTokenDialog(activeStudyBab.id)" class="py-2.5 px-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs shadow cursor-pointer">Daily Exam</button>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -406,8 +352,8 @@
   <div id="view-exam" class="hidden min-h-screen bg-slate-100 flex flex-col justify-between p-4 sm:p-6">
     <div class="max-w-6xl mx-auto w-full bg-white rounded-2xl p-4 shadow-sm border border-slate-200 flex flex-wrap justify-between items-center gap-4 mb-6">
       <div class="flex items-center space-x-3">
-        <button onclick="exitExamConfirm()" class="p-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl transition cursor-pointer" title="Back to Dashboard">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+        <button onclick="exitExamConfirm()" class="p-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl transition cursor-pointer">
+          ←
         </button>
         <div>
           <div class="flex items-center gap-2">
@@ -422,7 +368,6 @@
         <div id="cheat-badge" class="hidden bg-rose-50 text-rose-700 border border-rose-200 px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 animate-pulse">
           <span>⚠️ Tab Switches: <span id="cheat-count-num">0</span>x</span>
         </div>
-
         <div id="exam-timer-box" class="bg-slate-900 text-white px-4 py-2 rounded-xl flex items-center gap-2">
           <span id="exam-timer-text" class="font-mono text-sm sm:text-base font-bold text-amber-400">20:00</span>
         </div>
@@ -433,22 +378,18 @@
       <div class="lg:col-span-2 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 flex flex-col justify-between min-h-[440px]">
         <div>
           <div class="flex justify-between items-center border-b border-slate-100 pb-4 mb-6">
-            <span id="exam-q-num-badge" class="text-xs font-bold text-blue-800 bg-blue-50 px-3 py-1 rounded-lg border border-blue-200">Question 1 of 5</span>
-            <button onclick="toggleDoubtful()" id="exam-doubt-btn" class="text-xs font-bold text-slate-400 hover:text-amber-500 flex items-center gap-1.5 transition cursor-pointer">
-              <span>Mark as Doubtful</span>
-            </button>
+            <span id="exam-q-num-badge" class="text-xs font-bold text-blue-800 bg-blue-50 px-3 py-1 rounded-lg border border-blue-200">Question 1</span>
+            <button onclick="toggleDoubtful()" id="exam-doubt-btn" class="text-xs font-bold text-slate-400 hover:text-amber-500 cursor-pointer">Mark as Doubtful</button>
           </div>
           <div id="exam-q-text" class="text-slate-900 text-base sm:text-lg leading-relaxed font-medium mb-8"></div>
           <div id="exam-q-options" class="space-y-3"></div>
         </div>
 
         <div class="mt-8 pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center gap-3">
-          <button onclick="triggerRescueMode()" class="px-3.5 py-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-bold transition cursor-pointer">
-            Need Help? (Rescue Mode)
-          </button>
+          <button onclick="triggerRescueMode()" class="px-3.5 py-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-bold cursor-pointer">Need Help? (Rescue Mode)</button>
           <div class="flex space-x-2">
-            <button id="btn-prev-q" onclick="prevQuestion()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition cursor-pointer">Previous</button>
-            <button id="btn-next-q" onclick="nextQuestion()" class="px-5 py-2 bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs rounded-xl transition shadow cursor-pointer">Next</button>
+            <button id="btn-prev-q" onclick="prevQuestion()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl cursor-pointer">Previous</button>
+            <button id="btn-next-q" onclick="nextQuestion()" class="px-5 py-2 bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs rounded-xl shadow cursor-pointer">Next</button>
           </div>
         </div>
       </div>
@@ -458,17 +399,14 @@
           <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">Question Navigator</h4>
           <div id="exam-palette-grid" class="grid grid-cols-5 gap-2"></div>
           <div class="mt-6 pt-4 border-t border-slate-100">
-            <button onclick="confirmFinishExam()" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition shadow cursor-pointer">
-              Submit Exam
-            </button>
+            <button onclick="confirmFinishExam()" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow cursor-pointer">Submit Exam</button>
           </div>
         </div>
-
         <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200">
           <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">Exam Tools</h4>
           <div class="grid grid-cols-2 gap-3">
-            <button onclick="openCanvasModal()" class="p-3 bg-amber-50 hover:bg-amber-100 border border-amber-200 text-amber-800 rounded-2xl text-xs font-bold transition cursor-pointer">Scratchpad</button>
-            <button onclick="toggleCalcModal()" class="p-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-800 rounded-2xl text-xs font-bold transition cursor-pointer">Calculator</button>
+            <button onclick="openCanvasModal()" class="p-3 bg-amber-50 hover:bg-amber-100 border border-amber-200 text-amber-800 rounded-2xl text-xs font-bold cursor-pointer">Scratchpad</button>
+            <button onclick="toggleCalcModal()" class="p-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-800 rounded-2xl text-xs font-bold cursor-pointer">Calculator</button>
           </div>
         </div>
       </div>
@@ -478,7 +416,7 @@
   <!-- ==================== VIEW 4: SCORE & REVIEW ==================== -->
   <div id="view-result" class="hidden min-h-screen bg-slate-50 flex items-center justify-center p-4 sm:p-8">
     <div class="bg-white max-w-3xl w-full rounded-3xl overflow-hidden border border-slate-200 clean-card shadow-2xl">
-      <div class="p-8 text-center bg-slate-900 text-white relative">
+      <div class="p-8 text-center bg-slate-900 text-white">
         <span class="px-3 py-1 bg-blue-500/20 text-blue-300 border border-blue-500/30 rounded-full text-xs font-bold inline-block mb-3">Physics Assessment Results</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold" id="res-chapter-title">Chapter Title</h2>
         <p class="text-xs text-slate-300 mt-1" id="res-student-info">Candidate: -</p>
@@ -488,59 +426,40 @@
           <span class="text-xs font-bold text-emerald-400" id="res-score-status">Passed</span>
         </div>
       </div>
-
       <div class="grid grid-cols-4 gap-2 p-4 bg-slate-100 border-b border-slate-200 text-center text-xs">
         <div><span class="text-slate-500 font-semibold">Correct</span><p class="text-lg font-bold text-emerald-600 mt-0.5" id="res-stat-correct">0</p></div>
         <div><span class="text-slate-500 font-semibold">Wrong</span><p class="text-lg font-bold text-rose-600 mt-0.5" id="res-stat-wrong">0</p></div>
         <div><span class="text-slate-500 font-semibold">Unanswered</span><p class="text-lg font-bold text-amber-600 mt-0.5" id="res-stat-empty">0</p></div>
         <div><span class="text-slate-500 font-semibold">Tab Switches</span><p class="text-lg font-bold text-blue-700 mt-0.5" id="res-stat-cheat">0x</p></div>
       </div>
-
       <div class="p-6 sm:p-8 space-y-6">
         <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider">Answer Key & Solutions</h4>
         <div id="res-discussion-container" class="space-y-4"></div>
         <div class="pt-6 border-t border-slate-200 flex justify-between">
-          <button onclick="returnToDashboardFromResults()" class="px-6 py-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs transition shadow cursor-pointer">Return to Modules</button>
+          <button onclick="returnToDashboardFromResults()" class="px-6 py-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs shadow cursor-pointer">Return to Modules</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ==================== MODAL PILIH PAKET SOAL (1 - 5) ==================== -->
+  <!-- MODALS -->
   <div id="modal-paket" class="fixed inset-0 z-50 bg-slate-900/60 hidden flex items-center justify-center p-4 backdrop-blur-sm">
     <div class="bg-white w-full max-w-md rounded-3xl p-6 sm:p-8 clean-card relative shadow-2xl">
       <button onclick="closePackageModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 cursor-pointer">✕</button>
       <div class="text-center mb-6">
-        <span id="paket-mode-badge" class="px-3 py-1 rounded-full text-[11px] font-bold bg-blue-50 text-blue-800 border border-blue-200 inline-block mb-2 uppercase">Self Practice</span>
+        <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-blue-50 text-blue-800 border border-blue-200 inline-block mb-2 uppercase">Self Practice</span>
         <h3 class="text-lg font-black text-slate-900" id="paket-modal-title">Select Question Package</h3>
-        <p class="text-xs text-slate-500 mt-1">Each package contains 20 curated physics problems.</p>
       </div>
       <div class="space-y-2.5">
-        <button onclick="selectPackageAndStart(1)" class="w-full p-3.5 rounded-2xl border border-slate-200 hover:border-blue-600 hover:bg-blue-50 transition flex items-center justify-between group cursor-pointer">
-          <div class="flex items-center gap-3"><span class="w-8 h-8 rounded-xl bg-blue-100 text-blue-800 font-extrabold text-xs flex items-center justify-center">01</span><div class="text-left"><h4 class="text-xs font-bold text-slate-900">Package Set 1</h4><p class="text-[10px] text-slate-400">Core Standard</p></div></div>
-          <span class="text-xs font-bold text-blue-600">Start →</span>
-        </button>
-        <button onclick="selectPackageAndStart(2)" class="w-full p-3.5 rounded-2xl border border-slate-200 hover:border-blue-600 hover:bg-blue-50 transition flex items-center justify-between group cursor-pointer">
-          <div class="flex items-center gap-3"><span class="w-8 h-8 rounded-xl bg-blue-100 text-blue-800 font-extrabold text-xs flex items-center justify-center">02</span><div class="text-left"><h4 class="text-xs font-bold text-slate-900">Package Set 2</h4><p class="text-[10px] text-slate-400">Applied Concepts</p></div></div>
-          <span class="text-xs font-bold text-blue-600">Start →</span>
-        </button>
-        <button onclick="selectPackageAndStart(3)" class="w-full p-3.5 rounded-2xl border border-slate-200 hover:border-blue-600 hover:bg-blue-50 transition flex items-center justify-between group cursor-pointer">
-          <div class="flex items-center gap-3"><span class="w-8 h-8 rounded-xl bg-blue-100 text-blue-800 font-extrabold text-xs flex items-center justify-center">03</span><div class="text-left"><h4 class="text-xs font-bold text-slate-900">Package Set 3</h4><p class="text-[10px] text-slate-400">Analytical Drill</p></div></div>
-          <span class="text-xs font-bold text-blue-600">Start →</span>
-        </button>
-        <button onclick="selectPackageAndStart(4)" class="w-full p-3.5 rounded-2xl border border-slate-200 hover:border-blue-600 hover:bg-blue-50 transition flex items-center justify-between group cursor-pointer">
-          <div class="flex items-center gap-3"><span class="w-8 h-8 rounded-xl bg-blue-100 text-blue-800 font-extrabold text-xs flex items-center justify-center">04</span><div class="text-left"><h4 class="text-xs font-bold text-slate-900">Package Set 4</h4><p class="text-[10px] text-slate-400">Problem Solving</p></div></div>
-          <span class="text-xs font-bold text-blue-600">Start →</span>
-        </button>
-        <button onclick="selectPackageAndStart(5)" class="w-full p-3.5 rounded-2xl border border-slate-200 hover:border-blue-600 hover:bg-blue-50 transition flex items-center justify-between group cursor-pointer">
-          <div class="flex items-center gap-3"><span class="w-8 h-8 rounded-xl bg-blue-100 text-blue-800 font-extrabold text-xs flex items-center justify-center">05</span><div class="text-left"><h4 class="text-xs font-bold text-slate-900">Package Set 5</h4><p class="text-[10px] text-slate-400">Exam Mastery</p></div></div>
-          <span class="text-xs font-bold text-blue-600">Start →</span>
-        </button>
+        <button onclick="selectPackageAndStart(1)" class="w-full p-3.5 rounded-2xl border border-slate-200 hover:border-blue-600 hover:bg-blue-50 flex items-center justify-between cursor-pointer"><span class="text-xs font-bold">01 • Package Set 1 (Core Standard)</span><span class="text-xs font-bold text-blue-600">Start →</span></button>
+        <button onclick="selectPackageAndStart(2)" class="w-full p-3.5 rounded-2xl border border-slate-200 hover:border-blue-600 hover:bg-blue-50 flex items-center justify-between cursor-pointer"><span class="text-xs font-bold">02 • Package Set 2 (Applied Concepts)</span><span class="text-xs font-bold text-blue-600">Start →</span></button>
+        <button onclick="selectPackageAndStart(3)" class="w-full p-3.5 rounded-2xl border border-slate-200 hover:border-blue-600 hover:bg-blue-50 flex items-center justify-between cursor-pointer"><span class="text-xs font-bold">03 • Package Set 3 (Analytical Drill)</span><span class="text-xs font-bold text-blue-600">Start →</span></button>
+        <button onclick="selectPackageAndStart(4)" class="w-full p-3.5 rounded-2xl border border-slate-200 hover:border-blue-600 hover:bg-blue-50 flex items-center justify-between cursor-pointer"><span class="text-xs font-bold">04 • Package Set 4 (Problem Solving)</span><span class="text-xs font-bold text-blue-600">Start →</span></button>
+        <button onclick="selectPackageAndStart(5)" class="w-full p-3.5 rounded-2xl border border-slate-200 hover:border-blue-600 hover:bg-blue-50 flex items-center justify-between cursor-pointer"><span class="text-xs font-bold">05 • Package Set 5 (Exam Mastery)</span><span class="text-xs font-bold text-blue-600">Start →</span></button>
       </div>
     </div>
   </div>
 
-  <!-- ==================== MODAL TOKEN DAILY EXAM ==================== -->
   <div id="modal-token" class="fixed inset-0 z-50 bg-slate-900/60 hidden flex items-center justify-center p-4 backdrop-blur-sm">
     <div class="bg-white w-full max-w-md rounded-3xl p-6 sm:p-8 clean-card relative">
       <button onclick="closeTokenModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 cursor-pointer">✕</button>
@@ -549,124 +468,99 @@
         <p class="text-xs text-slate-500 mt-1" id="token-modal-title">Chapter Title</p>
       </div>
       <form onsubmit="submitExamToken(event)" class="space-y-4">
-        <div>
-          <label class="block text-xs font-bold text-slate-700 mb-1.5">Enter Secret Token from Instructor</label>
-          <input type="text" id="input-token-value" required placeholder="e.g. ENERGI11" class="uppercase font-mono w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-center font-black tracking-widest text-slate-900 text-base focus:bg-white focus:outline-none focus:border-blue-600">
-        </div>
-        <button type="submit" class="w-full py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-sm transition shadow-md cursor-pointer">Start Assessment →</button>
+        <input type="text" id="input-token-value" required placeholder="e.g. ENERGI11" class="uppercase font-mono w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-center font-black tracking-widest text-slate-900 text-base">
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-sm shadow-md cursor-pointer">Start Assessment →</button>
       </form>
     </div>
   </div>
 
-  <!-- ==================== MODAL GURU: QUESTION EDITOR ==================== -->
   <div id="modal-editor" class="fixed inset-0 z-50 bg-slate-900/60 hidden flex items-center justify-center p-4 backdrop-blur-sm">
     <div class="bg-white w-full max-w-2xl rounded-3xl p-6 sm:p-8 clean-card relative max-h-[90vh] overflow-y-auto">
       <button onclick="closeQuestionEditorModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 cursor-pointer">✕</button>
-      <div class="mb-6">
-        <h3 class="text-xl font-black text-slate-900">Question & Token Editor</h3>
-        <p class="text-xs text-slate-500 mt-1">Add new physics questions directly into the active session.</p>
-      </div>
+      <h3 class="text-xl font-black text-slate-900 mb-4">Question & Token Editor</h3>
       <form onsubmit="handleSaveNewQuestion(event)" class="space-y-4">
         <div class="grid grid-cols-2 gap-3">
-          <div>
-            <label class="block text-xs font-bold text-slate-700 mb-1">Target Chapter</label>
-            <select id="edit-bab-select" class="w-full p-2.5 rounded-xl border text-xs font-bold bg-slate-50"></select>
-          </div>
-          <div>
-            <label class="block text-xs font-bold text-slate-700 mb-1">Correct Answer</label>
-            <select id="edit-kunci-select" class="w-full p-2.5 rounded-xl border text-xs font-bold bg-slate-50">
-              <option value="0">A</option><option value="1">B</option><option value="2">C</option><option value="3">D</option>
-            </select>
-          </div>
+          <select id="edit-bab-select" class="w-full p-2.5 rounded-xl border text-xs font-bold bg-slate-50"></select>
+          <select id="edit-kunci-select" class="w-full p-2.5 rounded-xl border text-xs font-bold bg-slate-50">
+            <option value="0">A</option><option value="1">B</option><option value="2">C</option><option value="3">D</option>
+          </select>
         </div>
-        <div>
-          <label class="block text-xs font-bold text-slate-700 mb-1">Question Prompt (KaTeX: $E_p = mgh$)</label>
-          <textarea id="edit-soal-text" rows="3" required class="w-full p-3 rounded-xl border text-xs sm:text-sm bg-slate-50"></textarea>
-        </div>
+        <textarea id="edit-soal-text" rows="3" required placeholder="Question Prompt" class="w-full p-3 rounded-xl border text-xs bg-slate-50"></textarea>
         <div class="grid grid-cols-2 gap-2 text-xs">
           <input type="text" id="edit-opt-0" required placeholder="Option A" class="w-full p-2 rounded-lg border bg-slate-50">
           <input type="text" id="edit-opt-1" required placeholder="Option B" class="w-full p-2 rounded-lg border bg-slate-50">
           <input type="text" id="edit-opt-2" required placeholder="Option C" class="w-full p-2 rounded-lg border bg-slate-50">
           <input type="text" id="edit-opt-3" required placeholder="Option D" class="w-full p-2 rounded-lg border bg-slate-50">
         </div>
-        <div>
-          <label class="block text-xs font-bold text-slate-700 mb-1">Solution / Discussion</label>
-          <input type="text" id="edit-pembahasan" required class="w-full p-2.5 rounded-xl border text-xs bg-slate-50">
-        </div>
-        <div class="pt-2 flex justify-end gap-2">
-          <button type="button" onclick="closeQuestionEditorModal()" class="px-4 py-2 rounded-xl bg-slate-100 text-xs font-bold text-slate-700 cursor-pointer">Cancel</button>
-          <button type="submit" class="px-5 py-2 rounded-xl bg-blue-700 text-xs font-bold text-white shadow cursor-pointer">Save Question</button>
+        <input type="text" id="edit-pembahasan" required placeholder="Solution" class="w-full p-2.5 rounded-xl border text-xs bg-slate-50">
+        <div class="flex justify-end gap-2">
+          <button type="button" onclick="closeQuestionEditorModal()" class="px-4 py-2 rounded-xl bg-slate-100 text-xs font-bold cursor-pointer">Cancel</button>
+          <button type="submit" class="px-5 py-2 rounded-xl bg-blue-700 text-xs font-bold text-white cursor-pointer">Save Question</button>
         </div>
       </form>
     </div>
   </div>
 
-  <!-- ==================== MODAL TOOLS: SCRATCHPAD & CALCULATOR ==================== -->
   <div id="modal-canvas" class="fixed inset-0 z-50 bg-slate-900/70 hidden flex items-center justify-center p-4">
     <div class="bg-white w-full max-w-3xl rounded-3xl overflow-hidden clean-card flex flex-col">
       <div class="bg-slate-900 text-white px-6 py-4 flex justify-between items-center">
         <h3 class="text-sm font-bold">Physics Digital Scratchpad</h3>
         <div class="flex items-center space-x-3">
-          <button onclick="clearCanvas()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg cursor-pointer">Clear All</button>
+          <button onclick="clearCanvas()" class="text-xs bg-slate-800 px-3 py-1.5 rounded-lg cursor-pointer">Clear</button>
           <button onclick="closeCanvasModal()" class="text-slate-400 hover:text-white cursor-pointer">✕</button>
         </div>
       </div>
       <div class="p-3 bg-slate-100 flex items-center gap-4 text-xs text-slate-700 border-b">
-        <label class="flex items-center gap-2"><span>Color:</span><input type="color" id="pen-color" value="#1e40af" class="cursor-pointer bg-transparent"></label>
-        <label class="flex items-center gap-2"><span>Size:</span><input type="range" id="pen-size" min="1" max="10" value="3"></label>
+        <label>Color: <input type="color" id="pen-color" value="#1e40af"></label>
+        <label>Size: <input type="range" id="pen-size" min="1" max="10" value="3"></label>
       </div>
       <canvas id="scratchpad-canvas" class="w-full h-80 bg-amber-50/40 cursor-crosshair"></canvas>
     </div>
   </div>
 
-  <div id="modal-calc" class="fixed bottom-6 right-6 z-50 bg-white rounded-3xl p-4 w-80 sm:w-96 hidden shadow-2xl border border-slate-200 select-none">
+  <div id="modal-calc" class="fixed bottom-6 right-6 z-50 bg-white rounded-3xl p-4 w-80 hidden shadow-2xl border border-slate-200 select-none">
     <div class="flex justify-between items-center mb-2 pb-2 border-b border-slate-100">
       <span class="text-xs font-bold text-blue-700">Scientific Calculator</span>
       <button onclick="toggleCalcModal()" class="text-slate-400 hover:text-slate-700 cursor-pointer">✕</button>
     </div>
-    <input type="text" id="calc-display" readonly class="w-full bg-slate-100 text-right font-mono p-3 text-base font-bold rounded-xl border border-slate-200 mb-3 text-slate-900" value="0">
+    <input type="text" id="calc-display" readonly class="w-full bg-slate-100 text-right font-mono p-3 text-base font-bold rounded-xl border border-slate-200 mb-3" value="0">
     <div class="grid grid-cols-5 gap-1.5 text-[11px] font-bold">
       <button onclick="calcPush('sin(')" class="p-2 bg-blue-50 text-blue-800 rounded-lg cursor-pointer">sin</button>
       <button onclick="calcPush('cos(')" class="p-2 bg-blue-50 text-blue-800 rounded-lg cursor-pointer">cos</button>
       <button onclick="calcPush('tan(')" class="p-2 bg-blue-50 text-blue-800 rounded-lg cursor-pointer">tan</button>
       <button onclick="calcDel()" class="p-2 bg-amber-50 text-amber-700 rounded-lg cursor-pointer">DEL</button>
       <button onclick="calcReset()" class="p-2 bg-rose-50 text-rose-700 rounded-lg cursor-pointer">AC</button>
-      <button onclick="calcPush('log(')" class="p-2 bg-blue-50 text-blue-800 rounded-lg cursor-pointer">log</button>
-      <button onclick="calcPush('ln(')" class="p-2 bg-blue-50 text-blue-800 rounded-lg cursor-pointer">ln</button>
-      <button onclick="calcPush('^')" class="p-2 bg-blue-50 text-blue-800 rounded-lg cursor-pointer">xʸ</button>
-      <button onclick="calcPush('(')" class="p-2 bg-slate-100 text-slate-700 rounded-lg cursor-pointer">(</button>
-      <button onclick="calcPush(')')" class="p-2 bg-slate-100 text-slate-700 rounded-lg cursor-pointer">)</button>
-      <button onclick="calcPush('√(')" class="p-2 bg-blue-50 text-blue-800 rounded-lg cursor-pointer">√</button>
       <button onclick="calcPush('7')" class="p-2 bg-slate-50 rounded-lg cursor-pointer">7</button>
       <button onclick="calcPush('8')" class="p-2 bg-slate-50 rounded-lg cursor-pointer">8</button>
       <button onclick="calcPush('9')" class="p-2 bg-slate-50 rounded-lg cursor-pointer">9</button>
       <button onclick="calcPush('÷')" class="p-2 bg-slate-200 text-blue-800 rounded-lg cursor-pointer">÷</button>
-      <button onclick="calcPush('π')" class="p-2 bg-blue-50 text-blue-800 rounded-lg cursor-pointer">π</button>
+      <button onclick="calcPush('√(')" class="p-2 bg-blue-50 text-blue-800 rounded-lg cursor-pointer">√</button>
       <button onclick="calcPush('4')" class="p-2 bg-slate-50 rounded-lg cursor-pointer">4</button>
       <button onclick="calcPush('5')" class="p-2 bg-slate-50 rounded-lg cursor-pointer">5</button>
       <button onclick="calcPush('6')" class="p-2 bg-slate-50 rounded-lg cursor-pointer">6</button>
       <button onclick="calcPush('×')" class="p-2 bg-slate-200 text-blue-800 rounded-lg cursor-pointer">×</button>
-      <button onclick="calcPush('e')" class="p-2 bg-blue-50 text-blue-800 rounded-lg cursor-pointer">e</button>
+      <button onclick="calcPush('^')" class="p-2 bg-blue-50 text-blue-800 rounded-lg cursor-pointer">xʸ</button>
       <button onclick="calcPush('1')" class="p-2 bg-slate-50 rounded-lg cursor-pointer">1</button>
       <button onclick="calcPush('2')" class="p-2 bg-slate-50 rounded-lg cursor-pointer">2</button>
       <button onclick="calcPush('3')" class="p-2 bg-slate-50 rounded-lg cursor-pointer">3</button>
       <button onclick="calcPush('-')" class="p-2 bg-slate-200 text-blue-800 rounded-lg cursor-pointer">-</button>
-      <button onclick="calcPush('×10^(')" class="p-2 bg-blue-50 text-blue-800 rounded-lg cursor-pointer text-[9px]">EXP</button>
+      <button onclick="calcPush('(')" class="p-2 bg-slate-100 rounded-lg cursor-pointer">(</button>
       <button onclick="calcPush('0')" class="p-2 bg-slate-50 rounded-lg cursor-pointer">0</button>
       <button onclick="calcPush('.')" class="p-2 bg-slate-50 rounded-lg cursor-pointer">.</button>
       <button onclick="calcPush('+')" class="p-2 bg-slate-200 text-blue-800 rounded-lg cursor-pointer">+</button>
+      <button onclick="calcPush(')')" class="p-2 bg-slate-100 rounded-lg cursor-pointer">)</button>
       <button onclick="calcCompute()" class="p-2 bg-blue-700 text-white font-black rounded-lg cursor-pointer">=</button>
     </div>
   </div>
 
   <!-- ==================== JAVASCRIPT MASTER ENGINE ==================== -->
   <script src="bankSoal.js"></script>
+  <script src="materiSemester1.js"></script>
 
   <script>
     const GURU_PASSWORDS = ["FISIKA18", "UMAR18"];
     const GOOGLE_SHEET_URL = "https://docs.google.com/spreadsheets";
 
-    // Helper KaTeX Safe Renderer
     function applyKaTeX(targetEl) {
       try {
         if (window.renderMathInElement && targetEl) {
@@ -678,391 +572,57 @@
             throwOnError: false
           });
         }
-      } catch (e) {
-        console.warn("KaTeX skipped:", e);
-      }
+      } catch (e) {}
     }
 
-    // Fullscreen Portal Toggle
     function toggleFullScreenPortal() {
       const docEl = document.documentElement;
       const label = document.getElementById('fs-label-text');
       if (!document.fullscreenElement) {
-        if (docEl.requestFullscreen) {
-          docEl.requestFullscreen().then(() => { label.innerText = "Exit Fullscreen"; }).catch(() => {});
-        }
+        if (docEl.requestFullscreen) docEl.requestFullscreen().then(() => { label.innerText = "Exit Fullscreen"; }).catch(() => {});
       } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen().then(() => { label.innerText = "Fullscreen"; }).catch(() => {});
-        }
+        if (document.exitFullscreen) document.exitFullscreen().then(() => { label.innerText = "Fullscreen"; }).catch(() => {});
       }
     }
 
-    // MASTER DATA BAB (TERMASUK WORK & MECHANICAL ENERGY + VIRTUAL LAB MAPPING)
-    let masterBabData = [
-      // GRADE 10
-      {
-        id: "x-pengukuran",
-        grade: "10",
-        title: "Scientific Measurement & Lab Work",
-        desc: "Base/derived dimensions, significant figures, vernier calipers, and uncertainty.",
-        token: "UKUR10",
-        labType: "energy",
-        ytId: "mhIOylZMg6Q",
-        conceptHtml: `<p><strong>Besaran Pokok & Dimensi:</strong> Setiap besaran turunan dapat diuraikan ke dalam dimensi dasar $[M]$, $[L]$, dan $[T]$.</p>
-          <div class="p-3 bg-blue-50 border border-blue-200 rounded-xl font-bold text-blue-900">$$[W] = [F][s] = [M][L]^2[T]^{-2}$$</div>
-          <p class="text-xs text-slate-600">Ketelitian jangka sorong standar adalah $0{,}1\\text{ mm}$ ($0{,}01\\text{ cm}$), sedangkan mikrometer sekrup $0{,}01\\text{ mm}$.</p>`,
-        conclusionHtml: `<ul class="list-disc list-inside space-y-1.5"><li>Angka penting menentukan tingkat ketelitian hasil pengukuran.</li><li>Analisis dimensi memverifikasi kebenaran persamaan fisika.</li></ul>`,
-        quickQuiz: { q: "Dimensi dari energi kinetik ($E_k = \\frac{1}{2}mv^2$) adalah...", opts: ["$[M][L][T]^{-2}$", "$[M][L]^2[T]^{-2}$", "$[M][L]^2[T]^{-1}$"], ans: 1 },
-        questions: [
-          {
-            id: 1001,
-            text: "The dimension of Work / Energy ($W = F \\cdot s$) in SI base units is...",
-            options: ["$[M][L][T]^{-1}$", "$[M][L][T]^{-2}$", "$[M][L]^2[T]^{-2}$", "$[M][L]^2[T]^{-1}$"],
-            correct: 2,
-            discussion: "Work unit is $\\text{kg}\\cdot\\text{m}^2/\\text{s}^2$, giving dimension $[M][L]^2[T]^{-2}$."
-          }
-        ]
-      },
-      {
-        id: "x-energi",
-        grade: "10",
-        title: "Renewable Energy & Conservation",
-        desc: "Kinetic & potential energy, solar, wind, biomass, and energy conservation.",
-        token: "ENERGI10",
-        labType: "energy",
-        ytId: "mhIOylZMg6Q",
-        conceptHtml: `<p><strong>Hukum Kekekalan Energi:</strong> Energi tidak dapat diciptakan atau dimusnahkan, hanya berubah bentuk dari satu bentuk ke bentuk lainnya ($E_p \\leftrightarrow E_k$).</p>
-          <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-xl font-bold text-emerald-900">$$E_m = E_p + E_k = mgh + \\frac{1}{2}mv^2$$</div>`,
-        conclusionHtml: `<ul class="list-disc list-inside space-y-1.5"><li>Pembangkit listrik terbarukan mengonversi energi mekanik angin/air menjadi energi listrik.</li><li>Efisiensi energi bergantung pada minimnya energi terbuang (panas/gesekan).</li></ul>`,
-        quickQuiz: { q: "Saat air waduk jatuh memutar turbin PLTA, perubahan energi utamanya adalah...", opts: ["Kinetik ke Potensial", "Potensial ke Kinetik lalu Listrik", "Listrik ke Termal"], ans: 1 },
-        questions: [
-          {
-            id: 1002,
-            text: "Which of the following is considered a non-renewable energy source?",
-            options: ["Solar Power", "Geothermal Energy", "Coal / Fossil Fuel", "Wind Turbine"],
-            correct: 2,
-            discussion: "Coal is a finite fossil fuel and therefore non-renewable."
-          }
-        ]
-      },
-      {
-        id: "x-pemanasan-global",
-        grade: "10",
-        title: "Global Warming: Concepts & Solutions",
-        desc: "Greenhouse gases, carbon emissions, climate change, and renewable mitigation.",
-        token: "IKLIM10",
-        labType: "energy",
-        ytId: "mhIOylZMg6Q",
-        conceptHtml: `<p><strong>Efek Rumah Kaca:</strong> Radiasi inframerah gelombang panjang yang dipantulkan permukaan bumi terperangkap oleh gas rumah kaca ($\text{CO}_2$, $\text{CH}_4$, $\text{N}_2\text{O}$) di atmosfer.</p>`,
-        conclusionHtml: `<ul class="list-disc list-inside space-y-1.5"><li>Transisi menuju energi bersih menekan emisi karbon dioksida.</li><li>Efek rumah kaca alami menjaga suhu bumi tetap layak huni, namun peningkatan berlebih memicu pemanasan global.</li></ul>`,
-        quickQuiz: { q: "Gas rumah kaca utama hasil pembakaran bahan bakar fosil adalah...", opts: ["$\\text{O}_2$", "$\\text{CO}_2$", "$\\text{N}_2$"], ans: 1 },
-        questions: [
-          {
-            id: 1003,
-            text: "The primary greenhouse gas emitted through anthropogenic activities is...",
-            options: ["$\\text{CO}_2$", "$\\text{O}_2$", "$\\text{N}_2$", "$\\text{He}$"],
-            correct: 0,
-            discussion: "Carbon dioxide ($\\text{CO}_2$) is the most prevalent anthropogenic greenhouse gas."
-          }
-        ]
-      },
-
-      // GRADE 11
-      {
-        id: "xi-vektor",
-        grade: "11",
-        title: "Vector Analysis & Decomposition",
-        desc: "Unit vectors, dot and cross products, analytical addition of vector components.",
-        token: "VEKTOR11",
-        labType: "vector",
-        ytId: "mhIOylZMg6Q",
-        conceptHtml: `<p><strong>Penguraian Komponen Vektor:</strong> Vektor gaya $\\vec{F}$ yang membentuk sudut $\\theta$ terhadap sumbu-$x$ positif diuraikan menjadi komponen horizontal dan vertikal:</p>
-          <div class="p-3 bg-blue-50 border border-blue-200 rounded-xl font-bold text-blue-900">$$F_x = F\\cos\\theta \\quad | \\quad F_y = F\\sin\\theta \\quad | \\quad |\\vec{R}| = \\sqrt{R_x^2 + R_y^2}$$</div>`,
-        conclusionHtml: `<ul class="list-disc list-inside space-y-1.5"><li>Penjumlahan analitis menjumlahkan komponen sumbu-$x$ dan sumbu-$y$ secara terpisah.</li><li>Dua vektor saling tegak lurus ($90^\\circ$) menghasilkan resultan $R = \\sqrt{F_1^2 + F_2^2}$.</li></ul>`,
-        quickQuiz: { q: "Jika $F_x = 6\\text{ N}$ dan $F_y = 8\\text{ N}$, maka besar resultannya adalah...", opts: ["$10\\text{ N}$", "$14\\text{ N}$", "$48\\text{ N}$"], ans: 0 },
-        questions: [
-          {
-            id: 1101,
-            text: "Two force vectors act on a particle: $\\vec{F}_1 = 6\\hat{i} + 8\\hat{j}\\text{ N}$ and $\\vec{F}_2 = 2\\hat{i} - 2\\hat{j}\\text{ N}$. Find the resultant magnitude $|\\vec{F}_1 + \\vec{F}_2|$!",
-            options: ["$8\\text{ N}$", "$10\\text{ N}$", "$12\\text{ N}$", "$14\\text{ N}$"],
-            correct: 1,
-            discussion: "$\\vec{R} = 8\\hat{i} + 6\\hat{j}\\text{ N}$. Magnitude $|\\vec{R}| = \\sqrt{8^2 + 6^2} = 10\\text{ N}$."
-          }
-        ]
-      },
-      {
-        id: "xi-kinematika",
-        grade: "11",
-        title: "Kinematics Analysis (1D & 2D)",
-        desc: "Position vector, instantaneous velocity/acceleration, projectile and circular motion.",
-        token: "GERAK11",
-        labType: "projectile",
-        ytId: "mhIOylZMg6Q",
-        conceptHtml: `<p><strong>Gerak Parabola (2D):</strong> Perpaduan antara Gerak Lurus Beraturan (GLB) pada sumbu horizontal ($v_x = v_0\\cos\\theta$) dan Gerak Lurus Berubah Beraturan (GLBB) pada sumbu vertikal ($v_y = v_0\\sin\\theta - gt$).</p>
-          <div class="p-3 bg-blue-50 border border-blue-200 rounded-xl font-bold text-blue-900">$$x_{\\max} = \\frac{v_0^2 \\sin 2\\theta}{g} \\quad | \\quad y_{\\max} = \\frac{v_0^2 \\sin^2\\theta}{2g}$$</div>`,
-        conclusionHtml: `<ul class="list-disc list-inside space-y-1.5"><li>Jangkauan horizontal terjauh dicapai pada sudut elevasi $\\theta = 45^\\circ$.</li><li>Di titik tertinggi lintasan parabola, kecepatan vertikal $v_y = 0$, namun $v_x$ tetap konstan.</li></ul>`,
-        quickQuiz: { q: "Sudut elevasi yang menghasilkan jarak mendatar maksimum pada gerak parabola adalah...", opts: ["$30^\\circ$", "$45^\\circ$", "$60^\\circ$"], ans: 1 },
-        questions: [
-          {
-            id: 1102,
-            text: "A particle moves with position function $x(t) = 2t^3 - 4t + 5\\text{ m}$. What is the acceleration at $t = 3\\text{ s}$?",
-            options: ["$18\\text{ m/s}^2$", "$36\\text{ m/s}^2$", "$48\\text{ m/s}^2$", "$54\\text{ m/s}^2$"],
-            correct: 1,
-            discussion: "$v(t) = 6t^2 - 4$, $a(t) = 12t$. At $t=3\\text{ s} \\rightarrow a(3) = 36\\text{ m/s}^2$."
-          }
-        ]
-      },
-      {
-        id: "xi-dinamika",
-        grade: "11",
-        title: "Dynamics of Motion (Newton's Laws)",
-        desc: "Newton's laws, kinetic/static friction, incline planes, and pulley systems.",
-        token: "GAYA11",
-        labType: "energy",
-        ytId: "mhIOylZMg6Q",
-        conceptHtml: `<p><strong>Hukum II Newton & Gaya Gesek:</strong> Percepatan benda berbanding lurus dengan resultan gaya dan berbanding terbalik dengan massanya.</p>
-          <div class="p-3 bg-blue-50 border border-blue-200 rounded-xl font-bold text-blue-900">$$\\sum F = m \\cdot a \\quad | \\quad f_k = \\mu_k \\cdot N$$</div>`,
-        conclusionHtml: `<ul class="list-disc list-inside space-y-1.5"><li>Gaya gesek selalu berlawanan dengan arah kecenderungan gerak benda.</li><li>Pada bidang miring sudut $\\theta$, gaya normal $N = mg\\cos\\theta$.</li></ul>`,
-        quickQuiz: { q: "Jika resultan gaya pada benda bernilai nol ($\\sum F = 0$), maka benda akan...", opts: ["Selalu diam", "Diam atau bergerak lurus beraturan (GLB)", "Bergerak dipercepat"], ans: 1 },
-        questions: [
-          {
-            id: 1103,
-            text: "A $4\\text{ kg}$ block is pulled on a rough surface ($\\mu_k = 0.25$) by $F = 20\\text{ N}$ ($g = 10\\text{ m/s}^2$). The acceleration is...",
-            options: ["$1.5\\text{ m/s}^2$", "$2.5\\text{ m/s}^2$", "$3.0\\text{ m/s}^2$", "$4.0\\text{ m/s}^2$"],
-            correct: 1,
-            discussion: "$f_k = \\mu_k N = 0.25 \\times 40 = 10\\text{ N}$. $a = (20 - 10)/4 = 2.5\\text{ m/s}^2$."
-          }
-        ]
-      },
-      {
-        id: "xi-energi-mekanik",
-        grade: "11",
-        title: "Work & Conservation of Mechanical Energy",
-        desc: "Potential & kinetic energy, conservative vs dissipative systems, roller coaster & incline physics.",
-        token: "ENERGI11",
-        labType: "energy",
-        ytId: "mhIOylZMg6Q",
-        conceptHtml: `<p><strong>Hukum Kekekalan Energi Mekanik:</strong> Apabila tidak ada gaya non-konservatif (gesekan) yang bekerja, jumlah energi potensial dan energi kinetik selalu konstan di setiap titik lintasan:</p>
-          <div class="p-3 bg-blue-50 border border-blue-200 rounded-xl font-bold text-blue-900">$$E_{m1} = E_{m2} \\Rightarrow mgh_1 + \\frac{1}{2}mv_1^2 = mgh_2 + \\frac{1}{2}mv_2^2$$</div>
-          <p class="text-xs text-slate-600">Jika lintasan kasar ($\\mu > 0$), sebagian energi mekanik berubah menjadi energi panas (termal): $W_{\\text{gesek}} = E_{m2} - E_{m1} = -E_{\\text{termal}}$.</p>`,
-        conclusionHtml: `<ul class="list-disc list-inside space-y-1.5"><li>Di titik tertinggi ($v=0$), $E_p$ maksimum dan $E_k = 0$. Di titik terendah ($h=0$), $E_k$ maksimum.</li><li>Pada lintasan licin, kelajuan di dasar hanya bergantung pada ketinggian: $v = \\sqrt{2g\\Delta h}$.</li><li>Pada lintasan kasar, energi tidak musnah melainkan terkonversi menjadi energi termal.</li></ul>`,
-        quickQuiz: { q: "Benda $2\\text{ kg}$ jatuh bebas dari ketinggian $5\\text{ m}$ ($g = 10\\text{ m/s}^2$). Kelajuan benda saat menyentuh tanah adalah...", opts: ["$5\\text{ m/s}$", "$10\\text{ m/s}$", "$50\\text{ m/s}$"], ans: 1 },
-        questions: [
-          {
-            id: 1105,
-            text: "A $2\\text{ kg}$ ball falls freely from a height of $5\\text{ m}$ ($g = 10\\text{ m/s}^2$) without air resistance. What is its speed right before hitting the ground?",
-            options: ["$5\\text{ m/s}$", "$10\\text{ m/s}$", "$25\\text{ m/s}$", "$50\\text{ m/s}$"],
-            correct: 1,
-            discussion: "$v = \\sqrt{2gh} = \\sqrt{2 \\times 10 \\times 5} = \\sqrt{100} = 10\\text{ m/s}$."
-          },
-          {
-            id: 1106,
-            text: "A $4\\text{ kg}$ block slides down a rough incline from $h = 5\\text{ m}$ ($v_0 = 0$) and reaches the bottom at $8\\text{ m/s}$. How much mechanical energy is converted into thermal energy?",
-            options: ["$32\\text{ J}$", "$72\\text{ J}$", "$128\\text{ J}$", "$200\\text{ J}$"],
-            correct: 1,
-            discussion: "$E_{m1} = mgh = 4(10)(5) = 200\\text{ J}$. $E_{m2} = \\frac{1}{2}(4)(8^2) = 128\\text{ J}$. $E_{\\text{termal}} = 200 - 128 = 72\\text{ J}$."
-          }
-        ]
-      },
-      {
-        id: "xi-fluida",
-        grade: "11",
-        title: "Fluid Mechanics (Static & Dynamic)",
-        desc: "Hydrostatic pressure, Pascal's principle, Archimedes, continuity, and Bernoulli.",
-        token: "FLUIDA11",
-        labType: "fluid",
-        ytId: "mhIOylZMg6Q",
-        conceptHtml: `<p><strong>Tekanan Hidrostatis & Kontinuitas:</strong> Tekanan zat cair diam bergantung pada massa jenis fluida dan kedalaman titik dari permukaan.</p>
-          <div class="p-3 bg-blue-50 border border-blue-200 rounded-xl font-bold text-blue-900">$$P_h = \\rho \\cdot g \\cdot h \\quad | \\quad Q = A_1 v_1 = A_2 v_2$$</div>`,
-        conclusionHtml: `<ul class="list-disc list-inside space-y-1.5"><li>Semakin dalam posisi di dalam fluida, tekanan hidrostatis semakin besar.</li><li>Pada pipa menyempit ($A_2 < A_1$), kelajuan aliran fluida meningkat ($v_2 > v_1$).</li></ul>`,
-        quickQuiz: { q: "Tekanan hidrostatis pada kedalaman $3\\text{ m}$ di air ($\\rho = 1000\\text{ kg/m}^3, g = 10\\text{ m/s}^2$) adalah...", opts: ["$3.000\\text{ Pa}$", "$30.000\\text{ Pa}$", "$300.000\\text{ Pa}$"], ans: 1 },
-        questions: [
-          {
-            id: 1104,
-            text: "Hydrostatic pressure at depth $2\\text{ m}$ under water ($\\rho = 1000\\text{ kg/m}^3, g = 10\\text{ m/s}^2$) is...",
-            options: ["$10.000\\text{ Pa}$", "$20.000\\text{ Pa}$", "$30.000\\text{ Pa}$", "$40.000\\text{ Pa}$"],
-            correct: 1,
-            discussion: "$P_h = \\rho g h = 1000 \\times 10 \\times 2 = 20.000\\text{ Pa}$."
-          }
-        ]
-      },
-
-      // GRADE 12
-      {
-        id: "xii-statis",
-        grade: "12",
-        title: "Electrostatics & Capacitance",
-        desc: "Coulomb's Law, electric field, potential, Gauss's Law, parallel plate capacitors.",
-        token: "STATIK12",
-        labType: "dc",
-        ytId: "mhIOylZMg6Q",
-        conceptHtml: `<p><strong>Hukum Coulomb:</strong> Besar gaya tarik-menarik atau tolak-menolak antara dua muatan listrik berbanding lurus dengan hasil kali kedua muatan dan berbanding terbalik dengan kuadrat jaraknya ($F = k\\frac{q_1 q_2}{r^2}$).</p>`,
-        conclusionHtml: `<ul class="list-disc list-inside space-y-1.5"><li>Muatan sejenis tolak-menolak, muatan berlawanan tarik-menarik.</li><li>Kapasitor menyimpan energi listrik dalam bentuk medan listrik di antara kedua keping.</li></ul>`,
-        quickQuiz: { q: "Jika jarak dua muatan diperbesar menjadi 2 kali semula, gaya Coulomb menjadi...", opts: ["2 kali semula", "1/2 kali semula", "1/4 kali semula"], ans: 2 },
-        questions: [
-          {
-            id: 1201,
-            text: "Two charges $q_1 = 2\\,\\mu\\text{C}$ and $q_2 = 3\\,\\mu\\text{C}$ are $3\\text{ cm}$ apart ($k = 9\\times 10^9\\text{ N m}^2/\\text{C}^2$). The Coulomb force is...",
-            options: ["$30\\text{ N}$", "$60\\text{ N}$", "$90\\text{ N}$", "$120\\text{ N}$"],
-            correct: 1,
-            discussion: "$F = \\frac{k q_1 q_2}{r^2} = \\frac{9\\times 10^9 \\times 6\\times 10^{-12}}{(0.03)^2} = 60\\text{ N}$."
-          }
-        ]
-      },
-      {
-        id: "xii-dc",
-        grade: "12",
-        title: "Direct Current Electricity (DC)",
-        desc: "Ohm's Law, Kirchhoff's loop laws, resistor circuits, electrical power and energy.",
-        token: "LISTRIK12",
-        labType: "dc",
-        ytId: "mhIOylZMg6Q",
-        conceptHtml: `<p><strong>Hukum Ohm & Daya Listrik:</strong> Kuat arus listrik dalam rangkaian tertutup berbanding lurus dengan tegangan sumber dan berbanding terbalik dengan hambatan total.</p>
-          <div class="p-3 bg-blue-50 border border-blue-200 rounded-xl font-bold text-blue-900">$$I = \\frac{V}{R} \\quad | \\quad P = V \\cdot I = I^2 R$$</div>`,
-        conclusionHtml: `<ul class="list-disc list-inside space-y-1.5"><li>Rangkaian seri membagi tegangan dengan kuat arus yang sama.</li><li>Rangkaian paralel membagi arus dengan tegangan yang sama pada setiap cabang.</li></ul>`,
-        quickQuiz: { q: "Resistor $6\\,\\Omega$ dihubungkan dengan sumber tegangan $12\\text{ V}$. Kuat arus yang mengalir adalah...", opts: ["$0{,}5\\text{ A}$", "$2\\text{ A}$", "$72\\text{ A}$"], ans: 1 },
-        questions: [
-          {
-            id: 1202,
-            text: "A conductor with $R = 12\\,\\Omega$ carries a current of $2\\text{ A}$ for $5\\text{ s}$. The total charge passed is...",
-            options: ["$5\\text{ C}$", "$10\\text{ C}$", "$15\\text{ C}$", "$20\\text{ C}$"],
-            correct: 1,
-            discussion: "$Q = I \\cdot t = 2 \\times 5 = 10\\text{ C}$."
-          }
-        ]
-      },
-      {
-        id: "xii-magnet",
-        grade: "12",
-        title: "Magnetism & Magnetic Induction",
-        desc: "Lorentz force, Biot-Savart, solenoids, toroids, Faraday's & Lenz's Laws.",
-        token: "MAGNET12",
-        labType: "dc",
-        ytId: "mhIOylZMg6Q",
-        conceptHtml: `<p><strong>Induksi Magnetik & Gaya Lorentz:</strong> Kawat berarus listrik menghasilkan medan magnet di sekitarnya ($B = \\frac{\\mu_0 I}{2\\pi a}$) dan mengalami gaya Lorentz saat berada dalam medan magnet luar ($F_L = B I L \\sin\\theta$).</p>`,
-        conclusionHtml: `<ul class="list-disc list-inside space-y-1.5"><li>GGL induksi timbul akibat perubahan fluks magnetik terhadap waktu (Hukum Faraday).</li><li>Arah arus induksi selalu menentang penyebab perubahannya (Hukum Lenz).</li></ul>`,
-        quickQuiz: { q: "Gaya Lorentz pada kawat berarus sejajar medan magnet ($\\theta = 0^\\circ$) bernilai...", opts: ["Maksimum", "Setengah maksimum", "Nol"], ans: 2 },
-        questions: [
-          {
-            id: 1203,
-            text: "A straight wire carries $5\\text{ A}$. Magnetic field at distance $10\\text{ cm}$ ($\\mu_0 = 4\\pi\\times 10^{-7}$) is...",
-            options: ["$10^{-5}\\text{ T}$", "$2\\times 10^{-5}\\text{ T}$", "$10^{-6}\\text{ T}$", "$2\\times 10^{-6}\\text{ T}$"],
-            correct: 0,
-            discussion: "$B = \\frac{\\mu_0 I}{2\\pi a} = \\frac{4\\pi \\times 10^{-7} \\times 5}{2\\pi \\times 0.1} = 10^{-5}\\text{ Tesla}$."
-          }
-        ]
-      },
-      {
-        id: "xii-ac",
-        grade: "12",
-        title: "Alternating Current Circuits (AC)",
-        desc: "Sinusoidal AC, R-L-C series circuits, impedance, phase difference, and resonance.",
-        token: "AC12",
-        labType: "dc",
-        ytId: "mhIOylZMg6Q",
-        conceptHtml: `<p><strong>Rangkaian Seri R-L-C:</strong> Impedansi total rangkaian arus bolak-balik dirumuskan sebagai $Z = \\sqrt{R^2 + (X_L - X_C)^2}$.</p>`,
-        conclusionHtml: `<ul class="list-disc list-inside space-y-1.5"><li>Resonansi terjadi saat $X_L = X_C$ sehingga impedansi minimum ($Z = R$) dan arus maksimum.</li></ul>`,
-        quickQuiz: { q: "Syarat terjadinya resonansi pada rangkaian seri R-L-C adalah...", opts: ["$X_L = X_C$", "$R = 0$", "$X_L = 0$"], ans: 0 },
-        questions: [
-          {
-            id: 1204,
-            text: "In an RLC series circuit, resonance occurs when...",
-            options: ["$X_L = X_C$", "$X_L > X_C$", "$R = 0$", "$Z = 0$"],
-            correct: 0,
-            discussion: "Resonance happens when inductive reactance equals capacitive reactance ($X_L = X_C$)."
-          }
-        ]
-      },
-      {
-        id: "xii-gelombang-em",
-        grade: "12",
-        title: "Electromagnetic Waves & Spectrum",
-        desc: "EM wave spectrum, wavelength/frequency relationships, radiation, and applications.",
-        token: "GELOMBANG12",
-        labType: "projectile",
-        ytId: "mhIOylZMg6Q",
-        conceptHtml: `<p><strong>Spektrum Gelombang Elektromagnetik:</strong> Seluruh gelombang EM merambat di ruang hampa dengan kelajuan cahaya $c = 3 \\times 10^8\\text{ m/s}$ ($c = \\lambda \\cdot f$).</p>`,
-        conclusionHtml: `<ul class="list-disc list-inside space-y-1.5"><li>Urutan frekuensi terbesar ke terkecil: Sinar Gamma, Sinar-X, UV, Cahaya Tampak, Inframerah, Gelombang Mikro, Gelombang Radio.</li></ul>`,
-        quickQuiz: { q: "Gelombang elektromagnetik dengan panjang gelombang terbesar adalah...", opts: ["Sinar Gamma", "Sinar-X", "Gelombang Radio"], ans: 2 },
-        questions: [
-          {
-            id: 1205,
-            text: "Which electromagnetic wave has the highest photon energy?",
-            options: ["Radio Waves", "Microwaves", "Visible Light", "Gamma Rays"],
-            correct: 3,
-            discussion: "Gamma rays have the highest frequency and therefore highest photon energy ($E = hf$)."
-          }
-        ]
-      }
-    ];
+    // Mengambil data dari materiSemester1.js
+    let masterBabData = window.MATERI_SEMESTER_1 || [];
 
     const rescueQuestionsList = [
-      {
-        id: 991,
-        text: "⭐ <b>[RESCUE BONUS QUESTION]</b> The SI unit for measuring <i>Acceleration</i> is...",
-        options: ["$\\text{m/s}$", "$\\text{m/s}^2$", "$\\text{kg}\\cdot\\text{m}$", "$\\text{Joule}$"],
-        correct: 1,
-        discussion: "SI unit of velocity is $\\text{m/s}$, while acceleration is $\\text{m/s}^2$."
-      },
-      {
-        id: 992,
-        text: "⭐ <b>[RESCUE BONUS QUESTION]</b> The instrument specifically designed to measure electric current is...",
-        options: ["Voltmeter", "Ammeter", "Thermometer", "Barometer"],
-        correct: 1,
-        discussion: "An Ammeter measures electric current in Amperes ($A$)."
-      }
+      { id: 991, text: "⭐ <b>[RESCUE BONUS]</b> The SI unit for Acceleration is...", options: ["$\\text{m/s}$", "$\\text{m/s}^2$", "$\\text{kg}\\cdot\\text{m}$", "$\\text{Joule}$"], correct: 1, discussion: "Acceleration is measured in $\\text{m/s}^2$." },
+      { id: 992, text: "⭐ <b>[RESCUE BONUS]</b> The instrument used to measure electric current is...", options: ["Voltmeter", "Ammeter", "Thermometer", "Barometer"], correct: 1, discussion: "An Ammeter measures electric current in Amperes ($A$)." }
     ];
 
-    // STATE MANAGEMENT
-    let currentUser = null;
-    let selectedGrade = "11";
-    let activeBabForExam = null;
-    let activeStudyBab = null;
-    let currentExamQuestions = [];
-    let currentQIdx = 0;
-    let userAnswers = {};
-    let doubtfulAnswers = new Set();
-    let cheatCount = 0;
-    let timerRef = null;
-    let timeRemaining = 0;
-    let selectedPackageBabId = null;
+    let currentUser = null, selectedGrade = "11", activeBabForExam = null, activeStudyBab = null;
+    let currentExamQuestions = [], currentQIdx = 0, userAnswers = {}, doubtfulAnswers = new Set();
+    let cheatCount = 0, timerRef = null, timeRemaining = 0, selectedPackageBabId = null;
 
     window.addEventListener('DOMContentLoaded', () => {
       document.getElementById('link-google-sheet').href = GOOGLE_SHEET_URL;
       setupCanvas();
       setupAntiCheat();
       try {
-        const savedNama = localStorage.getItem('muh18_saved_nama');
-        const savedKelas = localStorage.getItem('muh18_saved_kelas');
-        const savedAbsen = localStorage.getItem('muh18_saved_absen');
-        if (savedNama) document.getElementById('siswa-nama').value = savedNama;
-        if (savedKelas) document.getElementById('siswa-kelas').value = savedKelas;
-        if (savedAbsen) document.getElementById('siswa-absen').value = savedAbsen;
+        if (localStorage.getItem('muh18_saved_nama')) document.getElementById('siswa-nama').value = localStorage.getItem('muh18_saved_nama');
+        if (localStorage.getItem('muh18_saved_kelas')) document.getElementById('siswa-kelas').value = localStorage.getItem('muh18_saved_kelas');
+        if (localStorage.getItem('muh18_saved_absen')) document.getElementById('siswa-absen').value = localStorage.getItem('muh18_saved_absen');
       } catch (e) {}
     });
 
     function togglePasswordVisibility(inputId, spanId) {
       const input = document.getElementById(inputId);
-      const span = document.getElementById(spanId);
-      const eyeOpenSVG = '<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>';
-      const eyeOffSVG = '<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>';
-      if (input.type === 'password') { input.type = 'text'; span.innerHTML = eyeOffSVG; }
-      else { input.type = 'password'; span.innerHTML = eyeOpenSVG; }
+      input.type = input.type === 'password' ? 'text' : 'password';
     }
 
     function setAuthMode(role) {
-      const tabSiswa = document.getElementById('tab-btn-siswa');
-      const tabGuru = document.getElementById('tab-btn-guru');
-      const formSiswa = document.getElementById('auth-form-siswa');
-      const formGuru = document.getElementById('auth-form-guru');
+      const tabSiswa = document.getElementById('tab-btn-siswa'), tabGuru = document.getElementById('tab-btn-guru');
+      const formSiswa = document.getElementById('auth-form-siswa'), formGuru = document.getElementById('auth-form-guru');
       if (role === 'siswa') {
         tabSiswa.className = "py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 bg-white text-blue-900 shadow-sm border border-slate-200 cursor-pointer";
-        tabGuru.className = "py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 text-slate-500 hover:text-slate-800 cursor-pointer";
+        tabGuru.className = "py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 text-slate-500 cursor-pointer";
         formSiswa.classList.remove('hidden'); formGuru.classList.add('hidden');
       } else {
         tabGuru.className = "py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 bg-white text-blue-900 shadow-sm border border-slate-200 cursor-pointer";
-        tabSiswa.className = "py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 text-slate-500 hover:text-slate-800 cursor-pointer";
+        tabSiswa.className = "py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 text-slate-500 cursor-pointer";
         formGuru.classList.remove('hidden'); formSiswa.classList.add('hidden');
       }
     }
@@ -1074,27 +634,21 @@
       const absen = document.getElementById('siswa-absen').value.trim();
       const pass = document.getElementById('siswa-password').value.trim().toUpperCase();
 
-      let prefix = kelas.replace("-", "");
-      if (kelas === "X-Tahfidz") prefix = "XT";
+      let prefix = kelas === "X-Tahfidz" ? "XT" : kelas.replace("-", "");
       const validPasscode = `${prefix}-${absen}`.toUpperCase();
       const validPasscodeAlt = `${prefix}-${absen.padStart(2, '0')}`.toUpperCase();
 
       if (pass !== validPasscode && pass !== validPasscodeAlt && pass !== "MUH18") {
-        alert("❌ Invalid Passcode!\nPasscode must match your class and attendance number (e.g. " + validPasscode + ")");
+        alert("❌ Invalid Passcode! Example: " + validPasscode);
         return;
       }
-
       try {
         localStorage.setItem('muh18_saved_nama', nama);
         localStorage.setItem('muh18_saved_kelas', kelas);
         localStorage.setItem('muh18_saved_absen', absen);
       } catch (err) {}
 
-      let grade = "11";
-      if (kelas.startsWith("X-")) grade = "10";
-      else if (kelas.startsWith("XI-")) grade = "11";
-      else if (kelas.startsWith("XII-")) grade = "12";
-
+      let grade = kelas.startsWith("X-") ? "10" : (kelas.startsWith("XI-") ? "11" : "12");
       currentUser = { role: "siswa", nama, kelas, absen, allowedGrade: grade };
       enterDashboard();
     }
@@ -1121,27 +675,22 @@
       if (currentUser.role === 'guru') {
         document.getElementById('user-role-tag').innerText = "PHYSICS TEACHER";
         document.getElementById('user-role-tag').className = "px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300";
-        document.getElementById('user-display-sub').innerHTML = `<div class="flex items-center gap-1.5 text-xs text-slate-500 font-medium"><span>Access: Full Admin</span><span>•</span><span class="text-emerald-700 font-bold">Verified Instructor</span></div>`;
+        document.getElementById('user-display-sub').innerHTML = `<span class="text-xs text-emerald-700 font-bold">● Full Admin & Supervision Mode</span>`;
         document.getElementById('guru-shortcuts').classList.remove('hidden');
         document.getElementById('grade-filter-bar').classList.remove('hidden');
-        document.getElementById('banner-greeting').innerText = "Teacher Management & Virtual Lab Hub";
-        document.getElementById('banner-subtext').innerText = "Demonstrate interactive virtual labs in class, manage questions, and view active daily exam tokens.";
         setGradeFilter("11");
       } else {
         document.getElementById('user-role-tag').innerText = "Class " + currentUser.kelas;
-        document.getElementById('user-role-tag').className = "px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800 border border-blue-200 uppercase";
-        document.getElementById('user-display-sub').innerHTML = `<div class="flex items-center gap-1.5 text-xs text-slate-500 font-medium"><span>Attendance No: ${currentUser.absen}</span><span>•</span><span class="text-emerald-700 font-bold">Verified Student</span></div>`;
+        document.getElementById('user-display-sub').innerHTML = `<span class="text-xs text-slate-500">Attendance No: ${currentUser.absen} • <strong class="text-emerald-700">Verified Student</strong></span>`;
         document.getElementById('guru-shortcuts').classList.add('hidden');
         document.getElementById('grade-filter-bar').classList.add('hidden');
         document.getElementById('banner-greeting').innerText = `Welcome, ${currentUser.nama}!`;
-        document.getElementById('banner-subtext').innerText = `Select a module below to explore concepts & Virtual Lab, practice problems, or take the Daily Exam.`;
         setGradeFilter(currentUser.allowedGrade);
       }
     }
 
     function logoutPortal() {
-      currentUser = null;
-      vlabState.playing = false;
+      currentUser = null; vlabState.playing = false;
       document.getElementById('view-dashboard').classList.add('hidden');
       document.getElementById('view-study').classList.add('hidden');
       document.getElementById('view-auth').classList.remove('hidden');
@@ -1149,9 +698,7 @@
 
     function setGradeFilter(grade) {
       selectedGrade = grade;
-      document.querySelectorAll('.filter-grade-btn').forEach(b => {
-        b.className = "filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-slate-200 text-slate-700 cursor-pointer";
-      });
+      document.querySelectorAll('.filter-grade-btn').forEach(b => b.className = "filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-slate-200 text-slate-700 cursor-pointer");
       const activeBtn = document.getElementById(`tab-grade-${grade}`);
       if (activeBtn) activeBtn.className = "filter-grade-btn px-4 py-1.5 rounded-xl font-bold text-xs bg-blue-800 text-white shadow-sm cursor-pointer";
       renderCards();
@@ -1164,31 +711,24 @@
 
       list.forEach(bab => {
         const card = document.createElement('div');
-        card.className = "bg-white p-6 rounded-3xl border border-slate-200 clean-card flex flex-col justify-between hover:border-blue-300 hover:shadow-md transition duration-200";
+        card.className = "bg-white p-6 rounded-3xl border border-slate-200 clean-card flex flex-col justify-between hover:border-blue-300 transition";
         card.innerHTML = `
           <div>
             <div class="flex items-center justify-between mb-3">
-              <span class="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-blue-50 text-blue-800 border border-blue-200">Grade ${bab.grade} SMA</span>
-              <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">🔬 Virtual Lab Ready</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-blue-50 text-blue-800 border border-blue-200">Grade ${bab.grade} • Sem 1</span>
+              <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">🔬 ${bab.labBadge || 'Virtual Lab'}</span>
             </div>
             <h3 class="font-extrabold text-base text-slate-900 mb-1.5">${bab.title}</h3>
             <p class="text-xs text-slate-500 leading-relaxed">${bab.desc}</p>
             ${currentUser && currentUser.role === 'guru' ? `<div class="mt-3 p-2 bg-amber-50 rounded-xl border border-amber-200 text-[11px] text-amber-800 font-mono font-bold">🔑 Token: ${bab.token}</div>` : ''}
           </div>
-
           <div class="mt-5 pt-4 border-t border-slate-100 space-y-2">
-            <!-- Tombol Baru: Study & Virtual Lab -->
             <button onclick="openStudyHub('${bab.id}')" class="w-full py-2.5 px-3 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 font-extrabold text-xs transition flex items-center justify-center gap-1.5 cursor-pointer">
               <span>🔬</span> <span>Study Concept & Virtual Lab</span>
             </button>
-
             <div class="grid grid-cols-2 gap-2">
-              <button onclick="openPackageModal('${bab.id}', 'latihan')" class="py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs transition flex items-center justify-center gap-1.5 cursor-pointer">
-                <span>Self Practice</span>
-              </button>
-              <button onclick="openTokenDialog('${bab.id}')" class="py-2.5 px-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs transition shadow flex items-center justify-center gap-1.5 cursor-pointer">
-                <span>Daily Exam</span>
-              </button>
+              <button onclick="openPackageModal('${bab.id}', 'latihan')" class="py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs cursor-pointer">Self Practice</button>
+              <button onclick="openTokenDialog('${bab.id}')" class="py-2.5 px-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs shadow cursor-pointer">Daily Exam</button>
             </div>
           </div>
         `;
@@ -1197,19 +737,9 @@
     }
 
     // ========================================================
-    // STUDY HUB & MULTI-TOPIC INTERACTIVE VIRTUAL LAB ENGINE
+    // STUDY HUB & 8 TOPIC-SPECIFIC VIRTUAL LAB ENGINES
     // ========================================================
-    const vlabState = {
-      type: 'energy',
-      playing: false,
-      t: 0,
-      p1: 2,   // massa / gaya1 / kecepatan / kedalaman / tegangan
-      p2: 8,   // tinggi / gaya2 / sudut / massa jenis / hambatan
-      p3: 0,   // koefisien gesek
-      x: 0.05,
-      vx: 0,
-      records: []
-    };
+    const vlabState = { type: 'energy', playing: false, t: 0, p1: 2, p2: 8, p3: 0, x: 0.05, vx: 0, records: [] };
 
     function openStudyHub(babId) {
       activeStudyBab = masterBabData.find(b => b.id === babId);
@@ -1217,24 +747,17 @@
 
       document.getElementById('view-dashboard').classList.add('hidden');
       document.getElementById('view-study').classList.remove('hidden');
-
-      document.getElementById('study-grade-tag').innerText = `Grade ${activeStudyBab.grade} • Essential Physics`;
+      document.getElementById('study-grade-tag').innerText = `Grade ${activeStudyBab.grade} • Semester 1 Essential`;
       document.getElementById('study-chapter-title').innerText = activeStudyBab.title;
       document.getElementById('study-concept-body').innerHTML = activeStudyBab.conceptHtml;
       document.getElementById('study-conclusion-body').innerHTML = activeStudyBab.conclusionHtml;
       document.getElementById('study-yt-frame').src = `https://www.youtube.com/embed/${activeStudyBab.ytId || 'mhIOylZMg6Q'}`;
 
-      // Render Quick Quiz
       const qq = activeStudyBab.quickQuiz;
-      const qqBox = document.getElementById('study-quick-quiz');
-      qqBox.innerHTML = `
+      document.getElementById('study-quick-quiz').innerHTML = `
         <p class="text-xs font-bold text-slate-800">${qq.q}</p>
         <div class="space-y-1.5">
-          ${qq.opts.map((o, idx) => `
-            <button onclick="checkQuickQuiz(${idx}, ${qq.ans}, this)" class="w-full text-left p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-blue-50 text-xs font-medium transition cursor-pointer">
-              ${String.fromCharCode(65 + idx)}. ${o}
-            </button>
-          `).join('')}
+          ${qq.opts.map((o, idx) => `<button onclick="checkQuickQuiz(${idx}, ${qq.ans}, this)" class="w-full text-left p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-blue-50 text-xs font-medium cursor-pointer">${String.fromCharCode(65 + idx)}. ${o}</button>`).join('')}
         </div>
         <div id="qq-feedback" class="text-xs font-bold"></div>
       `;
@@ -1249,10 +772,10 @@
       const fb = document.getElementById('qq-feedback');
       if (chosen === correct) {
         btnEl.className = "w-full text-left p-2.5 rounded-xl border-2 border-emerald-500 bg-emerald-50 text-emerald-900 text-xs font-bold";
-        fb.innerHTML = `<span class="text-emerald-700">✅ Correct! Great intuition.</span>`;
+        fb.innerHTML = `<span class="text-emerald-700">✅ Correct!</span>`;
       } else {
         btnEl.className = "w-full text-left p-2.5 rounded-xl border-2 border-rose-400 bg-rose-50 text-rose-900 text-xs font-bold";
-        fb.innerHTML = `<span class="text-rose-700">❌ Not quite—check the formula on the left!</span>`;
+        fb.innerHTML = `<span class="text-rose-700">❌ Review the concept formulas on the left!</span>`;
       }
     }
 
@@ -1265,28 +788,94 @@
     function switchStudyTab(tab) {
       ['concept', 'lab', 'video'].forEach(t => {
         document.getElementById(`study-pane-${t}`).classList.toggle('hidden', t !== tab);
-        const btn = document.getElementById(`stab-${t}`);
-        btn.className = t === tab
-          ? "px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-800 text-white shadow-xs cursor-pointer"
-          : "px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 cursor-pointer";
+        document.getElementById(`stab-${t}`).className = t === tab
+          ? "px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-800 text-white cursor-pointer"
+          : "px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 cursor-pointer";
       });
       if (tab === 'lab') drawVLab();
       applyKaTeX(document.getElementById('view-study'));
     }
 
     function initVLabForType(type) {
-      vlabState.type = type;
-      vlabState.playing = false;
-      vlabState.records = [];
+      vlabState.type = type; vlabState.playing = false; vlabState.records = [];
       const ctrl = document.getElementById('vlab-controls');
       const thead = document.getElementById('vlab-table-head');
       const title = document.getElementById('vlab-sim-title');
 
-      if (type === 'energy') {
-        title.innerText = "Virtual Lab: Conservation of Mechanical Energy (Parabolic Track)";
+      if (type === 'caliper') {
+        title.innerText = "Virtual Lab: Vernier Caliper (Jangka Sorong 0.01 cm)";
+        vlabState.p1 = 24; // in 0.1 mm -> 2.40 cm
+        ctrl.innerHTML = `
+          <h4 class="text-xs font-extrabold uppercase text-blue-900">Vernier Jaw Position</h4>
+          <div><div class="flex justify-between text-xs font-bold"><span>Object Diameter</span><span id="vl-v1">2.40 cm</span></div>
+          <input type="range" min="5" max="65" step="1" value="24" class="w-full accent-blue-700" oninput="vlabState.p1=+this.value; document.getElementById('vl-v1').innerText=(this.value/10).toFixed(2)+' cm'; drawVLab();"></div>
+          <p class="text-[11px] text-slate-500">Geser rahang untuk membaca Skala Utama (SU) dan Skala Nonius (SN × 0,01 cm).</p>
+        `;
+        thead.innerHTML = `<tr><th class="p-2.5">#</th><th class="p-2.5">Main Scale (cm)</th><th class="p-2.5">Vernier Scale (cm)</th><th class="p-2.5">Total Reading (cm)</th><th class="p-2.5">In mm</th></tr>`;
+      } else if (type === 'turbine') {
+        title.innerText = "Virtual Lab: Wind Turbine & Solar Power Generator";
+        vlabState.p1 = 8; vlabState.p2 = 4;
+        ctrl.innerHTML = `
+          <h4 class="text-xs font-extrabold uppercase text-blue-900">Renewable Energy Parameters</h4>
+          <div><div class="flex justify-between text-xs font-bold"><span>Wind Speed (v)</span><span id="vl-v1">8 m/s</span></div>
+          <input type="range" min="2" max="16" step="1" value="8" class="w-full accent-blue-700" oninput="vlabState.p1=+this.value; document.getElementById('vl-v1').innerText=this.value+' m/s'; drawVLab();"></div>
+          <div><div class="flex justify-between text-xs font-bold"><span>Blade Radius (R)</span><span id="vl-v2">4 m</span></div>
+          <input type="range" min="2" max="8" step="1" value="4" class="w-full accent-emerald-600" oninput="vlabState.p2=+this.value; document.getElementById('vl-v2').innerText=this.value+' m'; drawVLab();"></div>
+        `;
+        thead.innerHTML = `<tr><th class="p-2.5">#</th><th class="p-2.5">Wind v (m/s)</th><th class="p-2.5">Radius R (m)</th><th class="p-2.5">Swept Area (m²)</th><th class="p-2.5">Output Power (kW)</th></tr>`;
+      } else if (type === 'climate') {
+        title.innerText = "Virtual Lab: Greenhouse Effect & Earth Radiation Balance";
+        vlabState.p1 = 420; vlabState.p2 = 30; // CO2 ppm, Albedo %
+        ctrl.innerHTML = `
+          <h4 class="text-xs font-extrabold uppercase text-blue-900">Atmospheric Controls</h4>
+          <div><div class="flex justify-between text-xs font-bold"><span>CO₂ Concentration</span><span id="vl-v1">420 ppm</span></div>
+          <input type="range" min="280" max="800" step="20" value="420" class="w-full accent-rose-600" oninput="vlabState.p1=+this.value; document.getElementById('vl-v1').innerText=this.value+' ppm'; drawVLab();"></div>
+          <div><div class="flex justify-between text-xs font-bold"><span>Ice Albedo (%)</span><span id="vl-v2">30%</span></div>
+          <input type="range" min="10" max="60" step="5" value="30" class="w-full accent-sky-600" oninput="vlabState.p2=+this.value; document.getElementById('vl-v2').innerText=this.value+'%'; drawVLab();"></div>
+        `;
+        thead.innerHTML = `<tr><th class="p-2.5">#</th><th class="p-2.5">CO₂ (ppm)</th><th class="p-2.5">Albedo (%)</th><th class="p-2.5">Trapped IR (%)</th><th class="p-2.5">Avg Earth Temp (°C)</th></tr>`;
+      } else if (type === 'vector') {
+        title.innerText = "Virtual Lab: 2D Vector Decomposition & Resultant";
+        vlabState.p1 = 6; vlabState.p2 = 8; vlabState.p3 = 60;
+        ctrl.innerHTML = `
+          <h4 class="text-xs font-extrabold uppercase text-blue-900">Vector Forces</h4>
+          <div><div class="flex justify-between text-xs font-bold"><span>F₁ (Horizontal)</span><span id="vl-v1">6 N</span></div>
+          <input type="range" min="1" max="15" step="1" value="6" class="w-full accent-blue-700" oninput="vlabState.p1=+this.value; document.getElementById('vl-v1').innerText=this.value+' N'; drawVLab();"></div>
+          <div><div class="flex justify-between text-xs font-bold"><span>F₂ (Inclined)</span><span id="vl-v2">8 N</span></div>
+          <input type="range" min="1" max="15" step="1" value="8" class="w-full accent-emerald-600" oninput="vlabState.p2=+this.value; document.getElementById('vl-v2').innerText=this.value+' N'; drawVLab();"></div>
+          <div><div class="flex justify-between text-xs font-bold"><span>Angle θ</span><span id="vl-v3">60°</span></div>
+          <input type="range" min="0" max="90" step="5" value="60" class="w-full accent-amber-600" oninput="vlabState.p3=+this.value; document.getElementById('vl-v3').innerText=this.value+'°'; drawVLab();"></div>
+        `;
+        thead.innerHTML = `<tr><th class="p-2.5">#</th><th class="p-2.5">F₁ (N)</th><th class="p-2.5">F₂ (N)</th><th class="p-2.5">Angle θ</th><th class="p-2.5">Rx (N)</th><th class="p-2.5">Ry (N)</th><th class="p-2.5">|R| (N)</th></tr>`;
+      } else if (type === 'projectile') {
+        title.innerText = "Virtual Lab: 2D Projectile Kinematics";
+        vlabState.p1 = 20; vlabState.p2 = 45;
+        ctrl.innerHTML = `
+          <h4 class="text-xs font-extrabold uppercase text-blue-900">Launch Settings (g = 10 m/s²)</h4>
+          <div><div class="flex justify-between text-xs font-bold"><span>Initial Speed (v₀)</span><span id="vl-v1">20 m/s</span></div>
+          <input type="range" min="10" max="30" step="2" value="20" class="w-full accent-blue-700" oninput="vlabState.p1=+this.value; document.getElementById('vl-v1').innerText=this.value+' m/s'; resetVLab();"></div>
+          <div><div class="flex justify-between text-xs font-bold"><span>Launch Angle (θ)</span><span id="vl-v2">45°</span></div>
+          <input type="range" min="15" max="75" step="5" value="45" class="w-full accent-amber-600" oninput="vlabState.p2=+this.value; document.getElementById('vl-v2').innerText=this.value+'°'; resetVLab();"></div>
+        `;
+        thead.innerHTML = `<tr><th class="p-2.5">#</th><th class="p-2.5">v₀ (m/s)</th><th class="p-2.5">Angle θ</th><th class="p-2.5">Time t (s)</th><th class="p-2.5">Range x (m)</th><th class="p-2.5">Height y (m)</th></tr>`;
+      } else if (type === 'dynamics') {
+        title.innerText = "Virtual Lab: Newton's Second Law & Kinetic Friction";
+        vlabState.p1 = 4; vlabState.p2 = 20; vlabState.p3 = 0.25;
+        ctrl.innerHTML = `
+          <h4 class="text-xs font-extrabold uppercase text-blue-900">Force & Friction (g = 10 m/s²)</h4>
+          <div><div class="flex justify-between text-xs font-bold"><span>Block Mass (m)</span><span id="vl-v1">4 kg</span></div>
+          <input type="range" min="1" max="10" step="1" value="4" class="w-full accent-blue-700" oninput="vlabState.p1=+this.value; document.getElementById('vl-v1').innerText=this.value+' kg'; resetVLab();"></div>
+          <div><div class="flex justify-between text-xs font-bold"><span>Pulling Force (F)</span><span id="vl-v2">20 N</span></div>
+          <input type="range" min="0" max="50" step="5" value="20" class="w-full accent-emerald-600" oninput="vlabState.p2=+this.value; document.getElementById('vl-v2').innerText=this.value+' N'; resetVLab();"></div>
+          <div><div class="flex justify-between text-xs font-bold"><span>Friction Coeff (μₖ)</span><span id="vl-v3">0.25</span></div>
+          <input type="range" min="0" max="0.50" step="0.05" value="0.25" class="w-full accent-rose-600" oninput="vlabState.p3=+this.value; document.getElementById('vl-v3').innerText=(+this.value).toFixed(2); resetVLab();"></div>
+        `;
+        thead.innerHTML = `<tr><th class="p-2.5">#</th><th class="p-2.5">Mass m (kg)</th><th class="p-2.5">Force F (N)</th><th class="p-2.5">Friction fₖ (N)</th><th class="p-2.5">Acceleration a (m/s²)</th></tr>`;
+      } else if (type === 'energy') {
+        title.innerText = "Virtual Lab: Conservation of Mechanical Energy";
         vlabState.p1 = 2; vlabState.p2 = 8; vlabState.p3 = 0;
         ctrl.innerHTML = `
-          <h4 class="text-xs font-extrabold uppercase text-blue-900">Parameters (g = 10 m/s²)</h4>
+          <h4 class="text-xs font-extrabold uppercase text-blue-900">Track Parameters (g = 10 m/s²)</h4>
           <div><div class="flex justify-between text-xs font-bold"><span>Mass (m)</span><span id="vl-v1">2 kg</span></div>
           <input type="range" min="1" max="10" step="1" value="2" class="w-full accent-blue-700" oninput="vlabState.p1=+this.value; document.getElementById('vl-v1').innerText=this.value+' kg'; resetVLab();"></div>
           <div><div class="flex justify-between text-xs font-bold"><span>Initial Height (h₀)</span><span id="vl-v2">8 m</span></div>
@@ -1295,35 +884,11 @@
           <input type="range" min="0" max="0.25" step="0.05" value="0" class="w-full accent-rose-600" oninput="vlabState.p3=+this.value; document.getElementById('vl-v3').innerText=(+this.value).toFixed(2); resetVLab();"></div>
         `;
         thead.innerHTML = `<tr><th class="p-2.5">#</th><th class="p-2.5">m (kg)</th><th class="p-2.5">h (m)</th><th class="p-2.5">v (m/s)</th><th class="p-2.5">Ep (J)</th><th class="p-2.5">Ek (J)</th><th class="p-2.5">Em = Ep + Ek (J)</th></tr>`;
-      } else if (type === 'vector') {
-        title.innerText = "Virtual Lab: 2D Vector Decomposition & Resultant";
-        vlabState.p1 = 6; vlabState.p2 = 8; vlabState.p3 = 30;
-        ctrl.innerHTML = `
-          <h4 class="text-xs font-extrabold uppercase text-blue-900">Vector Parameters</h4>
-          <div><div class="flex justify-between text-xs font-bold"><span>Force F₁ (Horizontal)</span><span id="vl-v1">6 N</span></div>
-          <input type="range" min="1" max="15" step="1" value="6" class="w-full accent-blue-700" oninput="vlabState.p1=+this.value; document.getElementById('vl-v1').innerText=this.value+' N'; drawVLab();"></div>
-          <div><div class="flex justify-between text-xs font-bold"><span>Force F₂ (Inclined)</span><span id="vl-v2">8 N</span></div>
-          <input type="range" min="1" max="15" step="1" value="8" class="w-full accent-blue-700" oninput="vlabState.p2=+this.value; document.getElementById('vl-v2').innerText=this.value+' N'; drawVLab();"></div>
-          <div><div class="flex justify-between text-xs font-bold"><span>Angle θ (deg)</span><span id="vl-v3">30°</span></div>
-          <input type="range" min="0" max="90" step="5" value="30" class="w-full accent-amber-600" oninput="vlabState.p3=+this.value; document.getElementById('vl-v3').innerText=this.value+'°'; drawVLab();"></div>
-        `;
-        thead.innerHTML = `<tr><th class="p-2.5">#</th><th class="p-2.5">F₁ (N)</th><th class="p-2.5">F₂ (N)</th><th class="p-2.5">Angle θ</th><th class="p-2.5">Rx (N)</th><th class="p-2.5">Ry (N)</th><th class="p-2.5">Resultant |R| (N)</th></tr>`;
-      } else if (type === 'projectile') {
-        title.innerText = "Virtual Lab: Projectile Motion Trajectory";
-        vlabState.p1 = 20; vlabState.p2 = 45; vlabState.p3 = 0;
-        ctrl.innerHTML = `
-          <h4 class="text-xs font-extrabold uppercase text-blue-900">Launch Parameters (g = 10 m/s²)</h4>
-          <div><div class="flex justify-between text-xs font-bold"><span>Initial Speed (v₀)</span><span id="vl-v1">20 m/s</span></div>
-          <input type="range" min="10" max="30" step="2" value="20" class="w-full accent-blue-700" oninput="vlabState.p1=+this.value; document.getElementById('vl-v1').innerText=this.value+' m/s'; resetVLab();"></div>
-          <div><div class="flex justify-between text-xs font-bold"><span>Launch Angle (θ)</span><span id="vl-v2">45°</span></div>
-          <input type="range" min="15" max="75" step="5" value="45" class="w-full accent-amber-600" oninput="vlabState.p2=+this.value; document.getElementById('vl-v2').innerText=this.value+'°'; resetVLab();"></div>
-        `;
-        thead.innerHTML = `<tr><th class="p-2.5">#</th><th class="p-2.5">v₀ (m/s)</th><th class="p-2.5">Angle θ</th><th class="p-2.5">Time t (s)</th><th class="p-2.5">Range x (m)</th><th class="p-2.5">Height y (m)</th></tr>`;
       } else if (type === 'fluid') {
         title.innerText = "Virtual Lab: Hydrostatic Pressure Sensor";
-        vlabState.p1 = 4; vlabState.p2 = 1000; vlabState.p3 = 0;
+        vlabState.p1 = 4; vlabState.p2 = 1000;
         ctrl.innerHTML = `
-          <h4 class="text-xs font-extrabold uppercase text-blue-900">Tank Parameters (g = 10 m/s²)</h4>
+          <h4 class="text-xs font-extrabold uppercase text-blue-900">Fluid Tank (g = 10 m/s²)</h4>
           <div><div class="flex justify-between text-xs font-bold"><span>Depth (h)</span><span id="vl-v1">4 m</span></div>
           <input type="range" min="0" max="10" step="1" value="4" class="w-full accent-blue-700" oninput="vlabState.p1=+this.value; document.getElementById('vl-v1').innerText=this.value+' m'; drawVLab();"></div>
           <div><div class="flex justify-between text-xs font-bold"><span>Fluid Density (ρ)</span><span id="vl-v2">1000 kg/m³</span></div>
@@ -1335,8 +900,8 @@
         `;
         thead.innerHTML = `<tr><th class="p-2.5">#</th><th class="p-2.5">Fluid ρ (kg/m³)</th><th class="p-2.5">Depth h (m)</th><th class="p-2.5">Hydrostatic P (Pa)</th><th class="p-2.5">Total P (kPa)</th></tr>`;
       } else {
-        title.innerText = "Virtual Lab: Ohm's Law & DC Circuit Analyzer";
-        vlabState.p1 = 12; vlabState.p2 = 6; vlabState.p3 = 0;
+        title.innerText = "Virtual Lab: Electromagnetism & Ohm's Law Analyzer";
+        vlabState.p1 = 12; vlabState.p2 = 6;
         ctrl.innerHTML = `
           <h4 class="text-xs font-extrabold uppercase text-blue-900">Circuit Parameters</h4>
           <div><div class="flex justify-between text-xs font-bold"><span>Voltage (V)</span><span id="vl-v1">12 V</span></div>
@@ -1352,10 +917,7 @@
     }
 
     function resetVLab() {
-      vlabState.playing = false;
-      vlabState.t = 0;
-      vlabState.x = 0.05;
-      vlabState.vx = 0;
+      vlabState.playing = false; vlabState.t = 0; vlabState.x = 0.05; vlabState.vx = 0;
       drawVLab();
     }
 
@@ -1371,20 +933,21 @@
       if (vlabState.type === 'energy') {
         const u = (vlabState.x - 0.5) * 2;
         const slope = 4 * vlabState.p2 * u / 12;
-        const sinT = slope / Math.sqrt(1 + slope * slope);
-        const cosT = 1 / Math.sqrt(1 + slope * slope);
+        const sinT = slope / Math.sqrt(1 + slope * slope), cosT = 1 / Math.sqrt(1 + slope * slope);
         let a = -10 * sinT;
-        if (vlabState.p3 > 0 && Math.abs(vlabState.vx) > 0.001) {
-          a -= (vlabState.vx > 0 ? 1 : -1) * vlabState.p3 * 10 * cosT;
-        }
-        vlabState.vx += a * 0.025;
-        vlabState.x += (vlabState.vx * 0.025) / 12;
+        if (vlabState.p3 > 0 && Math.abs(vlabState.vx) > 0.001) a -= (vlabState.vx > 0 ? 1 : -1) * vlabState.p3 * 10 * cosT;
+        vlabState.vx += a * 0.025; vlabState.x += (vlabState.vx * 0.025) / 12;
         if (vlabState.x < 0.03) { vlabState.x = 0.03; vlabState.vx = Math.abs(vlabState.vx) * 0.85; }
         if (vlabState.x > 0.97) { vlabState.x = 0.97; vlabState.vx = -Math.abs(vlabState.vx) * 0.85; }
       } else if (vlabState.type === 'projectile') {
         const rad = vlabState.p2 * Math.PI / 180;
         const tMax = (2 * vlabState.p1 * Math.sin(rad)) / 10;
         if (vlabState.t >= tMax) { vlabState.t = tMax; vlabState.playing = false; }
+      } else if (vlabState.type === 'dynamics') {
+        const fk = vlabState.p3 * vlabState.p1 * 10;
+        const a = Math.max(0, (vlabState.p2 - fk) / vlabState.p1);
+        vlabState.x = 0.08 + 0.5 * a * vlabState.t * vlabState.t * 0.02;
+        if (vlabState.x >= 0.85) { vlabState.x = 0.85; vlabState.playing = false; }
       }
 
       drawVLab();
@@ -1398,124 +961,157 @@
       const W = canvas.width, H = canvas.height;
       ctx.clearRect(0, 0, W, H);
 
-      // Grid
       ctx.strokeStyle = '#f1f5f9'; ctx.lineWidth = 1;
       for (let gx = 0; gx < W; gx += 40) { ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, H); ctx.stroke(); }
       for (let gy = 0; gy < H; gy += 40) { ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(W, gy); ctx.stroke(); }
 
-      const hud = document.getElementById('vlab-hud');
-      const tel = document.getElementById('vlab-telemetry');
+      const hud = document.getElementById('vlab-hud'), tel = document.getElementById('vlab-telemetry');
 
-      if (vlabState.type === 'energy') {
-        const baseY = 300, scaleY = 23;
-        ctx.fillStyle = '#e2e8f0'; ctx.fillRect(0, baseY, W, H - baseY);
-        ctx.beginPath();
-        for (let i = 0; i <= 100; i++) {
-          const nx = i / 100;
-          const u = (nx - 0.5) * 2;
-          const py = baseY - (vlabState.p2 * u * u) * scaleY;
-          const px = 40 + nx * (W - 80);
-          if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+      if (vlabState.type === 'caliper') {
+        const valCm = (vlabState.p1 / 10).toFixed(2);
+        const su = Math.floor(vlabState.p1 / 10) + (Math.floor((vlabState.p1 % 10) / 10 * 10) >= 0 ? (vlabState.p1 % 10) / 10 : 0);
+        // Gambar skala utama & nonius
+        ctx.fillStyle = '#cbd5e1'; ctx.fillRect(60, 120, 600, 45);
+        ctx.strokeStyle = '#0f172a'; ctx.lineWidth = 1.5;
+        for (let i = 0; i <= 70; i++) {
+          const x = 80 + i * 8;
+          const h = i % 10 === 0 ? 22 : (i % 5 === 0 ? 15 : 10);
+          ctx.beginPath(); ctx.moveTo(x, 165); ctx.lineTo(x, 165 - h); ctx.stroke();
+          if (i % 10 === 0) { ctx.fillStyle = '#0f172a'; ctx.font = 'bold 11px monospace'; ctx.fillText(i / 10, x - 3, 138); }
         }
-        ctx.strokeStyle = vlabState.p3 > 0 ? '#e11d48' : '#0d2347'; ctx.lineWidth = 5; ctx.stroke();
-
-        const uBall = (vlabState.x - 0.5) * 2;
-        const hCurr = vlabState.p2 * uBall * uBall;
-        const em0 = vlabState.p1 * 10 * (vlabState.p2 * 0.9 * 0.9);
-        const ep = vlabState.p1 * 10 * hCurr;
-        let ek = vlabState.p3 === 0 ? Math.max(0, em0 - ep) : 0.5 * vlabState.p1 * vlabState.vx * vlabState.vx;
-        const emNow = ep + ek;
-        const vCurr = Math.sqrt((2 * ek) / vlabState.p1);
-
-        const bx = 40 + vlabState.x * (W - 80);
-        const by = baseY - hCurr * scaleY - 11;
-        ctx.beginPath(); ctx.arc(bx, by, 11, 0, Math.PI * 2);
-        ctx.fillStyle = '#d97706'; ctx.fill(); ctx.strokeStyle = '#0d2347'; ctx.lineWidth = 3; ctx.stroke();
-
-        hud.innerHTML = `<div>Height (h): <b>${hCurr.toFixed(2)} m</b></div><div>Speed (v): <b>${vCurr.toFixed(2)} m/s</b></div>`;
-        const maxE = Math.max(1, em0);
-        tel.innerHTML = `
-          <div class="font-bold text-slate-700 mb-1">Live Energy Distribution</div>
-          <div><div class="flex justify-between text-blue-700 font-bold"><span>Ep</span><span>${ep.toFixed(1)} J</span></div><div class="h-2.5 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-blue-600" style="width:${Math.min(100,(ep/maxE)*100)}%"></div></div></div>
-          <div><div class="flex justify-between text-emerald-700 font-bold"><span>Ek</span><span>${ek.toFixed(1)} J</span></div><div class="h-2.5 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-emerald-500" style="width:${Math.min(100,(ek/maxE)*100)}%"></div></div></div>
-          <div><div class="flex justify-between text-amber-700 font-bold"><span>Em (Total)</span><span>${emNow.toFixed(1)} J</span></div><div class="h-2.5 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-amber-500" style="width:${Math.min(100,(emNow/maxE)*100)}%"></div></div></div>
-        `;
+        // Rahang geser
+        const shift = vlabState.p1 * 8;
+        ctx.fillStyle = 'rgba(30, 64, 175, 0.15)'; ctx.fillRect(80 + shift, 165, 110, 45);
+        ctx.strokeStyle = '#1e40af'; ctx.strokeRect(80 + shift, 165, 110, 45);
+        for (let j = 0; j <= 10; j++) {
+          const vx = 80 + shift + j * 7.2;
+          ctx.beginPath(); ctx.moveTo(vx, 165); ctx.lineTo(vx, 182); ctx.stroke();
+        }
+        // Benda ukur
+        ctx.fillStyle = '#d97706'; ctx.fillRect(80, 220, shift, 40);
+        hud.innerHTML = `<div>Reading: <b class="text-blue-800">${valCm} cm</b> (${vlabState.p1} mm)</div>`;
+        tel.innerHTML = `<div class="font-bold text-slate-700">Vernier Analysis</div><p>Total = SU + (SN × 0.01 cm)<br>Result = <b>${valCm} cm</b></p>`;
+      } else if (vlabState.type === 'turbine') {
+        const area = Math.PI * vlabState.p2 * vlabState.p2;
+        const powerKw = (0.5 * 1.2 * area * Math.pow(vlabState.p1, 3) * 0.4) / 1000;
+        // Tower & Blades
+        ctx.fillStyle = '#475569'; ctx.fillRect(352, 160, 16, 150);
+        ctx.save(); ctx.translate(360, 160); ctx.rotate(vlabState.t * vlabState.p1 * 0.3);
+        for (let b = 0; b < 3; b++) {
+          ctx.rotate((Math.PI * 2) / 3);
+          ctx.fillStyle = '#0284c7'; ctx.fillRect(-5, 0, 10, vlabState.p2 * 14);
+        }
+        ctx.restore();
+        hud.innerHTML = `<div>Wind Speed: <b>${vlabState.p1} m/s</b></div><div>Output Power: <b class="text-emerald-700">${powerKw.toFixed(2)} kW</b></div>`;
+        tel.innerHTML = `<div class="font-bold text-slate-700">Kinetic to Electrical</div><p>Swept Area A = <b>${area.toFixed(1)} m²</b><br>P ∝ v³ → Power = <b>${powerKw.toFixed(2)} kW</b></p>`;
+      } else if (vlabState.type === 'climate') {
+        const temp = 14 + (vlabState.p1 - 280) * 0.008 - (vlabState.p2 - 30) * 0.08;
+        ctx.beginPath(); ctx.arc(360, 210, 75, 0, Math.PI * 2); ctx.fillStyle = '#2563eb'; ctx.fill();
+        ctx.beginPath(); ctx.arc(360, 210, 95, 0, Math.PI * 2); ctx.strokeStyle = `rgba(225, 29, 72, ${vlabState.p1 / 900})`; ctx.lineWidth = 10; ctx.stroke();
+        hud.innerHTML = `<div>CO₂: <b>${vlabState.p1} ppm</b></div><div>Global Temp: <b class="text-rose-700">${temp.toFixed(2)} °C</b></div>`;
+        tel.innerHTML = `<div class="font-bold text-slate-700">Radiation Balance</div><p>Higher CO₂ traps outgoing infrared radiation, raising global mean temperature to <b>${temp.toFixed(2)} °C</b>.</p>`;
       } else if (vlabState.type === 'vector') {
         const ox = 180, oy = 250, scale = 12;
         const rad = vlabState.p3 * Math.PI / 180;
         const f1x = vlabState.p1, f2x = vlabState.p2 * Math.cos(rad), f2y = vlabState.p2 * Math.sin(rad);
-        const rx = f1x + f2x, ry = f2y;
-        const rMag = Math.sqrt(rx * rx + ry * ry);
-
-        // Draw F1
-        ctx.strokeStyle = '#1e40af'; ctx.lineWidth = 4;
-        ctx.beginPath(); ctx.moveTo(ox, oy); ctx.lineTo(ox + f1x * scale, oy); ctx.stroke();
-        // Draw F2
-        ctx.strokeStyle = '#059669';
-        ctx.beginPath(); ctx.moveTo(ox, oy); ctx.lineTo(ox + f2x * scale, oy - f2y * scale); ctx.stroke();
-        // Draw Resultant R
-        ctx.strokeStyle = '#d97706'; ctx.setLineDash([5, 4]);
-        ctx.beginPath(); ctx.moveTo(ox, oy); ctx.lineTo(ox + rx * scale, oy - ry * scale); ctx.stroke();
-        ctx.setLineDash([]);
-
-        hud.innerHTML = `<div>Rx = <b>${rx.toFixed(2)} N</b></div><div>Ry = <b>${ry.toFixed(2)} N</b></div><div>|R| = <b class="text-amber-700">${rMag.toFixed(2)} N</b></div>`;
-        tel.innerHTML = `<div class="font-bold text-slate-700">Vector Breakdown</div><p>Blue: F₁ (${vlabState.p1} N)<br>Green: F₂ (${vlabState.p2} N at ${vlabState.p3}°)<br>Gold Dashed: Resultant |R| = <b>${rMag.toFixed(2)} N</b></p>`;
+        const rx = f1x + f2x, ry = f2y, rMag = Math.sqrt(rx * rx + ry * ry);
+        ctx.strokeStyle = '#1e40af'; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(ox, oy); ctx.lineTo(ox + f1x * scale, oy); ctx.stroke();
+        ctx.strokeStyle = '#059669'; ctx.beginPath(); ctx.moveTo(ox, oy); ctx.lineTo(ox + f2x * scale, oy - f2y * scale); ctx.stroke();
+        ctx.strokeStyle = '#d97706'; ctx.setLineDash([5, 4]); ctx.beginPath(); ctx.moveTo(ox, oy); ctx.lineTo(ox + rx * scale, oy - ry * scale); ctx.stroke(); ctx.setLineDash([]);
+        hud.innerHTML = `<div>Rx = <b>${rx.toFixed(2)} N</b> | Ry = <b>${ry.toFixed(2)} N</b></div><div>Resultant |R| = <b class="text-amber-700">${rMag.toFixed(2)} N</b></div>`;
+        tel.innerHTML = `<div class="font-bold text-slate-700">Analytical Vector Sum</div><p>F₂x = ${f2x.toFixed(2)} N, F₂y = ${f2y.toFixed(2)} N<br>|R| = √(Rx² + Ry²) = <b>${rMag.toFixed(2)} N</b></p>`;
       } else if (vlabState.type === 'projectile') {
         const baseY = 290, scale = 6;
         ctx.fillStyle = '#e2e8f0'; ctx.fillRect(0, baseY, W, H - baseY);
         const rad = vlabState.p2 * Math.PI / 180;
         const x = vlabState.p1 * Math.cos(rad) * vlabState.t;
         const y = Math.max(0, vlabState.p1 * Math.sin(rad) * vlabState.t - 5 * vlabState.t * vlabState.t);
+        ctx.beginPath(); ctx.arc(60 + x * scale, baseY - y * scale - 8, 8, 0, Math.PI * 2); ctx.fillStyle = '#1e40af'; ctx.fill();
+        hud.innerHTML = `<div>Time: <b>${vlabState.t.toFixed(2)} s</b></div><div>Range x: <b>${x.toFixed(2)} m</b> | Height y: <b>${y.toFixed(2)} m</b></div>`;
+        tel.innerHTML = `<div class="font-bold text-slate-700">Projectile Telemetry</div><p>vx = ${(vlabState.p1*Math.cos(rad)).toFixed(1)} m/s (constant)<br>Click <b>Play</b> to launch!</p>`;
+      } else if (vlabState.type === 'dynamics') {
+        const baseY = 270;
+        ctx.fillStyle = '#cbd5e1'; ctx.fillRect(0, baseY, W, H - baseY);
+        const bx = 60 + vlabState.x * (W - 160);
+        ctx.fillStyle = '#0d2347'; ctx.fillRect(bx, baseY - 50, 70, 50);
+        ctx.fillStyle = '#ffffff'; ctx.font = 'bold 12px sans-serif'; ctx.fillText(`${vlabState.p1} kg`, bx + 18, baseY - 20);
+        const fk = vlabState.p3 * vlabState.p1 * 10;
+        const a = Math.max(0, (vlabState.p2 - fk) / vlabState.p1);
+        hud.innerHTML = `<div>Friction fₖ: <b>${fk.toFixed(1)} N</b></div><div>Acceleration a: <b class="text-emerald-700">${a.toFixed(2)} m/s²</b></div>`;
+        tel.innerHTML = `<div class="font-bold text-slate-700">Newton's 2nd Law</div><p>Normal N = ${vlabState.p1*10} N<br>a = (F − fₖ)/m = <b>${a.toFixed(2)} m/s²</b></p>`;
+      } else if (vlabState.type === 'energy') {
+        const baseY = 300, scaleY = 23;
+        ctx.fillStyle = '#e2e8f0'; ctx.fillRect(0, baseY, W, H - baseY);
+        ctx.beginPath();
+        for (let i = 0; i <= 100; i++) {
+          const nx = i / 100, u = (nx - 0.5) * 2;
+          const py = baseY - (vlabState.p2 * u * u) * scaleY, px = 40 + nx * (W - 80);
+          if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+        }
+        ctx.strokeStyle = vlabState.p3 > 0 ? '#e11d48' : '#0d2347'; ctx.lineWidth = 5; ctx.stroke();
 
-        ctx.beginPath(); ctx.arc(60 + x * scale, baseY - y * scale - 8, 8, 0, Math.PI * 2);
-        ctx.fillStyle = '#1e40af'; ctx.fill();
+        const uBall = (vlabState.x - 0.5) * 2, hCurr = vlabState.p2 * uBall * uBall;
+        const em0 = vlabState.p1 * 10 * (vlabState.p2 * 0.9 * 0.9);
+        const ep = vlabState.p1 * 10 * hCurr;
+        let ek = vlabState.p3 === 0 ? Math.max(0, em0 - ep) : 0.5 * vlabState.p1 * vlabState.vx * vlabState.vx;
+        const vCurr = Math.sqrt((2 * ek) / vlabState.p1);
 
-        hud.innerHTML = `<div>Time: <b>${vlabState.t.toFixed(2)} s</b></div><div>Range x: <b>${x.toFixed(2)} m</b></div><div>Height y: <b>${y.toFixed(2)} m</b></div>`;
-        tel.innerHTML = `<div class="font-bold text-slate-700">Trajectory Telemetry</div><p>Initial Speed: ${vlabState.p1} m/s<br>Angle: ${vlabState.p2}°<br>Click <b>Play</b> to launch projectile.</p>`;
+        const bx = 40 + vlabState.x * (W - 80), by = baseY - hCurr * scaleY - 11;
+        ctx.beginPath(); ctx.arc(bx, by, 11, 0, Math.PI * 2); ctx.fillStyle = '#d97706'; ctx.fill(); ctx.strokeStyle = '#0d2347'; ctx.lineWidth = 3; ctx.stroke();
+
+        hud.innerHTML = `<div>Height (h): <b>${hCurr.toFixed(2)} m</b></div><div>Speed (v): <b>${vCurr.toFixed(2)} m/s</b></div>`;
+        const maxE = Math.max(1, em0);
+        tel.innerHTML = `
+          <div class="font-bold text-slate-700 mb-1">Live Energy Bars</div>
+          <div><div class="flex justify-between text-blue-700 font-bold"><span>Ep</span><span>${ep.toFixed(1)} J</span></div><div class="h-2.5 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-blue-600" style="width:${Math.min(100,(ep/maxE)*100)}%"></div></div></div>
+          <div><div class="flex justify-between text-emerald-700 font-bold"><span>Ek</span><span>${ek.toFixed(1)} J</span></div><div class="h-2.5 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-emerald-500" style="width:${Math.min(100,(ek/maxE)*100)}%"></div></div></div>
+          <div><div class="flex justify-between text-amber-700 font-bold"><span>Em</span><span>${(ep+ek).toFixed(1)} J</span></div><div class="h-2.5 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-amber-500" style="width:${Math.min(100,((ep+ek)/maxE)*100)}%"></div></div></div>
+        `;
       } else if (vlabState.type === 'fluid') {
         ctx.fillStyle = '#bae6fd'; ctx.fillRect(180, 60, 360, 240);
         ctx.strokeStyle = '#0284c7'; ctx.lineWidth = 3; ctx.strokeRect(180, 60, 360, 240);
         const sy = 60 + (vlabState.p1 / 10) * 220;
         ctx.beginPath(); ctx.arc(360, sy, 10, 0, Math.PI * 2); ctx.fillStyle = '#e11d48'; ctx.fill();
-
         const ph = vlabState.p2 * 10 * vlabState.p1;
         hud.innerHTML = `<div>Depth h: <b>${vlabState.p1} m</b></div><div>P_hydrostatic: <b>${ph.toLocaleString()} Pa</b></div>`;
-        tel.innerHTML = `<div class="font-bold text-slate-700">Pressure Readout</div><p>P_h = ρ · g · h = <b>${(ph/1000).toFixed(2)} kPa</b><br>Total P (with 100 kPa atm) = <b>${(100 + ph/1000).toFixed(2)} kPa</b></p>`;
+        tel.innerHTML = `<div class="font-bold text-slate-700">Pressure Readout</div><p>P_h = ρ·g·h = <b>${(ph/1000).toFixed(2)} kPa</b></p>`;
       } else {
-        ctx.strokeStyle = '#0d2347'; ctx.lineWidth = 4;
-        ctx.strokeRect(200, 80, 320, 180);
+        ctx.strokeStyle = '#0d2347'; ctx.lineWidth = 4; ctx.strokeRect(200, 80, 320, 180);
         ctx.fillStyle = '#ffffff'; ctx.fillRect(170, 145, 60, 50); ctx.strokeRect(170, 145, 60, 50);
-        ctx.fillStyle = '#0d2347'; ctx.font = 'bold 13px Plus Jakarta Sans'; ctx.fillText(`${vlabState.p1} V`, 183, 175);
+        ctx.fillStyle = '#0d2347'; ctx.font = 'bold 13px sans-serif'; ctx.fillText(`${vlabState.p1} V`, 183, 175);
         ctx.fillStyle = '#fef3c7'; ctx.fillRect(490, 145, 60, 50); ctx.strokeRect(490, 145, 60, 50);
         ctx.fillStyle = '#92400e'; ctx.fillText(`${vlabState.p2} Ω`, 505, 175);
-
         const curr = vlabState.p1 / vlabState.p2;
-        const pwr = vlabState.p1 * curr;
-        hud.innerHTML = `<div>Current (I): <b>${curr.toFixed(2)} A</b></div><div>Power (P): <b>${pwr.toFixed(2)} W</b></div>`;
-        tel.innerHTML = `<div class="font-bold text-slate-700">Ohm's Law Analysis</div><p>I = V / R = ${vlabState.p1} / ${vlabState.p2} = <b>${curr.toFixed(2)} A</b><br>Dissipated Power = <b>${pwr.toFixed(2)} Watt</b></p>`;
+        hud.innerHTML = `<div>Current (I): <b>${curr.toFixed(2)} A</b></div><div>Power (P): <b>${(vlabState.p1 * curr).toFixed(2)} W</b></div>`;
+        tel.innerHTML = `<div class="font-bold text-slate-700">Circuit Analysis</div><p>I = V / R = <b>${curr.toFixed(2)} A</b></p>`;
       }
     }
 
     function recordVLabRow() {
       const idx = vlabState.records.length + 1;
-      if (vlabState.type === 'energy') {
-        const uBall = (vlabState.x - 0.5) * 2;
-        const hCurr = vlabState.p2 * uBall * uBall;
-        const em0 = vlabState.p1 * 10 * (vlabState.p2 * 0.9 * 0.9);
-        const ep = vlabState.p1 * 10 * hCurr;
-        const ek = vlabState.p3 === 0 ? Math.max(0, em0 - ep) : 0.5 * vlabState.p1 * vlabState.vx * vlabState.vx;
-        const vCurr = Math.sqrt((2 * ek) / vlabState.p1);
-        vlabState.records.push([idx, vlabState.p1, hCurr.toFixed(2), vCurr.toFixed(2), ep.toFixed(1), ek.toFixed(1), (ep + ek).toFixed(1)]);
+      if (vlabState.type === 'caliper') {
+        const cm = (vlabState.p1 / 10).toFixed(2);
+        vlabState.records.push([idx, (Math.floor(vlabState.p1 / 10)).toFixed(1), ((vlabState.p1 % 10) * 0.01).toFixed(2), cm, vlabState.p1 + ' mm']);
+      } else if (vlabState.type === 'turbine') {
+        const area = Math.PI * vlabState.p2 * vlabState.p2;
+        const powerKw = (0.5 * 1.2 * area * Math.pow(vlabState.p1, 3) * 0.4) / 1000;
+        vlabState.records.push([idx, vlabState.p1, vlabState.p2, area.toFixed(1), powerKw.toFixed(2)]);
+      } else if (vlabState.type === 'climate') {
+        const temp = 14 + (vlabState.p1 - 280) * 0.008 - (vlabState.p2 - 30) * 0.08;
+        vlabState.records.push([idx, vlabState.p1, vlabState.p2 + '%', Math.round((vlabState.p1 / 900) * 100) + '%', temp.toFixed(2)]);
       } else if (vlabState.type === 'vector') {
-        const rad = vlabState.p3 * Math.PI / 180;
-        const rx = vlabState.p1 + vlabState.p2 * Math.cos(rad);
-        const ry = vlabState.p2 * Math.sin(rad);
+        const rad = vlabState.p3 * Math.PI / 180, rx = vlabState.p1 + vlabState.p2 * Math.cos(rad), ry = vlabState.p2 * Math.sin(rad);
         vlabState.records.push([idx, vlabState.p1, vlabState.p2, vlabState.p3 + '°', rx.toFixed(2), ry.toFixed(2), Math.sqrt(rx*rx+ry*ry).toFixed(2)]);
       } else if (vlabState.type === 'projectile') {
-        const rad = vlabState.p2 * Math.PI / 180;
-        const x = vlabState.p1 * Math.cos(rad) * vlabState.t;
-        const y = Math.max(0, vlabState.p1 * Math.sin(rad) * vlabState.t - 5 * vlabState.t * vlabState.t);
+        const rad = vlabState.p2 * Math.PI / 180, x = vlabState.p1 * Math.cos(rad) * vlabState.t, y = Math.max(0, vlabState.p1 * Math.sin(rad) * vlabState.t - 5 * vlabState.t * vlabState.t);
         vlabState.records.push([idx, vlabState.p1, vlabState.p2 + '°', vlabState.t.toFixed(2), x.toFixed(2), y.toFixed(2)]);
+      } else if (vlabState.type === 'dynamics') {
+        const fk = vlabState.p3 * vlabState.p1 * 10, a = Math.max(0, (vlabState.p2 - fk) / vlabState.p1);
+        vlabState.records.push([idx, vlabState.p1, vlabState.p2, fk.toFixed(1), a.toFixed(2)]);
+      } else if (vlabState.type === 'energy') {
+        const uBall = (vlabState.x - 0.5) * 2, hCurr = vlabState.p2 * uBall * uBall, em0 = vlabState.p1 * 10 * (vlabState.p2 * 0.81), ep = vlabState.p1 * 10 * hCurr;
+        const ek = vlabState.p3 === 0 ? Math.max(0, em0 - ep) : 0.5 * vlabState.p1 * vlabState.vx * vlabState.vx;
+        vlabState.records.push([idx, vlabState.p1, hCurr.toFixed(2), Math.sqrt((2 * ek) / vlabState.p1).toFixed(2), ep.toFixed(1), ek.toFixed(1), (ep + ek).toFixed(1)]);
       } else if (vlabState.type === 'fluid') {
         const ph = vlabState.p2 * 10 * vlabState.p1;
         vlabState.records.push([idx, vlabState.p2, vlabState.p1, ph.toLocaleString(), (100 + ph/1000).toFixed(2)]);
@@ -1529,32 +1125,21 @@
     function renderVLabTable() {
       const tbody = document.getElementById('vlab-table-body');
       if (vlabState.records.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="7" class="p-4 text-center text-slate-400 font-sans">No data recorded yet. Click "Record Data" during simulation.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="7" class="p-4 text-center text-slate-400 font-sans">No data recorded yet. Click "Record Data".</td></tr>`;
         return;
       }
       tbody.innerHTML = vlabState.records.map(row => `<tr>${row.map(c => `<td class="p-2.5">${c}</td>`).join('')}</tr>`).join('');
     }
-
     function clearVLabTable() { vlabState.records = []; renderVLabTable(); }
 
     // ========================================================
-    // PACKAGE MODAL, TOKEN & CBT EXAM ARENA
+    // CBT EXAM CONTROLLERS
     // ========================================================
-    function openPackageModal(babId, mode) {
-      selectedPackageBabId = babId;
-      const targetBab = masterBabData.find(b => b.id === babId);
-      document.getElementById('paket-modal-title').innerText = targetBab.title;
-      document.getElementById('modal-paket').classList.remove('hidden');
-    }
+    function openPackageModal(babId) { selectedPackageBabId = babId; document.getElementById('paket-modal-title').innerText = masterBabData.find(b => b.id === babId).title; document.getElementById('modal-paket').classList.remove('hidden'); }
     function closePackageModal() { document.getElementById('modal-paket').classList.add('hidden'); }
-    function selectPackageAndStart(packageNum) { closePackageModal(); startExamSession(selectedPackageBabId, 'latihan', packageNum); }
+    function selectPackageAndStart(pkg) { closePackageModal(); startExamSession(selectedPackageBabId, 'latihan', pkg); }
 
-    function openTokenDialog(babId) {
-      activeBabForExam = masterBabData.find(b => b.id === babId);
-      document.getElementById('token-modal-title').innerText = activeBabForExam.title;
-      document.getElementById('input-token-value').value = '';
-      document.getElementById('modal-token').classList.remove('hidden');
-    }
+    function openTokenDialog(babId) { activeBabForExam = masterBabData.find(b => b.id === babId); document.getElementById('token-modal-title').innerText = activeBabForExam.title; document.getElementById('input-token-value').value = ''; document.getElementById('modal-token').classList.remove('hidden'); }
     function closeTokenModal() { document.getElementById('modal-token').classList.add('hidden'); }
 
     function submitExamToken(e) {
@@ -1562,20 +1147,15 @@
       const entered = document.getElementById('input-token-value').value.trim().toUpperCase();
       if (entered === activeBabForExam.token || (currentUser && currentUser.role === 'guru')) {
         closeTokenModal();
-        const randomPackage = Math.floor(Math.random() * 5) + 1;
-        startExamSession(activeBabForExam.id, 'ulangan', randomPackage);
-      } else {
-        alert("❌ Invalid Exam Token! Please ask your teacher for the active token.");
-      }
+        startExamSession(activeBabForExam.id, 'ulangan', Math.floor(Math.random() * 5) + 1);
+      } else { alert("❌ Invalid Exam Token!"); }
     }
 
     function startExamSession(babId, mode, packageNum = 1) {
       activeBabForExam = masterBabData.find(b => b.id === babId);
-      if (window.MASTER_BANK_SOAL && window.MASTER_BANK_SOAL[babId] && window.MASTER_BANK_SOAL[babId][mode] && window.MASTER_BANK_SOAL[babId][mode][packageNum]) {
-        currentExamQuestions = window.MASTER_BANK_SOAL[babId][mode][packageNum];
-      } else {
-        currentExamQuestions = activeBabForExam.questions;
-      }
+      currentExamQuestions = (window.MASTER_BANK_SOAL && window.MASTER_BANK_SOAL[babId] && window.MASTER_BANK_SOAL[babId][mode] && window.MASTER_BANK_SOAL[babId][mode][packageNum])
+        ? window.MASTER_BANK_SOAL[babId][mode][packageNum]
+        : activeBabForExam.questions;
 
       currentQIdx = 0; userAnswers = {}; doubtfulAnswers.clear(); cheatCount = 0;
       document.getElementById('exam-chapter-title').innerText = `${activeBabForExam.title} (Package ${packageNum})`;
@@ -1583,214 +1163,139 @@
       document.getElementById('exam-student-label').innerText = `Candidate: ${currentUser.nama} (${currentUser.kelas})`;
       document.getElementById('cheat-badge').classList.add('hidden');
 
-      if (mode === 'ulangan') {
-        document.getElementById('exam-timer-box').classList.remove('hidden');
-        startTimer(currentExamQuestions.length * 2.5 * 60);
-      } else {
-        document.getElementById('exam-timer-box').classList.add('hidden');
-        clearInterval(timerRef);
-      }
+      if (mode === 'ulangan') { document.getElementById('exam-timer-box').classList.remove('hidden'); startTimer(currentExamQuestions.length * 150); }
+      else { document.getElementById('exam-timer-box').classList.add('hidden'); clearInterval(timerRef); }
 
       document.getElementById('view-dashboard').classList.add('hidden');
       document.getElementById('view-exam').classList.remove('hidden');
-      loadExamQuestion(0);
-      renderExamPalette();
+      loadExamQuestion(0); renderExamPalette();
     }
 
     function loadExamQuestion(idx) {
       currentQIdx = idx;
       const q = currentExamQuestions[idx];
       if (!q) return;
-
       document.getElementById('exam-q-num-badge').innerText = `Question ${idx + 1} of ${currentExamQuestions.length}`;
-      let questionHTML = `<div class="mb-3">${q.text}</div>`;
-      if (q.image) {
-        questionHTML += `<div class="my-4 flex justify-center"><div class="p-2 bg-slate-50 border border-slate-200 rounded-2xl max-w-md w-full flex flex-col items-center"><img src="${q.image}" alt="Diagram" class="max-h-56 object-contain rounded-xl" onerror="this.parentElement.style.display='none';"></div></div>`;
-      }
-      document.getElementById('exam-q-text').innerHTML = questionHTML;
+      document.getElementById('exam-q-text').innerHTML = `<div class="mb-3">${q.text}</div>`;
 
       const optsBox = document.getElementById('exam-q-options');
       optsBox.innerHTML = '';
       q.options.forEach((opt, i) => {
-        const isSelected = userAnswers[q.id] === i;
-        const optCard = document.createElement('div');
-        optCard.className = `p-4 rounded-2xl border cursor-pointer flex items-center gap-3 transition ${isSelected ? 'border-blue-600 bg-blue-50 font-bold text-blue-900 shadow-sm' : 'border-slate-200 bg-white hover:bg-slate-50'}`;
-        optCard.innerHTML = `<div class="w-7 h-7 rounded-xl border flex items-center justify-center text-xs font-bold ${isSelected ? 'bg-blue-700 text-white border-blue-700' : 'bg-slate-100 text-slate-600 border-slate-300'}">${String.fromCharCode(65 + i)}</div><span class="text-sm sm:text-base">${opt}</span>`;
-        optCard.onclick = () => { userAnswers[q.id] = i; loadExamQuestion(currentQIdx); renderExamPalette(); };
-        optsBox.appendChild(optCard);
+        const isSel = userAnswers[q.id] === i;
+        const card = document.createElement('div');
+        card.className = `p-4 rounded-2xl border cursor-pointer flex items-center gap-3 ${isSel ? 'border-blue-600 bg-blue-50 font-bold text-blue-900' : 'border-slate-200 bg-white hover:bg-slate-50'}`;
+        card.innerHTML = `<div class="w-7 h-7 rounded-xl border flex items-center justify-center text-xs font-bold ${isSel ? 'bg-blue-700 text-white' : 'bg-slate-100'}">${String.fromCharCode(65 + i)}</div><span>${opt}</span>`;
+        card.onclick = () => { userAnswers[q.id] = i; loadExamQuestion(currentQIdx); renderExamPalette(); };
+        optsBox.appendChild(card);
       });
 
-      document.getElementById('btn-prev-q').disabled = (idx === 0);
-      document.getElementById('btn-next-q').disabled = (idx === currentExamQuestions.length - 1);
-
+      document.getElementById('btn-prev-q').disabled = idx === 0;
+      document.getElementById('btn-next-q').disabled = idx === currentExamQuestions.length - 1;
       applyKaTeX(document.getElementById('exam-q-text'));
       applyKaTeX(optsBox);
     }
 
-    function toggleDoubtful() {
-      const q = currentExamQuestions[currentQIdx];
-      if (doubtfulAnswers.has(q.id)) doubtfulAnswers.delete(q.id); else doubtfulAnswers.add(q.id);
-      loadExamQuestion(currentQIdx); renderExamPalette();
-    }
+    function toggleDoubtful() { const q = currentExamQuestions[currentQIdx]; if (doubtfulAnswers.has(q.id)) doubtfulAnswers.delete(q.id); else doubtfulAnswers.add(q.id); renderExamPalette(); }
     function prevQuestion() { if (currentQIdx > 0) loadExamQuestion(currentQIdx - 1); }
     function nextQuestion() { if (currentQIdx < currentExamQuestions.length - 1) loadExamQuestion(currentQIdx + 1); }
 
     function renderExamPalette() {
-      const grid = document.getElementById('exam-palette-grid');
-      grid.innerHTML = '';
+      const grid = document.getElementById('exam-palette-grid'); grid.innerHTML = '';
       currentExamQuestions.forEach((q, i) => {
-        const isAns = userAnswers[q.id] !== undefined;
-        const isDoubt = doubtfulAnswers.has(q.id);
-        const isCur = i === currentQIdx;
-        let styleClass = "bg-slate-100 text-slate-700 hover:bg-slate-200 border-slate-200";
-        if (isAns) styleClass = "bg-blue-700 text-white font-bold border-blue-700";
-        if (isDoubt) styleClass = "bg-amber-400 text-slate-900 font-bold border-amber-400";
+        let cls = userAnswers[q.id] !== undefined ? "bg-blue-700 text-white" : "bg-slate-100 text-slate-700";
+        if (doubtfulAnswers.has(q.id)) cls = "bg-amber-400 text-slate-900";
         const btn = document.createElement('button');
-        btn.className = `h-10 rounded-xl text-xs font-bold border flex items-center justify-center transition cursor-pointer ${styleClass} ${isCur ? 'ring-2 ring-slate-900 ring-offset-2' : ''}`;
-        btn.innerText = i + 1;
-        btn.onclick = () => loadExamQuestion(i);
-        grid.appendChild(btn);
+        btn.className = `h-10 rounded-xl text-xs font-bold border ${cls} ${i === currentQIdx ? 'ring-2 ring-slate-900' : ''}`;
+        btn.innerText = i + 1; btn.onclick = () => loadExamQuestion(i); grid.appendChild(btn);
       });
     }
 
     function setupAntiCheat() {
       document.addEventListener('visibilitychange', () => {
         if (document.hidden && !document.getElementById('view-exam').classList.contains('hidden')) {
-          cheatCount++;
-          document.getElementById('cheat-badge').classList.remove('hidden');
-          document.getElementById('cheat-count-num').innerText = cheatCount;
-          alert(`⚠️ WARNING (#${cheatCount}): Tab switch detected! Please stay on the test window.`);
+          cheatCount++; document.getElementById('cheat-badge').classList.remove('hidden'); document.getElementById('cheat-count-num').innerText = cheatCount;
         }
       });
     }
 
     function triggerRescueMode() {
-      if (confirm("Enable Rescue Mode? This provides fundamental concept questions so you do not receive a zero score.")) {
-        currentExamQuestions = rescueQuestionsList;
-        userAnswers = {}; doubtfulAnswers.clear();
-        document.getElementById('exam-chapter-title').innerText = "Rescue Mode (Core Concepts)";
+      if (confirm("Enable Rescue Mode?")) {
+        currentExamQuestions = rescueQuestionsList; userAnswers = {}; doubtfulAnswers.clear();
         loadExamQuestion(0); renderExamPalette();
       }
     }
 
-    function startTimer(duration) {
-      timeRemaining = duration; clearInterval(timerRef);
+    function startTimer(dur) {
+      timeRemaining = dur; clearInterval(timerRef);
       timerRef = setInterval(() => {
         timeRemaining--;
-        const m = Math.floor(timeRemaining / 60), s = timeRemaining % 60;
-        document.getElementById('exam-timer-text').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
-        if (timeRemaining <= 0) { clearInterval(timerRef); alert("Time is up!"); confirmFinishExam(true); }
+        document.getElementById('exam-timer-text').innerText = `${String(Math.floor(timeRemaining / 60)).padStart(2, '0')}:${String(timeRemaining % 60).padStart(2, '0')}`;
+        if (timeRemaining <= 0) { clearInterval(timerRef); confirmFinishExam(true); }
       }, 1000);
     }
 
-    function exitExamConfirm() {
-      if (confirm("Exit exam? Unsaved answers will not be recorded.")) {
-        clearInterval(timerRef);
-        document.getElementById('view-exam').classList.add('hidden');
-        document.getElementById('view-dashboard').classList.remove('hidden');
-      }
-    }
+    function exitExamConfirm() { if (confirm("Exit exam?")) { clearInterval(timerRef); document.getElementById('view-exam').classList.add('hidden'); document.getElementById('view-dashboard').classList.remove('hidden'); } }
 
     function confirmFinishExam(force = false) {
-      if (!force && !confirm("Submit your answers and finalize this evaluation?")) return;
+      if (!force && !confirm("Submit answers?")) return;
       clearInterval(timerRef);
-
       let correct = 0, wrong = 0, empty = 0;
       currentExamQuestions.forEach(q => {
         const a = userAnswers[q.id];
-        if (a === undefined) empty++;
-        else if (a === q.correct) correct++;
-        else wrong++;
+        if (a === undefined) empty++; else if (a === q.correct) correct++; else wrong++;
       });
-
       const score = Math.round((correct / currentExamQuestions.length) * 100);
       document.getElementById('res-chapter-title').innerText = document.getElementById('exam-chapter-title').innerText;
-      document.getElementById('res-student-info').innerText = `Candidate: ${currentUser.nama} (${currentUser.kelas} / No: ${currentUser.absen})`;
+      document.getElementById('res-student-info').innerText = `Candidate: ${currentUser.nama} (${currentUser.kelas})`;
       document.getElementById('res-score-number').innerText = score;
       document.getElementById('res-stat-correct').innerText = correct;
       document.getElementById('res-stat-wrong').innerText = wrong;
       document.getElementById('res-stat-empty').innerText = empty;
       document.getElementById('res-stat-cheat').innerText = `${cheatCount}x`;
 
-      const statusEl = document.getElementById('res-score-status');
-      statusEl.innerText = score >= 75 ? "Passed (Mastered)" : "Needs Further Practice";
-      statusEl.className = score >= 75 ? "text-xs font-bold text-emerald-400" : "text-xs font-bold text-rose-400";
-
-      const discBox = document.getElementById('res-discussion-container');
-      discBox.innerHTML = '';
+      const discBox = document.getElementById('res-discussion-container'); discBox.innerHTML = '';
       currentExamQuestions.forEach((q, i) => {
-        const ua = userAnswers[q.id];
-        const isOk = ua === q.correct;
+        const ua = userAnswers[q.id], isOk = ua === q.correct;
         const item = document.createElement('div');
         item.className = `p-4 rounded-2xl border ${isOk ? 'border-emerald-200 bg-emerald-50/50' : 'border-rose-200 bg-rose-50/50'}`;
-        item.innerHTML = `
-          <div class="text-xs font-bold mb-1 ${isOk ? 'text-emerald-700' : 'text-rose-700'}">Question ${i+1}: ${isOk ? 'CORRECT' : 'INCORRECT / EMPTY'}</div>
-          <p class="text-sm text-slate-800 mb-2 font-medium">${q.text}</p>
-          <p class="text-xs text-slate-600">Your Answer: <b>${ua !== undefined ? q.options[ua] : '<i>None</i>'}</b></p>
-          <p class="text-xs text-blue-700 font-bold">Correct Key: ${q.options[q.correct]}</p>
-          <div class="mt-2 pt-2 border-t border-slate-200 text-xs text-slate-700 bg-white p-2.5 rounded-xl border"><b>💡 Solution:</b> ${q.discussion}</div>
-        `;
+        item.innerHTML = `<div class="text-xs font-bold mb-1">${i+1}. ${isOk ? 'CORRECT' : 'INCORRECT'}</div><p class="text-sm mb-1">${q.text}</p><p class="text-xs text-blue-700 font-bold">Key: ${q.options[q.correct]}</p><div class="mt-2 text-xs bg-white p-2 rounded-xl border">💡 ${q.discussion}</div>`;
         discBox.appendChild(item);
       });
-
       applyKaTeX(discBox);
       document.getElementById('view-exam').classList.add('hidden');
       document.getElementById('view-result').classList.remove('hidden');
     }
 
-    function returnToDashboardFromResults() {
-      document.getElementById('view-result').classList.add('hidden');
-      document.getElementById('view-dashboard').classList.remove('hidden');
-    }
+    function returnToDashboardFromResults() { document.getElementById('view-result').classList.add('hidden'); document.getElementById('view-dashboard').classList.remove('hidden'); }
 
     function openQuestionEditorModal() {
-      const select = document.getElementById('edit-bab-select');
-      select.innerHTML = '';
-      masterBabData.forEach(b => {
-        const opt = document.createElement('option');
-        opt.value = b.id; opt.innerText = `[Grade ${b.grade}] ${b.title}`;
-        select.appendChild(opt);
-      });
+      const sel = document.getElementById('edit-bab-select'); sel.innerHTML = '';
+      masterBabData.forEach(b => { const o = document.createElement('option'); o.value = b.id; o.innerText = `[Grade ${b.grade}] ${b.title}`; sel.appendChild(o); });
       document.getElementById('modal-editor').classList.remove('hidden');
     }
     function closeQuestionEditorModal() { document.getElementById('modal-editor').classList.add('hidden'); }
-
     function handleSaveNewQuestion(e) {
       e.preventDefault();
-      const babId = document.getElementById('edit-bab-select').value;
-      const targetBab = masterBabData.find(b => b.id === babId);
-      targetBab.questions.push({
-        id: Date.now(),
-        text: document.getElementById('edit-soal-text').value.trim(),
-        options: [
-          document.getElementById('edit-opt-0').value.trim(),
-          document.getElementById('edit-opt-1').value.trim(),
-          document.getElementById('edit-opt-2').value.trim(),
-          document.getElementById('edit-opt-3').value.trim()
-        ],
+      const target = masterBabData.find(b => b.id === document.getElementById('edit-bab-select').value);
+      target.questions.push({
+        id: Date.now(), text: document.getElementById('edit-soal-text').value.trim(),
+        options: [0,1,2,3].map(i => document.getElementById(`edit-opt-${i}`).value.trim()),
         correct: parseInt(document.getElementById('edit-kunci-select').value),
         discussion: document.getElementById('edit-pembahasan').value.trim()
       });
-      alert(`✅ Successfully added 1 question to: ${targetBab.title}!`);
-      closeQuestionEditorModal(); renderCards();
+      alert("✅ Question saved!"); closeQuestionEditorModal();
     }
 
     let canvas, ctx, isDrawing = false;
     function setupCanvas() {
-      canvas = document.getElementById('scratchpad-canvas');
-      if (!canvas) return;
-      ctx = canvas.getContext('2d');
-      canvas.width = 800; canvas.height = 340;
+      canvas = document.getElementById('scratchpad-canvas'); if (!canvas) return;
+      ctx = canvas.getContext('2d'); canvas.width = 800; canvas.height = 340;
       canvas.addEventListener('mousedown', () => isDrawing = true);
       canvas.addEventListener('mouseup', () => { isDrawing = false; ctx.beginPath(); });
       canvas.addEventListener('mousemove', (e) => {
         if (!isDrawing) return;
-        ctx.lineWidth = document.getElementById('pen-size').value;
-        ctx.strokeStyle = document.getElementById('pen-color').value;
-        ctx.lineCap = 'round';
-        const r = canvas.getBoundingClientRect();
-        ctx.lineTo(e.clientX - r.left, e.clientY - r.top);
-        ctx.stroke(); ctx.beginPath(); ctx.moveTo(e.clientX - r.left, e.clientY - r.top);
+        ctx.lineWidth = document.getElementById('pen-size').value; ctx.strokeStyle = document.getElementById('pen-color').value;
+        const r = canvas.getBoundingClientRect(); ctx.lineTo(e.clientX - r.left, e.clientY - r.top); ctx.stroke(); ctx.beginPath(); ctx.moveTo(e.clientX - r.left, e.clientY - r.top);
       });
     }
     function openCanvasModal() { document.getElementById('modal-canvas').classList.remove('hidden'); }
@@ -1799,17 +1304,16 @@
 
     let cVal = '0';
     function toggleCalcModal() { document.getElementById('modal-calc').classList.toggle('hidden'); }
-    function calcPush(v) { if (cVal === '0' && v !== '.' && !['+', '-', '×', '÷', '^'].includes(v)) cVal = ''; cVal += v; document.getElementById('calc-display').value = cVal; }
+    function calcPush(v) { if (cVal === '0' && v !== '.') cVal = ''; cVal += v; document.getElementById('calc-display').value = cVal; }
     function calcDel() { cVal = cVal.length > 1 ? cVal.slice(0, -1) : '0'; document.getElementById('calc-display').value = cVal; }
     function calcReset() { cVal = '0'; document.getElementById('calc-display').value = '0'; }
     function calcCompute() {
       try {
-        let expr = cVal.replace(/×10\^\(/g, '*Math.pow(10,').replace(/×/g, '*').replace(/÷/g, '/').replace(/π/g, 'Math.PI').replace(/e/g, 'Math.E').replace(/\^/g, '**').replace(/√\(/g, 'Math.sqrt(').replace(/log\(/g, 'Math.log10(').replace(/ln\(/g, 'Math.log(')
-          .replace(/sin\(([^)]+)\)/g, 'Math.sin(($1) * Math.PI / 180)').replace(/cos\(([^)]+)\)/g, 'Math.cos(($1) * Math.PI / 180)').replace(/tan\(([^)]+)\)/g, 'Math.tan(($1) * Math.PI / 180)');
-        let res = Function('"use strict";return (' + expr + ')')();
-        if (typeof res === 'number') res = Math.round((res + Number.EPSILON) * 100000000) / 100000000;
-        cVal = res.toString(); document.getElementById('calc-display').value = cVal;
-      } catch (e) { document.getElementById('calc-display').value = 'Format Error'; cVal = '0'; }
+        let expr = cVal.replace(/×/g, '*').replace(/÷/g, '/').replace(/\^/g, '**').replace(/√\(/g, 'Math.sqrt(')
+          .replace(/sin\(([^)]+)\)/g, 'Math.sin(($1)*Math.PI/180)').replace(/cos\(([^)]+)\)/g, 'Math.cos(($1)*Math.PI/180)').replace(/tan\(([^)]+)\)/g, 'Math.tan(($1)*Math.PI/180)');
+        cVal = Function('"use strict";return (' + expr + ')')().toString();
+        document.getElementById('calc-display').value = cVal;
+      } catch (e) { document.getElementById('calc-display').value = 'Error'; cVal = '0'; }
     }
   </script>
 </body>
